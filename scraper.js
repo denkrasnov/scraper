@@ -1,0 +1,56 @@
+/* eslint-disable no-return-assign, no-param-reassign */
+const puppeteer = require("puppeteer");
+
+/* Maximum.md */
+module.exports = async () => {
+  const browser = await puppeteer.launch();
+
+  const extractProducts = async url => {
+    const extraPage = await browser.newPage();
+    await extraPage.goto(url);
+    // await extraPage.waitForSelector(".products-list-container");
+
+    // await extraPage.$$eval("div.product__item__image img", imgs =>
+    //   Promise.all(
+    //     imgs.map(img => new Promise(resolve => (img.onload = resolve)))
+    //   )
+    // );
+
+    // Scrape the data
+    const extraProducts = await extraPage.evaluate(() =>
+      Array.from(document.querySelectorAll("div.product__item")).map(
+        product => ({
+          title: product
+            .querySelector("div.product__item__title")
+            .textContent.trim(),
+          logo: product.querySelector("div.product__item__image img").src
+        })
+      )
+    );
+
+    await extraPage.close();
+
+    if (extraProducts.length < 1) {
+      // Terminate if no products exist
+      return extraProducts;
+    }
+
+    // Go fetch the next page search/x+1
+    let pageNumber = url.match(/search\/(\d+)/);
+    if (Array.isArray(pageNumber) && pageNumber.length > 1) {
+      pageNumber = parseInt(pageNumber[1], 10);
+    }
+
+    const nextUrl = `https://maximum.md/ru/search/${
+      pageNumber ? pageNumber + 1 : 2
+    }?query=tv`;
+
+    return extraProducts.concat(await extractProducts(nextUrl));
+  };
+
+  const firstUrl = "https://maximum.md/ru/search/?query=tv";
+  const allProducts = await extractProducts(firstUrl);
+
+  await browser.close();
+  return allProducts;
+};
