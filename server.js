@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-// the project is configured only for development mode
 const path = require("path");
 const app = require("express")();
 const bodyParser = require("body-parser");
@@ -39,12 +37,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/public/index.html"));
 });
-
-// const generateID = () => {
-//   return `_${Math.random()
-//     .toString(36)
-//     .substr(2, 9)}`;
-// };
 
 /**
  * GET products
