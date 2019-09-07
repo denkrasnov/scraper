@@ -1,20 +1,21 @@
 {
-  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
-  "parser": "babel-eslint",
-  "plugins": ["react-hooks", "babel", "react"],
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended", 
+    "prettier/react"
+  ],
+  "plugins": [
+    "@typescript-eslint", 
+    "react-hooks",
+    "react",
+    "import"
+  ],
   "env": {
     "browser": true,
     "es6": true,
     "node": true,
     "jest": true
-  },
-  "settings": {
-    "react": {
-      "version": "16.8"
-    },
-    "import/resolver": {
-      "babel-module": {}
-    }
   },
   "parserOptions": {
     "sourceType": "module",
@@ -23,13 +24,33 @@
     }
   },
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "jsx-a11y/label-has-associated-control": [ 2,
       {
         "assert": "either",
         "depth": 3
       }
     ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "no-unused-vars": ["off"],
+        "no-undef": ["off"]
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "16.8"
+    },
+    "import/resolver": {
+      "babel-module": {},
+      "node": true,
+      "eslint-import-resolver-typescript": true
+    }
   },
   "globals": {
     "window": true,

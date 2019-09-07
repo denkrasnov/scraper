@@ -1,5 +1,5 @@
 import { hot } from "react-hot-loader";
-import React, { Component } from "react";
+import React, { Component, ChangeEvent, FormEvent } from "react";
 
 import styles from "./App.css";
 
@@ -12,11 +12,11 @@ class App extends Component {
     response: null
   };
 
-  handleChange = event => {
-    this.setState({ value: event.target.value });
+  handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    this.setState({ value: e.target.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     const { value } = this.state;
@@ -39,7 +39,6 @@ class App extends Component {
 
   render() {
     const { value, loading, response } = this.state;
-    console.log(response);
     return (
       <main className={styles.main}>
         <header className={styles.header}>

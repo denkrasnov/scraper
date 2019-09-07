@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["dom", "es2017"],
+    "strict": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,    
+    "outDir": "build",  
+    "sourceMap": true,
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "paths": {
+      "src/*": ["src/*"],
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "jest"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

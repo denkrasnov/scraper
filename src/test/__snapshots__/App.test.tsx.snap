@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders 1`] = `
+<main
+  className="main"
+>
+  <header
+    className="header"
+  >
+    <h1>
+      Compara tehnica
+    </h1>
+  </header>
+  <div
+    className="underline"
+  />
+  <div
+    className="formContainer"
+  >
+    <form
+      method="post"
+      onSubmit={[Function]}
+    >
+      <input
+        name="search"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <button
+        type="submit"
+        value="onSubmit"
+      >
+        Button
+      </button>
+    </form>
+  </div>
+</main>
+`;

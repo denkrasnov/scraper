@@ -9,12 +9,15 @@ module.exports = {
   devtool: "inline-source-map",
   entry: [
     "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
-    "./src/index.js"
+    "./src/index.tsx"
   ],
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
     filename: "bundle.js"
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
   },
   module: {
     rules: [
@@ -35,11 +38,9 @@ module.exports = {
         ]
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.svg$/,
