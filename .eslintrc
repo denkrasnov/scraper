@@ -26,6 +26,7 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react/prop-types": "off",
     "jsx-a11y/label-has-associated-control": [ 2,
       {
         "assert": "either",
@@ -44,7 +45,7 @@
   ],
   "settings": {
     "react": {
-      "version": "16.8"
+      "version": "16.9"
     },
     "import/resolver": {
       "babel-module": {},
