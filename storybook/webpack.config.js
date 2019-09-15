@@ -1,12 +1,33 @@
-module.exports = ({ config }) => {
-  config.module.rules.push({
-    test: /\.(ts|tsx)$/,
-    use: [
+module.exports = {
+  module: {
+    rules: [
       {
-        loader: require.resolve("ts-loader")
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: require.resolve("babel-loader")
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          require.resolve("style-loader"),
+          {
+            loader: require.resolve("css-loader"),
+            options: {
+              sourceMap: true,
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[local]--[hash:base64:5]"
+            }
+          },
+          require.resolve("postcss-loader")
+        ]
       }
     ]
-  });
-  config.resolve.extensions.push(".ts", ".tsx");
-  return config;
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
+  }
 };

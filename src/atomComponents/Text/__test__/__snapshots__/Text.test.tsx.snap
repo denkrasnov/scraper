@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text renders 1`] = `
+<span
+  style={
+    Object {
+      "fontSize": undefined,
+    }
+  }
+>
+  __TEXT__
+</span>
+`;

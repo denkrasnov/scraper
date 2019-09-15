@@ -1,4 +1,5 @@
 import { configure } from "@storybook/react";
+import "../src/initial.css";
 
 const req = require.context("../src", true, /\.story.tsx$/);
 function loadStories() {

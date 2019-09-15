@@ -1,6 +1,7 @@
 import { hot } from "react-hot-loader";
 import React, { Component, ChangeEvent, FormEvent } from "react";
-
+import Box from "./atomComponents/Box";
+import Header from "./components/Header";
 import styles from "./App.css";
 
 class App extends Component {
@@ -41,13 +42,12 @@ class App extends Component {
     const { value, loading, response } = this.state;
     return (
       <main className={styles.main}>
-        <header className={styles.header}>
-          <h1>Compara tehnica</h1>
-        </header>
+        <Header text="Compara technica" />
         <div className={styles.underline} />
+        <Box>Heyy</Box>
         <div className={styles.formContainer}>
           {loading ? (
-            <p>Loadin...</p>
+            <p>Loading...</p>
           ) : (
             <form method="post" onSubmit={this.handleSubmit}>
               <input

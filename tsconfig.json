@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
+    "outDir": "build",
     "target": "es5",
     "module": "esnext",
+    "moduleResolution": "node",
     "lib": ["dom", "es2017"],
     "strict": true,
     "jsx": "react",
-    "allowSyntheticDefaultImports": true,    
-    "outDir": "build",  
+    "allowSyntheticDefaultImports": true,       
     "sourceMap": true,
     "baseUrl": ".",
     "skipLibCheck": true,

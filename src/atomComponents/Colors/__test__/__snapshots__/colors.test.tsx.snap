@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`colors renders 1`] = `
+Object {
+  "BACKGROUND": "#f9fbfc",
+  "BODY_TEXT": "#090f29",
+  "BORDER": "#c8e1ff",
+  "BORDER_DARK": "rgba(18, 67, 138, 0.7)",
+  "BORDER_GRAY": "#d3d3d3",
+  "BUTTON_HOVER": "#0b2fc4",
+  "BUTTON_PRIMARY": "#224dff",
+  "ERROR": "#ff5267",
+  "MAIN": "#f7faff",
+  "MAIN_DARK": "rgba(133, 204, 255, 0.15)",
+  "SHADOW_COLOR": "rgba(8, 31, 44, 0.12)",
+  "SUCCESS": "#45c42d",
+}
+`;

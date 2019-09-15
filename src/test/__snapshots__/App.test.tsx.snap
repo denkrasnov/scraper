@@ -4,16 +4,15 @@ exports[`App renders 1`] = `
 <main
   className="main"
 >
-  <header
-    className="header"
-  >
-    <h1>
-      Compara tehnica
-    </h1>
-  </header>
+  <Header
+    text="Compara technica"
+  />
   <div
     className="underline"
   />
+  <Box>
+    Heyy
+  </Box>
   <div
     className="formContainer"
   >

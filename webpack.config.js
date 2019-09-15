@@ -3,6 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const chalk = require("chalk");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -58,6 +59,7 @@ module.exports = {
       format: `webpack building [:bar] ${chalk.green.bold(":percent")}`,
       complete: chalk.hex("#224dff")("=")
     }),
+    new ForkTsCheckerWebpackPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]

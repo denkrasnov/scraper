@@ -12,6 +12,9 @@ module.exports = {
       "<rootDir>/jest/fileMock.js"
   },
   setupFilesAfterEnv: ["<rootDir>/jest/setupFile.tsx"],
-  collectCoverageFrom: ["src/**/*.{ts,tsx,js}"],
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx,js}",
+    "!src/**/{__stories__,__tests__}/**"
+  ],
   coveragePathIgnorePatterns: ["!*.d.ts"]
 };

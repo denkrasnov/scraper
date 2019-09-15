@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { Props } from "./types";
+import { ButtonProps } from "./types";
 
-const Button: FC<Props> = props => {
+const Button: FC<ButtonProps> = props => {
   const { children, onClick } = props;
   return (
     <button type="button" onClick={onClick}>
