@@ -11,8 +11,8 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
-    "lint:format": "eslint . --fix  && npm run lint:stylelint --fix",
-    "lint:eslint": "eslint .",
+    "format": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx --fix . && stylelint \"**/*.css\" --fix",
+    "lint:eslint": "eslint --ext .js,.ts,.tsx --max-warnings 0 .",
     "lint:stylelint": "stylelint \"**/*.css\"",
     "check-types": "tsc -p tsconfig.json --noEmit"
   },
@@ -97,6 +97,7 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.3.0",
+    "stylelint-prettier": "^1.1.1",
     "svg-react-loader": "^0.4.6",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",

@@ -34,6 +34,7 @@ export interface BoxProps {
   flexDirection?: FlexDirection;
   flexWrap?: FlexWrap;
   justifyContent?: JustifyContent;
+  grow?: number;
   width?: string;
   height?: string;
 }

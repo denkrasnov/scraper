@@ -5,6 +5,7 @@ import Text from "..";
 
 describe("Text", () => {
   const children = "__TEXT__";
+
   it("should render", () => {
     const component = shallow(<Text>{children}</Text>);
 
