@@ -1,0 +1,9 @@
+.Divider {
+  width: 100%;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.vertical {
+  height: 100%;
+  border-right: 1px solid var(--border-gray);
+}

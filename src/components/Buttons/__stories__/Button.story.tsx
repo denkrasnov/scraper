@@ -5,7 +5,7 @@ import { boolean } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 
-storiesOf("AtomComponents|Button", module).add("default", () => (
+storiesOf("Components|Button", module).add("default", () => (
   <Button disabled={boolean("Disabled", false)} onClick={action("clicked")}>
     Search
   </Button>

@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon server.js",
-    "storybook": "start-storybook -p 8008 -c ./storybook",
+    "storybook": "start-storybook -p 6006 -c ./storybook",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
@@ -57,7 +57,7 @@
     "@storybook/addon-knobs": "^5.1.11",
     "@storybook/addon-viewport": "^5.1.1",
     "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11",
+    "@storybook/react": "^5.2.1",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.18",

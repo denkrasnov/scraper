@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
-type FontWeight = 200 | 400 | 700;
+export type FontWeight = "fw200" | "fw400" | "fw700";
 
-type FontSize =
+export type FontSize =
   | "fs100" // 10px, step: 2
   | "fs200"
   | "fs300"
@@ -14,6 +14,7 @@ type FontSize =
   | "fs1000";
 
 export type Sizes = { [key in FontSize]: string };
+export type Weights = { [key in FontWeight]: number };
 
 type Tag = "p" | "span";
 

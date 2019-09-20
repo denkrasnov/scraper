@@ -1,10 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Text renders 1`] = `
+exports[`Text should render 1`] = `
+<span
+  style={Object {}}
+>
+  __TEXT__
+</span>
+`;
+
+exports[`Text should render with fontSize and fontWeight 1`] = `
 <span
   style={
     Object {
-      "fontSize": undefined,
+      "fontSize": "10px",
+      "fontWeight": 400,
     }
   }
 >

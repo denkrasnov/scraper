@@ -6,7 +6,7 @@ import Text from "../../Text";
 import colors from "../colors";
 import { Color } from "../types";
 
-storiesOf("AtomComponents|Colors", module).add("default", () => {
+storiesOf("Components|Colors", module).add("default", () => {
   const colorItems = Object.keys(colors).map(key => (
     <div
       key={key}
