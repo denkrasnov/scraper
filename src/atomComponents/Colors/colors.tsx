@@ -4,6 +4,7 @@ const colors: Colors = {
   BACKGROUND: "#f9fbfc",
   SHADOW_COLOR: "rgba(8, 31, 44, 0.12)",
   BUTTON_PRIMARY: "#224dff",
+  BUTTON_SECONDARY: "#5A6169",
   BUTTON_HOVER: "#0b2fc4",
   BORDER: "#c8e1ff",
   BORDER_DARK: "rgba(18, 67, 138, 0.7)",

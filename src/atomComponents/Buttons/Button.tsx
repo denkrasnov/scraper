@@ -1,10 +1,17 @@
 import React, { FC } from "react";
+
 import { ButtonProps } from "./types";
+import styles from "./Button.css";
 
 const Button: FC<ButtonProps> = props => {
-  const { children, onClick } = props;
+  const { disabled, children, onClick } = props;
   return (
-    <button type="button" onClick={onClick}>
+    <button
+      className={styles.Button}
+      disabled={disabled}
+      type="button"
+      onClick={onClick}
+    >
       {children}
     </button>
   );
