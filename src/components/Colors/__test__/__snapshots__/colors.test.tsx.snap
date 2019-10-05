@@ -13,6 +13,7 @@ Object {
   "ERROR": "var(--error)",
   "MAIN": "var(--main)",
   "MAIN_DARK": "var(--main-dark)",
+  "MAIN_RED": "var(--main-red)",
   "SHADOW_COLOR": "var(--shadow-color)",
   "SUCCESS": "var(--success)",
   "WHITE": "var(--white)",

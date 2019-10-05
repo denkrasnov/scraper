@@ -33,7 +33,7 @@ storiesOf("Components|Colors", module).add("default", () => {
     </div>
   ));
   return (
-    <Box justifyContent="space-between" flexWrap="wrap">
+    <Box flexWrap="wrap" justifyContent="space-between">
       {colorItems}
     </Box>
   );

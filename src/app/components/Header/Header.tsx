@@ -1,14 +1,17 @@
 import React, { FC } from "react";
 
-import { HeaderProps } from "./types";
-import styles from "./Header.css";
+import Box from "../../../components/Box";
+import Text from "../../../components/Text";
 
-const Header: FC<HeaderProps> = props => {
-  const { text } = props;
+const Header: FC = () => {
   return (
-    <header className={styles.header}>
-      <h1>{text}</h1>
-    </header>
+    <Box alignItems="center" height="60px">
+      <header>
+        <Text color="MAIN_RED" fontSize="fs400" fontWeight="fw700">
+          compare
+        </Text>
+      </header>
+    </Box>
   );
 };
 

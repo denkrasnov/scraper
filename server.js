@@ -1,3 +1,4 @@
+/* eslint-env node */
 const path = require("path");
 const app = require("express")();
 const bodyParser = require("body-parser");
@@ -7,13 +8,12 @@ const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
 
 const scrap = require("./scraper");
+const config = require("./webpack.config");
 
 process.stdout.write(`
  ${chalk.bgHex("#224dff").white("--- Compare md ---")}
  The server is available on ${chalk.hex("#f7c132")("http://localhost:9001/")}
 \n`);
-
-const config = require("./webpack.config");
 
 const compiler = webpack(config);
 

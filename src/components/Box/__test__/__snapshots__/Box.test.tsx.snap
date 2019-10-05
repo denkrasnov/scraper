@@ -8,3 +8,16 @@ exports[`Box renders 1`] = `
   <div />
 </div>
 `;
+
+exports[`Box renders with attributes 1`] = `
+<div
+  className="Box"
+  style={
+    Object {
+      "backgroundColor": "var(--backgound)",
+    }
+  }
+>
+  <div />
+</div>
+`;

@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { Color } from "../Colors/types";
+
 type Display =
   | "block"
   | "inline-block"
@@ -29,12 +31,15 @@ type FlexWrap = "wrap";
 
 export interface BoxProps {
   alignItems?: AlignItems;
+  backgroundColor?: Color;
   children: ReactNode;
   display?: Display;
   flexDirection?: FlexDirection;
   flexWrap?: FlexWrap;
-  justifyContent?: JustifyContent;
   grow?: number;
+  justifyContent?: JustifyContent;
+  padding?: string;
+  margin?: string;
   width?: string;
   height?: string;
 }

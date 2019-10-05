@@ -12,6 +12,7 @@ export type Color =
   | "BODY_TEXT"
   | "MAIN"
   | "MAIN_DARK"
+  | "MAIN_RED"
   | "WHITE";
 
 export type Colors = { [key in Color]: string };

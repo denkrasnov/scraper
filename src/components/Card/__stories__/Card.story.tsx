@@ -9,10 +9,10 @@ storiesOf("Components|Card", module).add("default", () => {
     <Box>
       <Card>
         <Box
-          width="200px"
-          height="200px"
           alignItems="center"
+          height="200px"
           justifyContent="center"
+          width="200px"
         >
           Content here
         </Box>

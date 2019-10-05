@@ -12,9 +12,9 @@ describe("Text", () => {
     expect(component).toMatchSnapshot();
   });
 
-  it("should render with fontSize and fontWeight", () => {
+  it("should render with attributes", () => {
     const component = shallow(
-      <Text fontSize="fs100" fontWeight="fw400">
+      <Text color="BODY_TEXT" fontSize="fs100" fontWeight="fw400">
         {children}
       </Text>
     );

@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { Color } from "../Colors/types";
+
 export type FontWeight = "fw200" | "fw400" | "fw700";
 
 export type FontSize =
@@ -22,6 +24,7 @@ type TextAlign = "center";
 
 export interface TextProps {
   children: ReactNode;
+  color?: Color;
   fontWeight?: FontWeight;
   fontSize?: FontSize;
   tag?: Tag;

@@ -18,6 +18,9 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
+    alias: {
+      "react-dom": "@hot-loader/react-dom"
+    },
     extensions: [".tsx", ".ts", ".js"]
   },
   module: {
@@ -39,8 +42,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.tsx?$/,
-        use: "ts-loader",
+        test: /\.(ts|tsx)$/,
+        use: "babel-loader",
         exclude: /node_modules/
       },
       {

@@ -1,5 +1,6 @@
 {
   "presets": [
+    "@babel/typescript",
     [
       "@babel/preset-env",
       {
@@ -7,18 +8,16 @@
         "corejs": 3
       }
     ],
-    "@babel/preset-react",
-    "@babel/typescript"
+    "@babel/preset-react",  
   ],
   "plugins": [
+    "react-hot-loader/babel",
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-export-namespace-from",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-transform-regenerator",
-    "react-hot-loader/babel",
     ["module-resolver", {
-      "root": ["./src"],
       "alias": {
         "src": "./src"
       },

@@ -9,9 +9,9 @@ const Input: FC<InputProps> = props => {
     <input
       className={styles.Input}
       onChange={onChange}
+      placeholder={placeholder}
       type="text"
       value={value}
-      placeholder={placeholder}
     />
   );
 };

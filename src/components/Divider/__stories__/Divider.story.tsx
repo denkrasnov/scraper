@@ -7,7 +7,7 @@ import Divider from "../Divider";
 
 storiesOf("Components|Divider", module).add("default", () => {
   return (
-    <Box width="100%" height="100px">
+    <Box height="100px" width="100%">
       <Divider vertical={boolean("Vertical position", false)} />
     </Box>
   );

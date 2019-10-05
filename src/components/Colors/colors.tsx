@@ -14,6 +14,7 @@ const colors: Colors = {
   BODY_TEXT: "var(--body-text)",
   MAIN: "var(--main)",
   MAIN_DARK: "var(--main-dark)",
+  MAIN_RED: "var(--main-red)",
   WHITE: "var(--white)"
 };
 

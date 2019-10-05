@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders 1`] = `
+<Fragment>
+  <Box
+    padding="0 40px"
+  >
+    <Header />
+  </Box>
+  <Divider />
+  <Box
+    backgroundColor="BACKGROUND"
+    height="calc(100vh - 61px)"
+    padding="0 40px"
+  >
+    <Box
+      alignItems="flex-start"
+      grow={1}
+      margin="20px 0"
+      width="100%"
+    >
+      <SearchBar />
+    </Box>
+  </Box>
+</Fragment>
+`;

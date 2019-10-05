@@ -9,8 +9,8 @@ const Button: FC<ButtonProps> = props => {
     <button
       className={styles.Button}
       disabled={disabled}
-      type="button"
       onClick={onClick}
+      type="button"
     >
       {children}
     </button>

@@ -24,23 +24,40 @@
     }
   },
   "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          ["sibling", "parent", "internal", "index", "unknown"]
+        ],
+        "newlines-between": "always"
+      }
+    ],
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "react/prop-types": "off",
+    "react/jsx-sort-props": ["error"],
     "import/prefer-default-export": 0,
     "jsx-a11y/label-has-associated-control": [ 2,
       {
         "assert": "either",
         "depth": 3
       }
-    ]
+    ],
+    "prettier/prettier": ["error", {
+      "endOfLine": "lf"
+    }]
   },
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],
       "rules": {
-        "no-unused-vars": ["off"],
-        "no-undef": ["off"]
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "no-restricted-globals": "off",
+        "space-infix-ops": "off",
+        "react/prop-types": "off",
+        "react/default-props-match-prop-types": "off"
       }
     }
   ],

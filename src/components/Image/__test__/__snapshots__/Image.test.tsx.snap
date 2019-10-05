@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders 1`] = `
+<img
+  alt="__ALT__"
+  src="__SRC__"
+  style={
+    Object {
+      "objectFit": undefined,
+    }
+  }
+/>
+`;

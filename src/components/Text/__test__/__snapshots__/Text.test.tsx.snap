@@ -8,10 +8,11 @@ exports[`Text should render 1`] = `
 </span>
 `;
 
-exports[`Text should render with fontSize and fontWeight 1`] = `
+exports[`Text should render with attributes 1`] = `
 <span
   style={
     Object {
+      "color": "var(--body-text)",
       "fontSize": "10px",
       "fontWeight": 400,
     }

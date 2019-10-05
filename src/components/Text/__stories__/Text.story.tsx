@@ -12,10 +12,10 @@ const fontWeights = Object.keys(weights);
 storiesOf("Components|Text", module).add("default", () => {
   return (
     <Text
+      fontSize={select("Font size", fontSizes, fontSizes[2]) as FontSize}
       fontWeight={
         select("Font weight", fontWeights, fontWeights[1]) as FontWeight
       }
-      fontSize={select("Font size", fontSizes, fontSizes[2]) as FontSize}
     >
       Text example
     </Text>
