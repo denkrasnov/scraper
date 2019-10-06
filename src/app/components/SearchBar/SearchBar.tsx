@@ -8,7 +8,7 @@ const SearchBar: FC = () => {
   return (
     <>
       <Input placeholder="Search" />
-      <Box padding="0 10px">
+      <Box padding="0 0 0 10px">
         <Button>search</Button>
       </Box>
     </>

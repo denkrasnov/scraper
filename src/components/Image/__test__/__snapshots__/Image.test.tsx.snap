@@ -3,11 +3,13 @@
 exports[`Button renders 1`] = `
 <img
   alt="__ALT__"
+  className="Image"
   src="__SRC__"
   style={
     Object {
       "objectFit": undefined,
     }
   }
+  width="100%"
 />
 `;

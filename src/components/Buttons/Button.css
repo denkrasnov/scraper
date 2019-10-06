@@ -7,12 +7,14 @@
   background-color: var(--main-red);
   color: var(--white);
   font-weight: 700;
+  font-size: 14px;
   box-shadow: 2px 2px 3px var(--shadow-color);
 }
 
-.Button:hover {
+/* Implement on desktop */
+/* .Button:hover {
   background-color: var(--button-hover);
-}
+} */
 
 .Button:active {
   background-color: var(--main-red);

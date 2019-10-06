@@ -6,7 +6,7 @@ exports[`SearchBox renders 1`] = `
     placeholder="Search"
   />
   <Box
-    padding="0 10px"
+    padding="0 0 0 10px"
   >
     <Button>
       search

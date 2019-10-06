@@ -10,8 +10,9 @@ exports[`Home renders 1`] = `
   <Divider />
   <Box
     backgroundColor="BACKGROUND"
+    flexDirection="column"
     height="calc(100vh - 61px)"
-    padding="0 40px"
+    padding="0 15px"
   >
     <Box
       alignItems="flex-start"
@@ -21,6 +22,7 @@ exports[`Home renders 1`] = `
     >
       <SearchBar />
     </Box>
+    <ProductCard />
   </Box>
 </Fragment>
 `;
