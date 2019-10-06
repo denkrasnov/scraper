@@ -4,12 +4,12 @@ import Box from "src/atoms/Box";
 import Divider from "src/atoms/Divider";
 import Header from "src/app/components/Header";
 import SearchBar from "src/app/components/SearchBar";
-import ProductCard from "src/app/components/ProductCard";
+import CompareCard from "src/app/components/CompareCard";
 
 const Home = () => {
   return (
     <>
-      <Box padding="0 40px">
+      <Box justifyContent="center">
         <Header />
       </Box>
       <Divider />
@@ -22,7 +22,7 @@ const Home = () => {
         <Box alignItems="flex-start" grow={1} margin="20px 0" width="100%">
           <SearchBar />
         </Box>
-        <ProductCard />
+        <CompareCard />
       </Box>
     </>
   );

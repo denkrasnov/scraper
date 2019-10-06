@@ -3,7 +3,7 @@
 exports[`Home renders 1`] = `
 <Fragment>
   <Box
-    padding="0 40px"
+    justifyContent="center"
   >
     <Header />
   </Box>

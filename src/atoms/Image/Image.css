@@ -2,3 +2,8 @@
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
+
+.borderRadiusLeft {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
