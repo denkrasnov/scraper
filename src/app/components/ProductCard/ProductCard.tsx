@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 
-import Image from "../../../components/Image";
-import Card from "../../../components/Card";
-import Box from "../../../components/Box";
-import { H2 } from "../../../components/Headings";
-import Text from "../../../components/Text";
-import Divider from "../../../components/Divider";
+import Image from "src/atoms/Image";
+import Card from "src/atoms/Card";
+import Box from "src/atoms/Box";
+import { H2 } from "src/atoms/Headings";
+import Text from "src/atoms/Text";
+import Divider from "src/atoms/Divider";
 
 const ProductCard: FC = () => {
   return (

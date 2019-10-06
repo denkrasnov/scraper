@@ -1,10 +1,10 @@
 import React from "react";
 
-import Box from "../../../components/Box";
-import Divider from "../../../components/Divider";
-import Header from "../../components/Header";
-import SearchBar from "../../components/SearchBar";
-import ProductCard from "../../components/ProductCard";
+import Box from "src/atoms/Box";
+import Divider from "src/atoms/Divider";
+import Header from "src/app/components/Header";
+import SearchBar from "src/app/components/SearchBar";
+import ProductCard from "src/app/components/ProductCard";
 
 const Home = () => {
   return (

@@ -62,9 +62,6 @@
     }
   ],
   "settings": {
-    "react": {
-      "version": "16.9"
-    },
     "import/resolver": {
       "babel-module": {},
       "node": true,

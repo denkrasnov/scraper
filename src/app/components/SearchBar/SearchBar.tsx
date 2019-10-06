@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
-import Box from "../../../components/Box";
-import Button from "../../../components/Buttons";
-import Input from "../../../components/Input";
+import Box from "src/atoms/Box";
+import Button from "src/atoms/Buttons";
+import Input from "src/atoms/Input";
 
 const SearchBar: FC = () => {
   return (
