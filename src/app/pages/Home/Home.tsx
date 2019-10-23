@@ -5,6 +5,7 @@ import Divider from "src/atoms/Divider";
 import Header from "src/app/components/Header";
 import SearchBar from "src/app/components/SearchBar";
 import CompareCard from "src/app/components/CompareCard";
+import ProductCard from "src/app/components/ProductCard";
 
 const Home = () => {
   return (
@@ -19,10 +20,17 @@ const Home = () => {
         height="calc(100vh - 61px)"
         padding="0 15px"
       >
-        <Box alignItems="flex-start" grow={1} margin="20px 0" width="100%">
+        <Box
+          alignItems="flex-start"
+          grow={1}
+          justifyContent="center"
+          margin="20px 0"
+          width="100%"
+        >
           <SearchBar />
         </Box>
         <CompareCard />
+        <ProductCard />
       </Box>
     </>
   );

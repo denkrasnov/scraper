@@ -42,4 +42,5 @@ export interface BoxProps {
   margin?: string;
   width?: string;
   height?: string;
+  maxWidth?: string;
 }
