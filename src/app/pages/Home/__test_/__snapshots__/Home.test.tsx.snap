@@ -2,21 +2,16 @@
 
 exports[`Home renders 1`] = `
 <Fragment>
-  <Box
-    justifyContent="center"
-  >
-    <Header />
-  </Box>
+  <Header />
   <Divider />
   <Box
-    backgroundColor="BACKGROUND"
     flexDirection="column"
-    height="calc(100vh - 61px)"
     padding="0 15px"
   >
     <Box
       alignItems="flex-start"
       grow={1}
+      justifyContent="center"
       margin="20px 0"
       width="100%"
     >

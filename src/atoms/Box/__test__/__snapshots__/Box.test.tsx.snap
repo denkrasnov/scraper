@@ -14,7 +14,7 @@ exports[`Box renders with attributes 1`] = `
   className="Box"
   style={
     Object {
-      "backgroundColor": "var(--backgound)",
+      "backgroundColor": "var(--background)",
     }
   }
 >

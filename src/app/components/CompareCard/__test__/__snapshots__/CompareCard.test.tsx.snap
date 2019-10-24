@@ -1,46 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CompareCard renders 1`] = `
-<Card>
-  <Box>
-    <Box
-      width="216px"
-    >
-      <Image
-        alt="product photo"
-        borderRadiusLeft={true}
-        objectFit="contain"
-        src="https://via.placeholder.com/350x150"
-      />
-    </Box>
-    <Box
-      flexDirection="column"
-      padding="0 10px 10px 10px"
-      width="100%"
-    >
-      <Component>
-        Product name
-      </Component>
+<Box
+  backgroundColor="WHITE"
+  display="block"
+  maxWidth="738px"
+>
+  <Card>
+    <Box>
       <Box
-        margin="0 0 15px"
+        width="216px"
       >
-        <Text>
-          Description here
-        </Text>
+        <Image
+          alt="product photo"
+          borderRadiusLeft={true}
+          objectFit="contain"
+          src="https://via.placeholder.com/350x150"
+        />
       </Box>
-      <Divider />
       <Box
-        justifyContent="flex-end"
-        margin="15px 0px 5px 0"
+        flexDirection="column"
+        padding="0 10px 10px 10px"
+        width="100%"
       >
-        <Text
-          color="MAIN_RED"
-          fontSize="fs400"
+        <Component>
+          Product name
+        </Component>
+        <Box
+          margin="0 0 15px"
         >
-          Price here
-        </Text>
+          <Text>
+            Description here
+          </Text>
+        </Box>
+        <Divider />
+        <Box
+          justifyContent="flex-end"
+          margin="15px 0px 5px 0"
+        >
+          <Text
+            color="MAIN_RED"
+            fontSize="fs400"
+          >
+            Price here
+          </Text>
+        </Box>
       </Box>
     </Box>
-  </Box>
-</Card>
+  </Card>
+</Box>
 `;

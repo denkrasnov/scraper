@@ -2,7 +2,7 @@
 
 exports[`colors renders 1`] = `
 Object {
-  "BACKGROUND": "var(--backgound)",
+  "BACKGROUND": "var(--background)",
   "BODY_TEXT": "var(--body-text)",
   "BORDER": "var(--border)",
   "BORDER_DARK": "var(--border-dark)",

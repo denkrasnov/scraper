@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBox renders 1`] = `
-<Fragment>
+<Box
+  maxWidth="739px"
+  width="100%"
+>
   <Input
     placeholder="Search"
   />
@@ -12,5 +15,5 @@ exports[`SearchBox renders 1`] = `
       search
     </Button>
   </Box>
-</Fragment>
+</Box>
 `;

@@ -8,8 +8,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "storybook": "start-storybook -p 6006 -c ./storybook",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "jest --colors",
+    "test:coverage": "jest --coverage --colors",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "prelint": "npm run check:types",
     "format": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx --fix . && stylelint \"**/*.css\" --fix",

@@ -1,44 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductCard renders 1`] = `
-<Card>
-  <Box
-    flexDirection="column"
-  >
-    <Box
-      height="200px"
-    >
-      <Image
-        alt="product photo"
-        src="https://via.placeholder.com/350x150"
-      />
-    </Box>
+<Box
+  backgroundColor="WHITE"
+  display="block"
+  maxWidth="380px"
+>
+  <Card>
     <Box
       flexDirection="column"
-      padding="0 10px 10px 10px"
     >
-      <Component>
-        Product name
-      </Component>
       <Box
-        margin="0 0 15px"
+        height="200px"
       >
-        <Text>
-          Description here
-        </Text>
+        <Image
+          alt="product photo"
+          src="https://via.placeholder.com/350x150"
+        />
       </Box>
-      <Divider />
       <Box
-        margin="15px 0px 5px 0"
+        flexDirection="column"
+        padding="0 10px 10px 10px"
       >
-        <Text
-          color="MAIN_RED"
-          fontSize="fs400"
+        <Component>
+          Product name
+        </Component>
+        <Box
+          margin="0 0 15px"
         >
-          Price here
-        </Text>
+          <Text>
+            Description here
+          </Text>
+        </Box>
+        <Divider />
+        <Box
+          margin="15px 0px 5px 0"
+        >
+          <Text
+            color="MAIN_RED"
+            fontSize="fs400"
+          >
+            Price here
+          </Text>
+        </Box>
       </Box>
     </Box>
-  </Box>
-</Card>
+  </Card>
+</Box>
 `;

@@ -1,7 +1,7 @@
 import { Colors } from "./types";
 
 const colors: Colors = {
-  BACKGROUND: "var(--backgound)",
+  BACKGROUND: "var(--background)",
   SHADOW_COLOR: "var(--shadow-color)",
   BUTTON_PRIMARY: "var(--button-primary)",
   BUTTON_SECONDARY: "var(--button-secondary)",
