@@ -2,8 +2,13 @@ import { hot } from "react-hot-loader/root";
 import React from "react";
 
 import Home from "./pages/Home";
+import ProductsProvider from "./services/fetchProducts";
 
-const App = () => <Home />;
+const App = () => (
+  <ProductsProvider>
+    <Home />
+  </ProductsProvider>
+);
 
 // TODO: Move the commented logic below to components
 

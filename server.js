@@ -44,14 +44,15 @@ app.get("/", (req, res) => {
  * Return the list of tasks with status code 200.
  */
 app.post("/search", (req, res) => {
-  if (!req.body.value) {
+  console.log("req---->", req.body);
+  if (!req.body.query) {
     return res.status(400).send({
       message: "Please complete at least one of the fields"
     });
   }
-  const { value } = req.body;
+  const { query } = req.body;
 
-  return scrap(value).then(products => res.status(200).json({ products }));
+  return scrap(query).then(products => res.status(200).json({ products }));
 });
 
 app.listen(9001);

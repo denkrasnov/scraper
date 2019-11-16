@@ -3,12 +3,19 @@ const puppeteer = require("puppeteer");
 
 /* Maximum.md */
 module.exports = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    // headless: true,
+    // args: ["--no-sandbox"]
+  });
 
   const extractProducts = async url => {
     const extraPage = await browser.newPage();
-    await extraPage.goto(url);
-    // await extraPage.waitForSelector(".products-list-container");
+
+    try {
+      await extraPage.goto(url);
+    } catch (error) {
+      throw new Error("Can not goto page", error);
+    }
 
     // await extraPage.$$eval("div.product__item__image img", imgs =>
     //   Promise.all(
@@ -19,11 +26,12 @@ module.exports = async () => {
     // Scrape the data
     const extraProducts = await extraPage.evaluate(() =>
       Array.from(document.querySelectorAll("div.product__item")).map(
-        product => ({
+        (product, index) => ({
+          id: index,
           title: product
             .querySelector("div.product__item__title")
             .textContent.trim(),
-          logo: product.querySelector("div.product__item__image img").src
+          imageUrl: product.querySelector("div.product__item__image img").src
         })
       )
     );

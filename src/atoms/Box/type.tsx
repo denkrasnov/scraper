@@ -27,7 +27,7 @@ export type AlignItems =
   | "baseline"
   | "stretch";
 
-type FlexWrap = "wrap";
+type FlexWrap = "wrap" | "nowrap";
 
 export interface BoxProps {
   alignItems?: AlignItems;

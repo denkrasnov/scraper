@@ -5,7 +5,7 @@ import Divider from "src/atoms/Divider";
 import Header from "src/app/components/Header";
 import SearchBar from "src/app/components/SearchBar";
 // import CompareCard from "src/app/components/CompareCard";
-import ProductCard from "src/app/components/ProductCard";
+import SearchResult from "src/app/components/SearchResult";
 
 const Home = () => {
   return (
@@ -23,7 +23,7 @@ const Home = () => {
           <SearchBar />
         </Box>
         {/* <CompareCard /> */}
-        <ProductCard />
+        <SearchResult />
       </Box>
     </>
   );

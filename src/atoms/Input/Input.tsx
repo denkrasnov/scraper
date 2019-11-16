@@ -4,10 +4,11 @@ import { InputProps } from "./types";
 import styles from "./Input.css";
 
 const Input: FC<InputProps> = props => {
-  const { onChange, placeholder, value } = props;
+  const { onChange, name, placeholder, value } = props;
   return (
     <input
       className={styles.Input}
+      name={name}
       onChange={onChange}
       placeholder={placeholder}
       type="text"

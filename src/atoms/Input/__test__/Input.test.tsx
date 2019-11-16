@@ -5,7 +5,9 @@ import Input from "..";
 
 describe("Input", () => {
   it("renders", () => {
-    const component = shallow(<Input placeholder="__PLACEHOLDER__" />);
+    const component = shallow(
+      <Input name="__NAME__" placeholder="__PLACEHOLDER__" />
+    );
     expect(component).toMatchSnapshot();
   });
 });
