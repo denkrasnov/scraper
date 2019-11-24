@@ -1,15 +1,11 @@
 import React, { FC } from "react";
 
 import Box from "src/atoms/Box";
-import { useFullContext } from "src/app/services/fetchProducts";
+import { useFullContext } from "src/app/services/ContextProvider";
 import ProductCard from "../ProductCard";
 
 const SearchResult: FC = () => {
-  const {
-    products: [{ products, isLoading, isError }]
-  } = useFullContext();
-
-  console.log("products---->", products);
+  const [{ products, isLoading, isError }] = useFullContext();
 
   if (isLoading || isError) {
     return isLoading ? <Box>Loading...</Box> : <Box>Error...</Box>;
@@ -20,7 +16,7 @@ const SearchResult: FC = () => {
       {products &&
         products.map(product => (
           <Box key={product.id} margin="0 10px 10px 0">
-            <ProductCard product={product} />
+            <ProductCard imageUrl={product.imageUrl} title={product.title} />
           </Box>
         ))}
     </Box>

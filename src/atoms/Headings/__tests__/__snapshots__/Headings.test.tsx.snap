@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Headings should render H1 1`] = `
+<h1>
+  __CHILDREN__
+</h1>
+`;
+
+exports[`Headings should render H2 1`] = `
+<h2>
+  __CHILDREN__
+</h2>
+`;
+
+exports[`Headings should render H3 1`] = `
+<h3>
+  __CHILDREN__
+</h3>
+`;
+
+exports[`Headings should render H4 1`] = `
+<h4>
+  __CHILDREN__
+</h4>
+`;
+
+exports[`Headings should render H5 1`] = `
+<h5>
+  __CHILDREN__
+</h5>
+`;
+
+exports[`Headings should render H6 1`] = `
+<h6>
+  __CHILDREN__
+</h6>
+`;

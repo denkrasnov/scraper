@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContextProvider should render 1`] = `
+<ContextProvider
+  value={
+    Array [
+      Object {
+        "isError": "",
+        "isLoading": false,
+        "products": null,
+        "query": "",
+      },
+      [Function],
+    ]
+  }
+>
+  <div />
+</ContextProvider>
+`;

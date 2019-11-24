@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render 1`] = `
+<SearchBar>
+  <Box
+    maxWidth="739px"
+    width="100%"
+  >
+    <div
+      className="Box"
+      style={
+        Object {
+          "maxWidth": "739px",
+          "width": "100%",
+        }
+      }
+    >
+      <ReactFinalForm
+        onSubmit={[Function]}
+      >
+        <Field
+          name="search"
+        >
+          <Input
+            name="search"
+            onChange={[Function]}
+            placeholder="Search"
+            value=""
+          >
+            <input
+              className="Input"
+              name="search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
+            />
+          </Input>
+        </Field>
+        <Box
+          padding="0 0 0 10px"
+        >
+          <div
+            className="Box"
+            style={
+              Object {
+                "padding": "0 0 0 10px",
+              }
+            }
+          >
+            <Button
+              onClick={[Function]}
+            >
+              <button
+                className="Button"
+                onClick={[Function]}
+                type="button"
+              >
+                search
+              </button>
+            </Button>
+          </div>
+        </Box>
+      </ReactFinalForm>
+    </div>
+  </Box>
+</SearchBar>
+`;

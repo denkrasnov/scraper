@@ -1,5 +1,3 @@
-import { Product } from "src/app/services/types";
+import { Product } from "src/app/services/fetchProducts/types";
 
-export interface ProductCardProps {
-  product: Product;
-}
+export interface ProductCardProps extends Pick<Product, "imageUrl" | "title"> {}

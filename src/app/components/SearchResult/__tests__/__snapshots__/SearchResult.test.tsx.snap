@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResult should render 1`] = `
+<Box
+  flexWrap="wrap"
+/>
+`;
+
+exports[`SearchResult should render Error 1`] = `
+<Box>
+  Error...
+</Box>
+`;
+
+exports[`SearchResult should render Loading 1`] = `
+<Box>
+  Loading...
+</Box>
+`;
+
+exports[`SearchResult should render products 1`] = `
+<Box
+  flexWrap="wrap"
+>
+  <Box
+    key="__ID__"
+    margin="0 10px 10px 0"
+  >
+    <ProductCard
+      imageUrl="__IMAGE_URL__"
+      title="__TITLE__"
+    />
+  </Box>
+</Box>
+`;

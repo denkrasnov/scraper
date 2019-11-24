@@ -24,17 +24,18 @@ module.exports = async () => {
     // );
 
     // Scrape the data
-    const extraProducts = await extraPage.evaluate(() =>
-      Array.from(document.querySelectorAll("div.product__item")).map(
-        (product, index) => ({
-          id: index,
-          title: product
-            .querySelector("div.product__item__title")
-            .textContent.trim(),
-          imageUrl: product.querySelector("div.product__item__image img").src
-        })
-      )
-    );
+    const extraProducts = await extraPage.evaluate(() => {
+      return Array.from(document.querySelectorAll("div.product__item")).map(
+        product => {
+          return {
+            title: product
+              .querySelector("div.product__item__title")
+              .textContent.trim(),
+            imageUrl: product.querySelector("div.product__item__image img").src
+          };
+        }
+      );
+    });
 
     await extraPage.close();
 

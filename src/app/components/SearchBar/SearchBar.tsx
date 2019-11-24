@@ -4,13 +4,11 @@ import { Form, Field } from "react-final-form";
 import Box from "src/atoms/Box";
 import Button from "src/atoms/Buttons";
 import Input from "src/atoms/Input";
-import { useFullContext } from "src/app/services/fetchProducts";
-import { ActionTypes } from "src/app/services/types";
+import { useFullContext } from "src/app/services/ContextProvider";
+import { ActionTypes } from "src/app/services/fetchProducts/types";
 
 const SearchBar: FC = () => {
-  const {
-    products: [, dispatch]
-  } = useFullContext();
+  const [, dispatch] = useFullContext();
 
   return (
     <Box maxWidth="739px" width="100%">
@@ -18,7 +16,8 @@ const SearchBar: FC = () => {
         onSubmit={values => {
           dispatch({ type: ActionTypes.FETCH, payload: values.search });
         }}
-        render={({ handleSubmit }) => {
+      >
+        {({ handleSubmit }) => {
           return (
             <>
               <Field name="search">
@@ -39,7 +38,7 @@ const SearchBar: FC = () => {
             </>
           );
         }}
-      />
+      </Form>
     </Box>
   );
 };

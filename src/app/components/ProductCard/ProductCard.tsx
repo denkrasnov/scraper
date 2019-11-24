@@ -9,9 +9,7 @@ import Divider from "src/atoms/Divider";
 import { ProductCardProps } from "./types";
 
 const ProductCard: FC<ProductCardProps> = props => {
-  const {
-    product: { title, imageUrl }
-  } = props;
+  const { title, imageUrl } = props;
 
   return (
     <Box backgroundColor="WHITE" display="block" maxWidth="380px">

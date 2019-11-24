@@ -4,7 +4,6 @@ import Box from "src/atoms/Box";
 import Divider from "src/atoms/Divider";
 import Header from "src/app/components/Header";
 import SearchBar from "src/app/components/SearchBar";
-// import CompareCard from "src/app/components/CompareCard";
 import SearchResult from "src/app/components/SearchResult";
 
 const Home = () => {
@@ -22,7 +21,6 @@ const Home = () => {
         >
           <SearchBar />
         </Box>
-        {/* <CompareCard /> */}
         <SearchResult />
       </Box>
     </>

@@ -44,7 +44,6 @@ app.get("/", (req, res) => {
  * Return the list of tasks with status code 200.
  */
 app.post("/search", (req, res) => {
-  console.log("req---->", req.body);
   if (!req.body.query) {
     return res.status(400).send({
       message: "Please complete at least one of the fields"

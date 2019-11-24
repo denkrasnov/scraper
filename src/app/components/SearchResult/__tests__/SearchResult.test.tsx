@@ -1,0 +1,56 @@
+import React from "react";
+import { shallow } from "enzyme";
+
+import * as AppContext from "src/app/services/ContextProvider";
+import { INITIAL_STATE } from "src/app/services/fetchProducts/constants";
+import SearchResult from "..";
+
+describe("SearchResult", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("should render", () => {
+    const component = shallow(<SearchResult />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render products", () => {
+    jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
+      {
+        ...INITIAL_STATE,
+        products: [
+          { id: "__ID__", title: "__TITLE__", imageUrl: "__IMAGE_URL__" }
+        ]
+      },
+      () => {}
+    ]);
+    const component = shallow(<SearchResult />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render Loading", () => {
+    jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
+      {
+        ...INITIAL_STATE,
+        isLoading: true
+      },
+      () => {}
+    ]);
+    const component = shallow(<SearchResult />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render Error", () => {
+    jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
+      {
+        ...INITIAL_STATE,
+        isError: "SomeError"
+      },
+      () => {}
+    ]);
+    const component = shallow(<SearchResult />);
+    expect(component).toMatchSnapshot();
+  });
+});
