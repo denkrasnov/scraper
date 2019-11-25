@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchResult should render 1`] = `
-<Box
-  flexWrap="wrap"
+<Grid
+  gridGap="25px"
+  gridTemplateColumns="repeat(auto-fit, minmax(280px, 1fr))"
 />
 `;
 
@@ -19,13 +20,14 @@ exports[`SearchResult should render Loading 1`] = `
 `;
 
 exports[`SearchResult should render products 1`] = `
-<Box
-  flexWrap="wrap"
+<Grid
+  gridGap="25px"
+  gridTemplateColumns="repeat(auto-fit, minmax(280px, 1fr))"
 >
   <ProductCard
     imageUrl="__IMAGE_URL__"
     key="__ID__"
     title="__TITLE__"
   />
-</Box>
+</Grid>
 `;

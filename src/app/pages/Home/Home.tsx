@@ -11,12 +11,12 @@ const Home = () => {
     <>
       <Header />
       <Divider />
-      <Box flexDirection="column" padding="0 15px">
+      <Box flexDirection="column" marginBottom="25px" padding="0 5%">
         <Box
           alignItems="flex-start"
           grow={1}
           justifyContent="center"
-          margin="20px 0"
+          margin="20px 0 30px"
           width="100%"
         >
           <SearchBar />

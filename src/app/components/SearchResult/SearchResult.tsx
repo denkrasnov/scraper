@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 
 import Box from "src/atoms/Box";
+import Grid from "src/atoms/Grid";
 import { useFullContext } from "src/app/services/ContextProvider";
 import ProductCard from "../ProductCard";
 
@@ -12,7 +13,10 @@ const SearchResult: FC = () => {
   }
 
   return (
-    <Box flexWrap="wrap">
+    <Grid
+      gridGap="25px"
+      gridTemplateColumns="repeat(auto-fit, minmax(280px, 1fr))"
+    >
       {products &&
         products.map(product => (
           <ProductCard
@@ -21,7 +25,7 @@ const SearchResult: FC = () => {
             title={product.title}
           />
         ))}
-    </Box>
+    </Grid>
   );
 };
 

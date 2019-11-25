@@ -32,14 +32,16 @@ type FlexWrap = "wrap" | "nowrap";
 export interface BoxProps {
   alignItems?: AlignItems;
   backgroundColor?: Color;
-  children: ReactNode;
+  children?: ReactNode;
   display?: Display;
   flexDirection?: FlexDirection;
   flexWrap?: FlexWrap;
   grow?: number;
+  flex?: number;
   justifyContent?: JustifyContent;
   padding?: string;
   margin?: string;
+  marginBottom?: string;
   width?: string;
   height?: string;
   maxWidth?: string;
