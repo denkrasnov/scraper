@@ -4,7 +4,9 @@ exports[`ProductCard should render 1`] = `
 <Box
   backgroundColor="WHITE"
   display="block"
+  margin="0 20px 20px 0"
   maxWidth="380px"
+  width="100%"
 >
   <Card>
     <Box

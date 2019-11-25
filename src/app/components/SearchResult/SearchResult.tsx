@@ -15,9 +15,11 @@ const SearchResult: FC = () => {
     <Box flexWrap="wrap">
       {products &&
         products.map(product => (
-          <Box key={product.id} margin="0 10px 10px 0">
-            <ProductCard imageUrl={product.imageUrl} title={product.title} />
-          </Box>
+          <ProductCard
+            key={product.id}
+            imageUrl={product.imageUrl}
+            title={product.title}
+          />
         ))}
     </Box>
   );

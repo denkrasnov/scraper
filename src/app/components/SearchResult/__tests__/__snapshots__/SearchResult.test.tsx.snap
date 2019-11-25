@@ -22,14 +22,10 @@ exports[`SearchResult should render products 1`] = `
 <Box
   flexWrap="wrap"
 >
-  <Box
+  <ProductCard
+    imageUrl="__IMAGE_URL__"
     key="__ID__"
-    margin="0 10px 10px 0"
-  >
-    <ProductCard
-      imageUrl="__IMAGE_URL__"
-      title="__TITLE__"
-    />
-  </Box>
+    title="__TITLE__"
+  />
 </Box>
 `;

@@ -12,7 +12,13 @@ const ProductCard: FC<ProductCardProps> = props => {
   const { title, imageUrl } = props;
 
   return (
-    <Box backgroundColor="WHITE" display="block" maxWidth="380px">
+    <Box
+      backgroundColor="WHITE"
+      display="block"
+      margin="0 20px 20px 0"
+      maxWidth="380px"
+      width="100%"
+    >
       <Card>
         <Box flexDirection="column">
           <Box height="200px">
