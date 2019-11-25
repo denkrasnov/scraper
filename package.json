@@ -9,13 +9,22 @@
     "start": "nodemon server.js",
     "storybook": "start-storybook -p 6006 -c ./storybook",
     "test": "jest --colors",
-    "test:coverage": "jest --coverage --colors",
+    "test:coverage": "jest --coverage --colors --no-cache",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "prelint": "npm run check:types",
     "format": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx --fix . && stylelint \"**/*.css\" --fix",
     "lint:eslint": "eslint --ext .js,.ts,.tsx --max-warnings 0 .",
     "lint:stylelint": "stylelint \"**/*.css\"",
     "check:types": "tsc -p tsconfig.json --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm lint"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts,js}": ["npm format", "git add"]
   },
   "browserslist": [
     "last 2 version",
@@ -90,10 +99,12 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "fork-ts-checker-webpack-plugin": "^3.1.0",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
     "jest-css-modules": "^2.1.0",
     "jest-fetch-mock": "^2.1.2",
     "jest-mock-axios": "^3.1.2",
+    "lint-staged": "^9.4.3",
     "nodemon": "^1.19.4",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
