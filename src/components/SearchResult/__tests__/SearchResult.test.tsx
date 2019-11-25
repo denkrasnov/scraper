@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import * as AppContext from "src/app/services/ContextProvider";
-import { INITIAL_STATE } from "src/app/services/fetchProducts/constants";
+import * as AppContext from "src/services/ContextProvider";
+import { INITIAL_STATE } from "src/services/fetchProducts/constants";
 import SearchResult from "..";
 
 describe("SearchResult", () => {

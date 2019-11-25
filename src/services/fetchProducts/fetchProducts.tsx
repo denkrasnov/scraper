@@ -14,7 +14,6 @@ const fetchProducts = (): [State, Dispatch<Action>] => {
 
     const fetchData = async () => {
       dispatch({ type: ActionTypes.FETCH_INIT });
-
       try {
         const result: Response = await axios.post("/search", { query }); // TODO": GET and type data
 

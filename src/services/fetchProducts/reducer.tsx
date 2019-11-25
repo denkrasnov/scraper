@@ -6,7 +6,6 @@ const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         query: action.payload,
-        isLoading: true,
         isError: ""
       };
     case ActionTypes.FETCH_INIT:

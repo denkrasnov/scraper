@@ -2,8 +2,8 @@ import React from "react";
 import { mount } from "enzyme";
 
 import Button from "src/atoms/Buttons";
-import * as AppContext from "src/app/services/ContextProvider";
-import { INITIAL_STATE } from "src/app/services/fetchProducts/constants";
+import * as AppContext from "src/services/ContextProvider";
+import { INITIAL_STATE } from "src/services/fetchProducts/constants";
 import SearchBar from "..";
 
 describe("SearchBar", () => {

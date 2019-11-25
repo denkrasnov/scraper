@@ -2,9 +2,9 @@ import React from "react";
 
 import Box from "src/atoms/Box";
 import Divider from "src/atoms/Divider";
-import Header from "src/app/components/Header";
-import SearchBar from "src/app/components/SearchBar";
-import SearchResult from "src/app/components/SearchResult";
+import Header from "src/components/Header";
+import SearchBar from "src/components/SearchBar";
+import SearchResult from "src/components/SearchResult";
 
 const Home = () => {
   return (

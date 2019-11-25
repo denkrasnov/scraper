@@ -12,8 +12,7 @@ describe("reducer", () => {
 
     expect(state).toEqual({
       ...INITIAL_STATE,
-      query: payload,
-      isLoading: true
+      query: payload
     });
   });
 
