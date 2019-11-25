@@ -9,7 +9,7 @@ import Divider from "src/atoms/Divider";
 import { ProductCardProps } from "./types";
 
 const ProductCard: FC<ProductCardProps> = props => {
-  const { title, imageUrl } = props;
+  const { title, imageUrl, price } = props;
 
   return (
     <Card>
@@ -21,9 +21,9 @@ const ProductCard: FC<ProductCardProps> = props => {
           <H2>{title}</H2>
           <Box flex={1} />
           <Divider />
-          <Box margin="15px 0px 5px 0">
-            <Text color="MAIN_RED" fontSize="fs400">
-              Price here
+          <Box justifyContent="flex-end" margin="15px 0px 5px 0">
+            <Text color="MAIN_RED" fontSize="fs400" fontWeight="fw700">
+              lei {price}
             </Text>
           </Box>
         </Box>

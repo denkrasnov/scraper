@@ -27,13 +27,16 @@ exports[`ProductCard should render 1`] = `
       />
       <Divider />
       <Box
+        justifyContent="flex-end"
         margin="15px 0px 5px 0"
       >
         <Text
           color="MAIN_RED"
           fontSize="fs400"
+          fontWeight="fw700"
         >
-          Price here
+          lei 
+          100
         </Text>
       </Box>
     </Box>

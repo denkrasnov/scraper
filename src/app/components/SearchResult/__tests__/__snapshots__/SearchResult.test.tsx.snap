@@ -27,6 +27,7 @@ exports[`SearchResult should render products 1`] = `
   <ProductCard
     imageUrl="__IMAGE_URL__"
     key="__ID__"
+    price="100"
     title="__TITLE__"
   />
 </Grid>

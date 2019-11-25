@@ -21,7 +21,12 @@ describe("SearchResult", () => {
       {
         ...INITIAL_STATE,
         products: [
-          { id: "__ID__", title: "__TITLE__", imageUrl: "__IMAGE_URL__" }
+          {
+            id: "__ID__",
+            title: "__TITLE__",
+            imageUrl: "__IMAGE_URL__",
+            price: "100"
+          }
         ]
       },
       () => {}

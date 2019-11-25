@@ -45,6 +45,10 @@ module.exports = async query => {
             title: product
               .querySelector("div.product__item__title")
               .textContent.trim(),
+            price: product
+              .querySelector("div.clearfix")
+              .querySelector("div.product__item__price-current")
+              .textContent.trim(),
             imageUrl: product.querySelector("div.product__item__image img").src
           };
         }

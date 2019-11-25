@@ -27,7 +27,12 @@ describe("reducer", () => {
 
   it("should return correct state when FETCH_SUCCESS", () => {
     const productPayload = [
-      { id: "__ID__", title: "__TITLE__", imageUrl: "__IMAGE_URL__" }
+      {
+        id: "__ID__",
+        title: "__TITLE__",
+        imageUrl: "__IMAGE_URL__",
+        price: "100"
+      }
     ];
     const state = reducer(INITIAL_STATE, {
       type: ActionTypes.FETCH_SUCCESS,

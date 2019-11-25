@@ -35,9 +35,14 @@ export type Action = ActionSuccess | ActionInit | ActionError | Fetch;
 export interface Product {
   id: string;
   title: string;
+  price: string;
   imageUrl: string;
 }
 
 export interface Products {
-  products?: Product[] | null;
+  products: Product[] | null;
+}
+
+export interface Response {
+  data: Products;
 }

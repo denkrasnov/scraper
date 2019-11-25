@@ -6,7 +6,7 @@ import ProductCard from "..";
 describe("ProductCard", () => {
   it("should render", () => {
     const component = shallow(
-      <ProductCard imageUrl="__IMAGE_URL__" title="__TITLE__" />
+      <ProductCard imageUrl="__IMAGE_URL__" price="100" title="__TITLE__" />
     );
     expect(component).toMatchSnapshot();
   });
