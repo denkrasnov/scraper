@@ -4,12 +4,25 @@ const puppeteer = require("puppeteer");
 /* Maximum.md */
 module.exports = async query => {
   const browser = await puppeteer.launch({
-    // headless: true,
+    // headless: false
     // args: ["--no-sandbox"]
   });
 
   const extractProducts = async url => {
     const extraPage = await browser.newPage();
+    await extraPage.setRequestInterception(true);
+
+    extraPage.on("request", req => {
+      if (
+        req.resourceType() === "stylesheet" ||
+        req.resourceType() === "font" ||
+        req.resourceType() === "image"
+      ) {
+        req.abort();
+      } else {
+        req.continue();
+      }
+    });
 
     try {
       await extraPage.goto(url);
