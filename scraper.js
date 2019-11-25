@@ -2,7 +2,7 @@
 const puppeteer = require("puppeteer");
 
 /* Maximum.md */
-module.exports = async () => {
+module.exports = async query => {
   const browser = await puppeteer.launch({
     // headless: true,
     // args: ["--no-sandbox"]
@@ -52,12 +52,12 @@ module.exports = async () => {
 
     const nextUrl = `https://maximum.md/ru/search/${
       pageNumber ? pageNumber + 1 : 2
-    }?query=tv`;
+    }?query=${query}`;
 
     return extraProducts.concat(await extractProducts(nextUrl));
   };
 
-  const firstUrl = "https://maximum.md/ru/search/?query=tv";
+  const firstUrl = `https://maximum.md/ru/search/?query=${query}`;
   const allProducts = await extractProducts(firstUrl);
 
   await browser.close();
