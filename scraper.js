@@ -1,5 +1,6 @@
 /* eslint-disable no-return-assign, no-param-reassign */
 const puppeteer = require("puppeteer");
+const nanoid = require("nanoid");
 
 /* Maximum.md */
 module.exports = async query => {
@@ -37,7 +38,7 @@ module.exports = async query => {
     // );
 
     // Scrape the data
-    const extraProducts = await extraPage.evaluate(() => {
+    const rawExtraProducts = await extraPage.evaluate(() => {
       return Array.from(document.querySelectorAll("div.product__item")).map(
         product => {
           return {
@@ -49,6 +50,11 @@ module.exports = async query => {
         }
       );
     });
+
+    const extraProducts = rawExtraProducts.map(product => ({
+      ...product,
+      id: nanoid(10)
+    }));
 
     await extraPage.close();
 
