@@ -39,8 +39,8 @@ module.exports = async () => {
 
     await extraPage.close();
 
-    if (extraProducts.length < 1) {
-      // Terminate if no products exist
+    if (extraProducts.length < 1 || extraProducts.length >= 20) {
+      // Terminate
       return extraProducts;
     }
 
