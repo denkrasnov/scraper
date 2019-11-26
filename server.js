@@ -6,7 +6,7 @@ const chalk = require("chalk");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
-const { body, sanitizeBody, validationResult } = require("express-validator");
+const { query, sanitizeQuery, validationResult } = require("express-validator");
 
 const scrap = require("./scraper");
 const config = require("./webpack.config");
@@ -42,15 +42,15 @@ app.get("/", (req, res) => {
 /**
  * GET products
  */
-app.post(
+app.get(
   "/search",
   [
-    body("query")
+    query("search")
       .not()
       .isEmpty()
       .trim()
       .escape(),
-    sanitizeBody("notifyOnReply").toBoolean()
+    sanitizeQuery("notifyOnReply").toBoolean()
   ],
   (req, res) => {
     const errors = validationResult(req);
@@ -60,9 +60,9 @@ app.post(
       return errors;
     }
 
-    const { query } = req.body;
+    const { search } = req.query;
 
-    return scrap(query).then(products => res.status(200).json({ products }));
+    return scrap(search).then(products => res.status(200).json({ products }));
   }
 );
 
