@@ -13,9 +13,9 @@ describe("fetchProducts", () => {
 
   const dispatchArguments = {
     type: ActionTypes.FETCH,
-    payload: "__QUERY__"
+    payload: "tv"
   } as Fetch;
-  const resultState = { ...INITIAL_STATE, query: "__QUERY__" };
+  const resultState = { ...INITIAL_STATE, query: "tv" };
   const response = { data: { products: [{ title: "__TITLE__" }] } };
   const errorResponse = { error: "fetch failed" };
 
@@ -25,9 +25,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.post).toHaveBeenCalledWith("/search", {
-      query: dispatchArguments.payload
-    });
+    expect(mockAxios.get).toHaveBeenCalledWith("/search?search=tv");
 
     mockAxios.mockResponse(response);
 
@@ -45,9 +43,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.post).toHaveBeenCalledWith("/search", {
-      query: dispatchArguments.payload
-    });
+    expect(mockAxios.get).toHaveBeenCalledWith("/search?search=tv");
     mockAxios.mockError(errorResponse);
 
     await waitForNextUpdate();
@@ -65,9 +61,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.post).toHaveBeenCalledWith("/search", {
-      query: dispatchArguments.payload
-    });
+    expect(mockAxios.get).toHaveBeenCalledWith("/search?search=tv");
     mockAxios.mockResponse(response);
 
     // eg. a user decided to leave the page
@@ -83,9 +77,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.post).toHaveBeenCalledWith("/search", {
-      query: dispatchArguments.payload
-    });
+    expect(mockAxios.get).toHaveBeenCalledWith("/search?search=tv");
     mockAxios.mockError(errorResponse);
 
     // eg. a user decided to leave the page
