@@ -1,14 +1,13 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import Button from "src/atoms/Buttons";
 import * as AppContext from "src/services/ContextProvider";
 import { INITIAL_STATE } from "src/services/fetchProducts/constants";
 import SearchBar from "..";
 
 describe("SearchBar", () => {
   beforeEach(() => {
-    jest.resetModules();
+    jest.clearAllMocks();
   });
 
   it("should render", () => {
@@ -29,8 +28,13 @@ describe("SearchBar", () => {
 
     const component = mount(<SearchBar />);
 
-    const button = component.find(Button);
-    button.simulate("click");
+    const search = component.find("input[name='search']");
+    ((search.instance() as unknown) as HTMLInputElement).value = "query";
+    search.simulate("change", search);
+
+    expect(component).toMatchSnapshot();
+
+    component.find("form").simulate("submit");
 
     expect(dispatchMock).toHaveBeenCalledTimes(1);
   });

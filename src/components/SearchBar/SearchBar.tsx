@@ -11,16 +11,19 @@ const SearchBar: FC = () => {
   const [, dispatch] = useFullContext();
 
   return (
-    <Box maxWidth="739px" width="100%">
-      <Form
-        onSubmit={values => {
-          dispatch({ type: ActionTypes.FETCH, payload: values.search });
-        }}
-      >
-        {({ handleSubmit }) => {
-          return (
-            <>
-              <Field name="search">
+    <Form
+      onSubmit={values => {
+        dispatch({ type: ActionTypes.FETCH, payload: values.search.trim() });
+      }}
+    >
+      {({ handleSubmit }) => {
+        return (
+          <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+            <Box margin="auto" maxWidth="739px" width="100%">
+              <Field
+                name="search"
+                validate={value => (value && value.trim() ? undefined : true)}
+              >
                 {({ input }) => {
                   return (
                     <Input
@@ -33,13 +36,13 @@ const SearchBar: FC = () => {
                 }}
               </Field>
               <Box padding="0 0 0 10px">
-                <Button onClick={handleSubmit}>search</Button>
+                <Button type="submit">Search</Button>
               </Box>
-            </>
-          );
-        }}
-      </Form>
-    </Box>
+            </Box>
+          </form>
+        );
+      }}
+    </Form>
   );
 };
 

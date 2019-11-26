@@ -4,13 +4,13 @@ import { ButtonProps } from "./types";
 import styles from "./Button.css";
 
 const Button: FC<ButtonProps> = props => {
-  const { disabled, children, onClick } = props;
+  const { disabled, children, onClick, type = "button" } = props;
   return (
     <button
       className={styles.Button}
       disabled={disabled}
       onClick={onClick}
-      type="button"
+      type={type}
     >
       {children}
     </button>

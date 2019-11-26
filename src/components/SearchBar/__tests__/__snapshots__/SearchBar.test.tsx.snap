@@ -2,67 +2,156 @@
 
 exports[`SearchBar should render 1`] = `
 <SearchBar>
-  <Box
-    maxWidth="739px"
-    width="100%"
+  <ReactFinalForm
+    onSubmit={[Function]}
   >
-    <div
-      className="Box"
+    <form
+      onSubmit={[Function]}
       style={
         Object {
-          "maxWidth": "739px",
           "width": "100%",
         }
       }
     >
-      <ReactFinalForm
-        onSubmit={[Function]}
+      <Box
+        margin="auto"
+        maxWidth="739px"
+        width="100%"
       >
-        <Field
-          name="search"
+        <div
+          className="Box"
+          style={
+            Object {
+              "margin": "auto",
+              "maxWidth": "739px",
+              "width": "100%",
+            }
+          }
         >
-          <Input
+          <Field
             name="search"
-            onChange={[Function]}
-            placeholder="Search"
-            value=""
+            validate={[Function]}
           >
-            <input
-              className="Input"
+            <Input
               name="search"
               onChange={[Function]}
               placeholder="Search"
-              type="text"
               value=""
-            />
-          </Input>
-        </Field>
-        <Box
-          padding="0 0 0 10px"
-        >
-          <div
-            className="Box"
-            style={
-              Object {
-                "padding": "0 0 0 10px",
-              }
-            }
-          >
-            <Button
-              onClick={[Function]}
             >
-              <button
-                className="Button"
-                onClick={[Function]}
-                type="button"
+              <input
+                className="Input"
+                name="search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
+              />
+            </Input>
+          </Field>
+          <Box
+            padding="0 0 0 10px"
+          >
+            <div
+              className="Box"
+              style={
+                Object {
+                  "padding": "0 0 0 10px",
+                }
+              }
+            >
+              <Button
+                type="submit"
               >
-                search
-              </button>
-            </Button>
-          </div>
-        </Box>
-      </ReactFinalForm>
-    </div>
-  </Box>
+                <button
+                  className="Button"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </Button>
+            </div>
+          </Box>
+        </div>
+      </Box>
+    </form>
+  </ReactFinalForm>
+</SearchBar>
+`;
+
+exports[`SearchBar should submit the Form 1`] = `
+<SearchBar>
+  <ReactFinalForm
+    onSubmit={[Function]}
+  >
+    <form
+      onSubmit={[Function]}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <Box
+        margin="auto"
+        maxWidth="739px"
+        width="100%"
+      >
+        <div
+          className="Box"
+          style={
+            Object {
+              "margin": "auto",
+              "maxWidth": "739px",
+              "width": "100%",
+            }
+          }
+        >
+          <Field
+            name="search"
+            validate={[Function]}
+          >
+            <Input
+              name="search"
+              onChange={[Function]}
+              placeholder="Search"
+              value="query"
+            >
+              <input
+                className="Input"
+                name="search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value="query"
+              />
+            </Input>
+          </Field>
+          <Box
+            padding="0 0 0 10px"
+          >
+            <div
+              className="Box"
+              style={
+                Object {
+                  "padding": "0 0 0 10px",
+                }
+              }
+            >
+              <Button
+                type="submit"
+              >
+                <button
+                  className="Button"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </Button>
+            </div>
+          </Box>
+        </div>
+      </Box>
+    </form>
+  </ReactFinalForm>
 </SearchBar>
 `;
