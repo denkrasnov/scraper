@@ -6,6 +6,7 @@ const chalk = require("chalk");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
+const { body, sanitizeBody, validationResult } = require("express-validator");
 
 const scrap = require("./scraper");
 const config = require("./webpack.config");
@@ -40,18 +41,29 @@ app.get("/", (req, res) => {
 
 /**
  * GET products
- *
- * Return the list of tasks with status code 200.
  */
-app.post("/search", (req, res) => {
-  if (!req.body.query) {
-    return res.status(400).send({
-      message: "Please complete at least one of the fields"
-    });
-  }
-  const { query } = req.body;
+app.post(
+  "/search",
+  [
+    body("query")
+      .not()
+      .isEmpty()
+      .trim()
+      .escape(),
+    sanitizeBody("notifyOnReply").toBoolean()
+  ],
+  (req, res) => {
+    const errors = validationResult(req);
 
-  return scrap(query).then(products => res.status(200).json({ products }));
-});
+    if (!errors.isEmpty()) {
+      res.status(422).json({ errors: errors.array() });
+      return errors;
+    }
+
+    const { query } = req.body;
+
+    return scrap(query).then(products => res.status(200).json({ products }));
+  }
+);
 
 app.listen(9001);
