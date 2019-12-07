@@ -1,15 +1,17 @@
-/* eslint-env node */
-const path = require("path");
-const app = require("express")();
-const bodyParser = require("body-parser");
-const chalk = require("chalk");
-const webpack = require("webpack");
-const webpackDevMiddleware = require("webpack-dev-middleware");
-const webpackHotMiddleware = require("webpack-hot-middleware");
-const { query, sanitizeQuery, validationResult } = require("express-validator");
+import express, { Application, Request, Response } from "express";
+import path from "path";
+import bodyParser from "body-parser";
+import chalk from "chalk";
+import webpack from "webpack";
+import webpackDevMiddleware from "webpack-dev-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
+import { query, sanitizeQuery, validationResult } from "express-validator";
 
-const scrap = require("./scraper");
+import { scrapMaximum, Product } from "./scraper";
+
 const config = require("./webpack.config");
+
+const app: Application = express();
 
 process.stdout.write(`
  ${chalk.bgHex("#224dff").white("--- Compare md ---")}
@@ -35,7 +37,7 @@ app.use(webpackHotMiddleware(compiler));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => {
+app.get("/", (_req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
@@ -52,7 +54,7 @@ app.get(
       .escape(),
     sanitizeQuery("notifyOnReply").toBoolean()
   ],
-  (req, res) => {
+  (req: Request, res: Response) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -62,7 +64,9 @@ app.get(
 
     const { search } = req.query;
 
-    return scrap(search).then(products => res.status(200).json({ products }));
+    return scrapMaximum(search).then((products: Product[]) =>
+      res.status(200).json({ products })
+    );
   }
 );
 

@@ -3,7 +3,10 @@
   "extends": [
     "airbnb",
     "plugin:prettier/recommended", 
-    "prettier/react"
+    "prettier/react",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "plugins": [
     "@typescript-eslint", 
@@ -65,7 +68,9 @@
   "settings": {
     "import/resolver": {
       "babel-module": {},
-      "node": true,
+      "node": {
+        "extensions": [ ".ts", ".tsx"]
+      },
       "eslint-import-resolver-typescript": true
     }
   },

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "build",
     "target": "es5",
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "lib": ["dom", "es2017"],
     "strict": true,
@@ -28,7 +28,7 @@
       "src/*": ["src/*"],
     }
   }, 
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "./server.ts", "./scraper.ts"],
   "exclude": [
     "node_modules",
     "build",
