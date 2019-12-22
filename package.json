@@ -6,7 +6,7 @@
   "license": "Proprietary",
   "private": true,
   "scripts": {
-    "start": "tsnd --respawn server.ts",
+    "start": "ts-node-dev --respawn --transpileOnly server.ts",
     "storybook": "start-storybook -p 6006 -c ./storybook",
     "test": "jest --colors",
     "test:coverage": "jest --coverage --colors --no-cache",
@@ -109,6 +109,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "file-loader": "^5.0.2",
     "fork-ts-checker-webpack-plugin": "^3.1.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",

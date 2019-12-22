@@ -7,7 +7,9 @@ import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import { query, sanitizeQuery, validationResult } from "express-validator";
 
-import { scrapMaximum, Product } from "./scraper";
+import scrapMaximum from "./scrapers/scrapMaximum";
+import scrapDarwin from "./scrapers/scrapDarwin";
+import { Product } from "./scrapers/types";
 
 const config = require("./webpack.config");
 
@@ -64,8 +66,11 @@ app.get(
 
     const { search } = req.query;
 
-    return scrapMaximum(search).then((products: Product[]) =>
-      res.status(200).json({ products })
+    return Promise.all([
+      scrapDarwin(search),
+      scrapMaximum(search)
+    ]).then((products: Product[][]) =>
+      res.status(200).json({ products: ([] as Product[]).concat(...products) })
     );
   }
 );

@@ -1,15 +1,9 @@
 import puppeteer, { Page } from "puppeteer";
 import nanoid from "nanoid";
 
-export interface Product {
-  id: string;
-  title: string | null;
-  imageUrl: string | null;
-  price: string | null;
-}
+import { Product } from "../types";
 
-/* Maximum.md */
-export const scrapMaximum = async (query: string) => {
+const scrapMaximum = async (query: string) => {
   const browser = await puppeteer.launch({
     // headless: false
     // args: ["--no-sandbox"]
@@ -37,17 +31,11 @@ export const scrapMaximum = async (query: string) => {
       throw new Error(`Can not goto page${error}`);
     }
 
-    // await extraPage.$$eval("div.product__item__image img", imgs =>
-    //   Promise.all(
-    //     imgs.map(img => new Promise(resolve => (img.onload = resolve)))
-    //   )
-    // );
-
     // Scrape the data
     const rawExtraProducts = await extraPage.evaluate(() => {
       const productItems = document.querySelectorAll("div.product__item");
 
-      if (productItems) {
+      if (productItems.length > 0) {
         return Array.from(productItems).map(product => {
           const productItemTitle = product.querySelector(
             "div.product__item__title"
@@ -106,3 +94,5 @@ export const scrapMaximum = async (query: string) => {
   await browser.close();
   return allProducts;
 };
+
+export default scrapMaximum;

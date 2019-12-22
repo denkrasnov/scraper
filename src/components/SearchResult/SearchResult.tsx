@@ -22,6 +22,7 @@ const SearchResult: FC = () => {
           <ProductCard
             key={product.id}
             imageUrl={product.imageUrl}
+            noImage={product.noImage}
             price={product.price}
             title={product.title}
           />

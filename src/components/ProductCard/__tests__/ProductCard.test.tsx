@@ -10,4 +10,16 @@ describe("ProductCard", () => {
     );
     expect(component).toMatchSnapshot();
   });
+
+  it("should render with alternative product", () => {
+    const component = shallow(
+      <ProductCard
+        imageUrl="__IMAGE_URL__"
+        noImage
+        price="100"
+        title="__TITLE__"
+      />
+    );
+    expect(component).toMatchSnapshot();
+  });
 });
