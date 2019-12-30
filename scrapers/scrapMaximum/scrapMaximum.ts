@@ -33,31 +33,29 @@ const scrapMaximum = async (query: string) => {
 
     // Scrape the data
     const rawExtraProducts = await extraPage.evaluate(() => {
-      const productItems = document.querySelectorAll("div.product__item");
+      const products = document.querySelectorAll("div.product__item");
 
-      if (productItems.length > 0) {
-        return Array.from(productItems).map(product => {
-          const productItemTitle = product.querySelector(
+      if (products.length > 0) {
+        return Array.from(products).map(product => {
+          const titleElement = product.querySelector(
             "div.product__item__title"
           );
-          const productItemTitleText =
-            productItemTitle && productItemTitle.textContent;
+          const titleText = titleElement && titleElement.textContent;
 
-          const clearfix = product.querySelector("div.clearfix");
-          const productPriceCurrent =
-            clearfix &&
-            clearfix.querySelector("div.product__item__price-current");
-          const productPriceCurrentText =
-            productPriceCurrent && productPriceCurrent.textContent;
+          const priceNewElement = product.querySelector(
+            "div.clearfix div.product__item__price-current"
+          );
 
-          const productItemImage: HTMLImageElement | null = product.querySelector(
+          const priceNewText = priceNewElement && priceNewElement.textContent;
+
+          const imageElement: HTMLImageElement | null = product.querySelector(
             "div.product__item__image img"
           );
 
           return {
-            title: productItemTitleText && productItemTitleText.trim(),
-            price: productPriceCurrentText && productPriceCurrentText.trim(),
-            imageUrl: productItemImage && productItemImage.src
+            title: titleText && titleText.trim(),
+            price: priceNewText && priceNewText.trim(),
+            imageUrl: imageElement && imageElement.src
           };
         });
       }
@@ -71,15 +69,17 @@ const scrapMaximum = async (query: string) => {
 
     await extraPage.close();
 
-    if (extraProducts.length < 1 || extraProducts.length >= 20) {
+    // Go fetch the next page search/x+1
+    const matchArray = url
+      ? url.match(/search\/(\d+)/)
+      : extraPage.url().match(/search\/(\d+)/);
+    const number = matchArray && matchArray[1];
+    const pageNumber = number && parseInt(number, 10);
+
+    if (extraProducts.length < 1 || pageNumber === 2) {
       // Terminate
       return extraProducts;
     }
-
-    // Go fetch the next page search/x+1
-    const matchArray = url.match(/search\/(\d+)/);
-    const number = matchArray && matchArray[1];
-    const pageNumber = number && parseInt(number, 10);
 
     const nextUrl = `https://maximum.md/ru/search/${
       pageNumber ? pageNumber + 1 : 2

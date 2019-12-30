@@ -31,6 +31,8 @@ export const scrapDarwin = async (query: string) => {
     } catch (error) {
       throw new Error(`Can not goto page${error}`);
     }
+
+    // Scrape the data
     const rawExtraProducts = await page.evaluate(() => {
       const products = document.querySelectorAll("div.mt-3 > div.col-6 figure");
 
@@ -39,10 +41,10 @@ export const scrapDarwin = async (query: string) => {
           const titleElement = product.querySelector("figcaption a");
           const titleText = titleElement && titleElement.textContent;
 
-          const priceNewElemnt = product.querySelector(
+          const priceNewElement = product.querySelector(
             "div.bottom-wrap span.price-new > b"
           );
-          const priceNewText = priceNewElemnt && priceNewElemnt.textContent;
+          const priceNewText = priceNewElement && priceNewElement.textContent;
 
           const imageElement: HTMLImageElement | null = product.querySelector(
             "div.img-wrap img"

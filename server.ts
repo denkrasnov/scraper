@@ -7,6 +7,7 @@ import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import { query, sanitizeQuery, validationResult } from "express-validator";
 
+import scrapBomba from "./scrapers/scrapBomba";
 import scrapMaximum from "./scrapers/scrapMaximum";
 import scrapDarwin from "./scrapers/scrapDarwin";
 import { Product } from "./scrapers/types";
@@ -68,7 +69,8 @@ app.get(
 
     return Promise.all([
       scrapDarwin(search),
-      scrapMaximum(search)
+      scrapMaximum(search),
+      scrapBomba(search)
     ]).then((products: Product[][]) =>
       res.status(200).json({ products: ([] as Product[]).concat(...products) })
     );
