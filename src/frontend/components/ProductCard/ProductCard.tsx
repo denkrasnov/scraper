@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 
-import Image from "src/atoms/Image";
-import Card from "src/atoms/Card";
-import Box from "src/atoms/Box";
-import { H3 } from "src/atoms/Headings";
-import Text from "src/atoms/Text";
-import Divider from "src/atoms/Divider";
+import Image from "~app/atoms/Image";
+import Card from "~app/atoms/Card";
+import Box from "~app/atoms/Box";
+import { H3 } from "~app/atoms/Headings";
+import Text from "~app/atoms/Text";
+import Divider from "~app/atoms/Divider";
 import { ProductCardProps } from "./types";
 import placeholder from "./images/placeholder.jpg";
 

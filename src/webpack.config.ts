@@ -10,7 +10,7 @@ module.exports = {
   devtool: "inline-source-map",
   entry: [
     "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
-    "./src/index.tsx"
+    "./src/frontend/index.tsx"
   ],
   output: {
     path: path.resolve(__dirname, "build"),

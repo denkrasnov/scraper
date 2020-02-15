@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import Box from "src/atoms/Box";
-import Text from "src/atoms/Text";
+import Text from "~app/atoms/Text";
+import Box from "~app/atoms/Box";
 
 const Header: FC = () => {
   return (

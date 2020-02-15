@@ -23,9 +23,9 @@ exports[`CompareCard should render 1`] = `
         padding="0 10px 10px 10px"
         width="100%"
       >
-        <Component>
+        <H3>
           Product name
-        </Component>
+        </H3>
         <Box
           margin="0 0 15px"
         >

@@ -7,10 +7,10 @@ import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import { query, sanitizeQuery, validationResult } from "express-validator";
 
-import scrapBomba from "./scrapers/scrapBomba";
-import scrapMaximum from "./scrapers/scrapMaximum";
-import scrapDarwin from "./scrapers/scrapDarwin";
-import { Product } from "./scrapers/types";
+import scrapBomba from "./backend/scrapers/scrapBomba";
+import scrapDarwin from "./backend/scrapers/scrapDarwin";
+import scrapMaximum from "./backend/scrapers/scrapMaximum";
+import { Product } from "./backend/scrapers/types";
 
 const config = require("./webpack.config");
 
@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "/public/index.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 /**

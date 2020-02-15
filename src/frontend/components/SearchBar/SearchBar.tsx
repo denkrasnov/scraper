@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Form, Field } from "react-final-form";
 
-import Box from "src/atoms/Box";
-import Button from "src/atoms/Buttons";
-import Input from "src/atoms/Input";
-import { useFullContext } from "src/services/ContextProvider";
-import { ActionTypes } from "src/services/fetchProducts/types";
+import Box from "~app/atoms/Box";
+import Button from "~app/atoms/Buttons";
+import Input from "~app/atoms/Input";
+import { useFullContext } from "~app/services/ContextProvider";
+import { ActionTypes } from "~app/services/fetchProducts/types";
 
 const SearchBar: FC = () => {
   const [, dispatch] = useFullContext();

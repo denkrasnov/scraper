@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
-import Box from "src/atoms/Box";
-import Grid from "src/atoms/Grid";
-import { useFullContext } from "src/services/ContextProvider";
+import Box from "~app/atoms/Box";
+import Grid from "~app/atoms/Grid";
+import { useFullContext } from "~app/services/ContextProvider";
 import ProductCard from "../ProductCard";
 
 const SearchResult: FC = () => {

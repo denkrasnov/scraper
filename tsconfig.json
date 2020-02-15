@@ -1,35 +1,48 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    /* Basic Options */
+    "outDir": "build",
     "target": "es5",
     "module": "commonjs",
-    "moduleResolution": "node",
     "lib": ["es2017", "dom", "es2019"],
-    "strict": true,
+    "allowJs": true,
+    "moduleResolution": "node",
     "jsx": "react",
-    "allowSyntheticDefaultImports": true,       
     "sourceMap": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true,
     "downlevelIteration": true,
-    "forceConsistentCasingInFileNames": true,
-    "newLine": "LF",
+
+    /* Strict Type-Checking Options */  
+    "strict": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveConstEnums": true,
-    "pretty": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "resolveJsonModule": true,
+    "strictNullChecks": true,
+
+   /* Module Resolution Options */
+     "allowSyntheticDefaultImports": true, 
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"],
-    }
+      "~app/*": ["src/frontend/*"],
+    },
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+  
+    /* Advanced Options */
+    "resolveJsonModule": true,
+
+    "pretty": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "newLine": "LF",
   }, 
-  "include": ["./src/**/*", "./server.ts", "./scrapers/**/*"],
+  "include": [ "./src/**/*" ],
   "exclude": [
+    "./public/",
+    "./src/**/*.test.ts",
     "node_modules",
     "build",
     "jest"

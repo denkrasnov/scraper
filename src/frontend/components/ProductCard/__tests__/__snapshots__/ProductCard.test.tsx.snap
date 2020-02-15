@@ -19,9 +19,9 @@ exports[`ProductCard should render 1`] = `
       height="100%"
       padding="0 10px 10px 10px"
     >
-      <Component>
+      <H3>
         __TITLE__
-      </Component>
+      </H3>
       <Box
         flex={1}
       />
@@ -63,9 +63,9 @@ exports[`ProductCard should render with alternative product 1`] = `
       height="100%"
       padding="0 10px 10px 10px"
     >
-      <Component>
+      <H3>
         __TITLE__
-      </Component>
+      </H3>
       <Box
         flex={1}
       />

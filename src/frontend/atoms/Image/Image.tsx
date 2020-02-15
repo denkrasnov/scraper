@@ -11,7 +11,7 @@ const Image: FC<ImageProps> = props => {
       alt={alt}
       className={borderRadiusLeft ? styles.borderRadiusLeft : styles.Image}
       src={src}
-      style={{ objectFit }}
+      style={{ objectFit:objectFit }}
       width="100%"
     />
   );

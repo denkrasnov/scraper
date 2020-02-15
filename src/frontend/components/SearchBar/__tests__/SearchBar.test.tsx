@@ -1,8 +1,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import * as AppContext from "src/services/ContextProvider";
-import { INITIAL_STATE } from "src/services/fetchProducts/constants";
+import * as AppContext from "~app/services/ContextProvider";
+import { INITIAL_STATE } from "~app/services/fetchProducts/constants";
 import SearchBar from "..";
 
 describe("SearchBar", () => {
