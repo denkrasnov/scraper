@@ -1,6 +1,8 @@
 node_modules/
 *~
 #*
-.vs_code/
+.vscode/*
 coverage/
 build/
+
+.env
