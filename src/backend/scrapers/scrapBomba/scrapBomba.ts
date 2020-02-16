@@ -4,7 +4,7 @@ import nanoid from "nanoid";
 import { Product } from "../types";
 
 // https://bomba.md/ru
-export const scrapBomba = async (query: string) => {
+export const scrapBomba = async () => {
   const browser = await puppeteer.launch({
     // headless: false
     // args: ["--no-sandbox"]
@@ -28,12 +28,15 @@ export const scrapBomba = async (query: string) => {
 
     try {
       await page.goto(url);
+      await page.waitForSelector(
+        "div.catalog > div.catalog-in > div.catalog-item2"
+      );
     } catch (error) {
       throw new Error(`Can not goto page${error}`);
     }
     const rawExtraProducts = await page.evaluate(() => {
       const products = document.querySelectorAll(
-        "div.catalog > div.catalog-in > div.catalog-item2 > div.catalog-product-box-in > div.catalog-item-product"
+        "div.catalog > div.catalog-in > div.catalog-item2 > div.catalog-product-box-in div.catalog-item-product"
       );
 
       if (products.length > 0) {
@@ -42,7 +45,7 @@ export const scrapBomba = async (query: string) => {
           const titleText = titleElement && titleElement.textContent;
 
           const priceNewElement = product.querySelector(
-            "div.product-sector-three > div.product-price div.aac-price-new span"
+            "div.product-sector-three > div.product-price div.aac-price-main span"
           );
           const priceNewText = priceNewElement && priceNewElement.textContent;
 
@@ -74,19 +77,19 @@ export const scrapBomba = async (query: string) => {
     const number = matchArray && matchArray[1];
     const pageNumber = number && parseInt(number, 10);
 
-    if (extraProducts.length < 1 || pageNumber === 3) {
+    if (extraProducts.length < 1) {
       // Terminate
       return extraProducts;
     }
 
-    const nextUrl = `https://bomba.md/ru/product/search/?search=${query}&page=${
+    const nextUrl = `https://bomba.md/ru/category/televizory/?price[min]=1499&price[max]=119999&filters[2817][min]=19&filters[2817][max]=75&filters[2819][min]=48&filters[2819][max]=209&page=${
       pageNumber ? pageNumber + 1 : 2
     }`;
 
     return extraProducts.concat(await extractProducts(nextUrl));
   };
 
-  const firstUrl = `https://bomba.md/ru/product/search/?search=${query}`;
+  const firstUrl = `https://bomba.md/ru/category/televizory/?price[min]=1499&price[max]=119999&filters[2817][min]=19&filters[2817][max]=75&filters[2819][min]=48&filters[2819][max]=209`;
   const allProducts = await extractProducts(firstUrl);
 
   await browser.close();

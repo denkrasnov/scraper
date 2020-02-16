@@ -65,12 +65,10 @@ app.get(
       return errors;
     }
 
-    const { search } = req.query;
-
     return Promise.all([
-      scrapDarwin(search),
-      scrapMaximum(search),
-      scrapBomba(search)
+      scrapDarwin(),
+      scrapMaximum(),
+      scrapBomba()
     ]).then((products: Product[][]) =>
       res.status(200).json({ products: ([] as Product[]).concat(...products) })
     );

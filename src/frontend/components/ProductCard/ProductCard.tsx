@@ -7,7 +7,7 @@ import { H3 } from "~app/atoms/Headings";
 import Text from "~app/atoms/Text";
 import Divider from "~app/atoms/Divider";
 import { ProductCardProps } from "./types";
-import placeholder from "./images/placeholder.jpg";
+import placeholder from "./images/tv.jpg";
 
 const ProductCard: FC<ProductCardProps> = props => {
   const { title, imageUrl, price, noImage } = props;

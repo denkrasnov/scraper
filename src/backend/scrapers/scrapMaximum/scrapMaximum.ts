@@ -3,7 +3,7 @@ import nanoid from "nanoid";
 
 import { Product } from "../types";
 
-const scrapMaximum = async (query: string) => {
+const scrapMaximum = async () => {
   const browser = await puppeteer.launch({
     // headless: false
     // args: ["--no-sandbox"]
@@ -53,9 +53,9 @@ const scrapMaximum = async (query: string) => {
           );
 
           return {
-            title: titleText && titleText.trim(),
-            price: priceNewText && priceNewText.trim(),
-            imageUrl: imageElement && imageElement.src
+            title: titleText?.trim(),
+            price: priceNewText?.trim(),
+            imageUrl: imageElement?.src
           };
         });
       }
@@ -76,19 +76,19 @@ const scrapMaximum = async (query: string) => {
     const number = matchArray && matchArray[1];
     const pageNumber = number && parseInt(number, 10);
 
-    if (extraProducts.length < 1 || pageNumber === 2) {
+    if (extraProducts.length < 1) {
       // Terminate
       return extraProducts;
     }
 
     const nextUrl = `https://maximum.md/ru/search/${
       pageNumber ? pageNumber + 1 : 2
-    }?query=${query}`;
+    }?query=televizor+LED`;
 
     return extraProducts.concat(await extractProducts(nextUrl));
   };
 
-  const firstUrl = `https://maximum.md/ru/search/?query=${query}`;
+  const firstUrl = `https://maximum.md/ru/search/?query=televizor+LED`;
   const allProducts = await extractProducts(firstUrl);
 
   await browser.close();

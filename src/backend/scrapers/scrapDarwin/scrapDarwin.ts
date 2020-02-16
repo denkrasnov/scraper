@@ -4,7 +4,7 @@ import nanoid from "nanoid";
 import { Product } from "../types";
 
 // https://darwin.md/ru
-export const scrapDarwin = async (query: string) => {
+export const scrapDarwin = async () => {
   const browser = await puppeteer.launch({
     // headless: false
     // args: ["--no-sandbox"]
@@ -34,7 +34,9 @@ export const scrapDarwin = async (query: string) => {
 
     // Scrape the data
     const rawExtraProducts = await page.evaluate(() => {
-      const products = document.querySelectorAll("div.mt-3 > div.col-6 figure");
+      const products = document.querySelectorAll(
+        "section.products div.col-6 figure"
+      );
 
       if (products.length > 0) {
         return Array.from(products).map(product => {
@@ -51,9 +53,9 @@ export const scrapDarwin = async (query: string) => {
           );
 
           return {
-            title: titleText && titleText.trim(),
-            price: priceNewText && priceNewText.trim(),
-            imageUrl: imageElement && imageElement.src,
+            title: titleText?.trim(),
+            price: priceNewText?.trim(),
+            imageUrl: imageElement?.src,
             noImage: true
           };
         });
@@ -75,19 +77,19 @@ export const scrapDarwin = async (query: string) => {
     const number = matchArray && matchArray[1];
     const pageNumber = number && parseInt(number, 10);
 
-    if (extraProducts.length < 1 || pageNumber === 3) {
+    if (extraProducts.length < 1) {
       // Terminate
       return extraProducts;
     }
 
-    const nextUrl = `https://darwin.md/ru/search?search=${query}&page=${
+    const nextUrl = `https://darwin.md/ru/tv-foto/tv?page=${
       pageNumber ? pageNumber + 1 : 2
     }`;
 
     return extraProducts.concat(await extractProducts(nextUrl));
   };
 
-  const firstUrl = `https://darwin.md/ru/search?search=${query}`;
+  const firstUrl = `https://darwin.md/ru/tv-foto/tv`;
   const allProducts = await extractProducts(firstUrl);
 
   await browser.close();
