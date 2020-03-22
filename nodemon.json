@@ -1,6 +1,6 @@
 {
-  "watch": ["src"],
+  "watch": ["src", "./server.ts"],
   "ext": ".tsx,.ts,.js",
   "ignore": ["src/frontend"],
-  "exec": "ts-node ./src/server.ts"
+  "exec": "ts-node ./server.ts"
 }
