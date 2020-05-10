@@ -83,12 +83,12 @@ app.get(
       return errors;
     }
 
-    return Promise.all([
-      scrapDarwin(),
-      scrapMaximum(),
-      scrapBomba()
-    ]).then((products: Product[][]) =>
-      res.status(200).json({ products: ([] as Product[]).concat(...products) })
+    return Promise.all([scrapMaximum(), scrapBomba(), scrapDarwin()]).then(
+      products => {
+        res
+          .status(200)
+          .json({ products: ([] as Product[]).concat(...products) });
+      }
     );
 
     // Add products to db
