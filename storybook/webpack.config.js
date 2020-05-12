@@ -17,9 +17,8 @@ module.exports = {
             loader: require.resolve("css-loader"),
             options: {
               sourceMap: true,
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[local]--[hash:base64:5]"
+              modules: { localIdentName: "[local]--[hash:base64:5]" },
+              importLoaders: 1
             }
           },
           require.resolve("postcss-loader")

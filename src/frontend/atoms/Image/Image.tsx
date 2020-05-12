@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { ImageProps } from "./types";
 import styles from "./Image.css";
 
-const Image: FC<ImageProps> = props => {
+const Image: FC<ImageProps> = (props) => {
   const { alt, borderRadiusLeft, objectFit, src } = props;
 
   return (

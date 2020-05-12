@@ -7,7 +7,7 @@ import colors from "../colors";
 import { Color } from "../types";
 
 storiesOf("Components|Colors", module).add("default", () => {
-  const colorItems = Object.keys(colors).map(key => (
+  const colorItems = Object.keys(colors).map((key) => (
     <div
       key={key}
       style={{

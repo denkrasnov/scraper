@@ -5,7 +5,7 @@ import { StyleType } from "../helpers/types";
 import { sizes, weights } from "./fonts";
 import { TextProps } from "./types";
 
-const Text: FC<TextProps> = props => {
+const Text: FC<TextProps> = (props) => {
   const { children, color, tag, fontSize, fontWeight, ...rest } = props;
   const Element = tag || "span";
 

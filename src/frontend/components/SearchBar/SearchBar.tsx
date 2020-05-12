@@ -12,7 +12,7 @@ const SearchBar: FC = () => {
 
   return (
     <Form
-      onSubmit={values => {
+      onSubmit={(values) => {
         dispatch({ type: ActionTypes.FETCH, payload: values.search.trim() });
       }}
     >
@@ -22,7 +22,7 @@ const SearchBar: FC = () => {
             <Box margin="auto" maxWidth="739px" width="100%">
               <Field
                 name="search"
-                validate={value => (value && value.trim() ? undefined : true)}
+                validate={(value) => (value && value.trim() ? undefined : true)}
               >
                 {({ input }) => {
                   return (

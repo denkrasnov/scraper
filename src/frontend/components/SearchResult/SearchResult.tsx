@@ -18,7 +18,7 @@ const SearchResult: FC = () => {
       gridTemplateColumns="repeat(auto-fit, minmax(280px, 1fr))"
     >
       {products &&
-        products.map(product => (
+        products.map((product) => (
           <ProductCard
             key={product.id}
             imageUrl={product.imageUrl}

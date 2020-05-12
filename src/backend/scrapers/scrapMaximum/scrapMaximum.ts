@@ -1,5 +1,5 @@
 import puppeteer, { Page } from "puppeteer";
-import nanoid from "nanoid";
+import { nanoid } from "nanoid";
 import chalk from "chalk";
 
 import getNextUrl from "./helpers/getNextUrl";
@@ -19,7 +19,7 @@ const scrapMaximum = async () => {
 
       await extraPage.setRequestInterception(true);
 
-      extraPage.on("request", req => {
+      extraPage.on("request", (req) => {
         if (
           req.resourceType() === "stylesheet" ||
           req.resourceType() === "font" ||
@@ -38,7 +38,7 @@ const scrapMaximum = async () => {
         const products = document.querySelectorAll("div.product__item");
 
         if (products.length > 0) {
-          return Array.from(products).map(product => {
+          return Array.from(products).map((product) => {
             const titleElement = product.querySelector(
               "div.product__item__title"
             );
@@ -64,7 +64,7 @@ const scrapMaximum = async () => {
         return [];
       });
 
-      const extraProducts: Product[] = rawExtraProducts.map(product => ({
+      const extraProducts: Product[] = rawExtraProducts.map((product) => ({
         ...product,
         id: nanoid(10)
       }));
@@ -88,7 +88,7 @@ const scrapMaximum = async () => {
       return extraProducts.concat(await extractProducts(nextUrl));
     };
 
-    const promises = urls.map(async url => {
+    const promises = urls.map(async (url) => {
       const products = await extractProducts(url);
       return products;
     });

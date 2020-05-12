@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { ButtonProps } from "./types";
 import styles from "./Button.css";
 
-const Button: FC<ButtonProps> = props => {
+const Button: FC<ButtonProps> = (props) => {
   const { disabled, children, onClick, type = "button" } = props;
   return (
     <button

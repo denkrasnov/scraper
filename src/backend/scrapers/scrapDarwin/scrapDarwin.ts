@@ -1,5 +1,5 @@
 import puppeteer, { Page } from "puppeteer";
-import nanoid from "nanoid";
+import { nanoid } from "nanoid";
 import chalk from "chalk";
 
 import { urls } from "./constants";
@@ -18,7 +18,7 @@ export const scrapDarwin = async () => {
       const page: Page = await browser.newPage();
       await page.setRequestInterception(true);
 
-      page.on("request", req => {
+      page.on("request", (req) => {
         if (
           req.resourceType() === "stylesheet" ||
           req.resourceType() === "font" ||
@@ -39,7 +39,7 @@ export const scrapDarwin = async () => {
         );
 
         if (products.length > 0) {
-          return Array.from(products).map(product => {
+          return Array.from(products).map((product) => {
             const titleElement = product.querySelector("figcaption a");
             const titleText = titleElement && titleElement.textContent;
 
@@ -63,7 +63,7 @@ export const scrapDarwin = async () => {
         return [];
       });
 
-      const extraProducts: Product[] = rawExtraProducts.map(product => ({
+      const extraProducts: Product[] = rawExtraProducts.map((product) => ({
         ...product,
         id: nanoid(10)
       }));
@@ -87,7 +87,7 @@ export const scrapDarwin = async () => {
       return extraProducts.concat(await extractProducts(nextUrl));
     };
 
-    const promises = urls.map(async url => {
+    const promises = urls.map(async (url) => {
       const products = await extractProducts(url);
       return products;
     });

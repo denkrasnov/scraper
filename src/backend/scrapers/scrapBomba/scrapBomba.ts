@@ -1,5 +1,5 @@
 import puppeteer, { Page } from "puppeteer";
-import nanoid from "nanoid";
+import { nanoid } from "nanoid";
 import chalk from "chalk";
 
 import getNextUrl from "./helpers/getNextUrl";
@@ -19,7 +19,7 @@ export const scrapBomba = async () => {
       await page.setViewport({ width: 1199, height: 900 });
       await page.setRequestInterception(true);
 
-      page.on("request", req => {
+      page.on("request", (req) => {
         if (req.resourceType() === "font" || req.resourceType() === "image") {
           req.abort();
         } else {
@@ -45,7 +45,7 @@ export const scrapBomba = async () => {
         const products = document.querySelectorAll("div.catalog-item-product");
 
         if (products.length > 0) {
-          return Array.from(products).map(product => {
+          return Array.from(products).map((product) => {
             const titleElement = product.querySelector("div.product-name a");
             const titleText = titleElement && titleElement.textContent;
 
@@ -68,7 +68,7 @@ export const scrapBomba = async () => {
         return [];
       });
 
-      const extraProducts: Product[] = rawExtraProducts.map(product => ({
+      const extraProducts: Product[] = rawExtraProducts.map((product) => ({
         ...product,
         id: nanoid(10)
       }));
@@ -92,7 +92,7 @@ export const scrapBomba = async () => {
       return extraProducts.concat(await extractProducts(nextUrl));
     };
 
-    const promises = urls.map(async url => {
+    const promises = urls.map(async (url) => {
       const products = await extractProducts(url);
       return products;
     });

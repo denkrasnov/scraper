@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { InputProps } from "./types";
 import styles from "./Input.css";
 
-const Input: FC<InputProps> = props => {
+const Input: FC<InputProps> = (props) => {
   const { onChange, name, placeholder, value } = props;
   return (
     <input

@@ -37,7 +37,14 @@
         "newlines-between": "always"
       }
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-sort-props": ["error"],
     "react/button-has-type": 0,
@@ -49,13 +56,15 @@
       }
     ],
     "prettier/prettier": ["error", {
-      "endOfLine": "auto"
+      "endOfLine": "auto",
+      "trailingComma": "none"
     }]
   },
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],
       "rules": {
+        "react/jsx-filename-extension": "off",
         "no-unused-vars": "off",
         "no-undef": "off",
         "no-restricted-globals": "off",

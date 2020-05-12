@@ -5,7 +5,7 @@ import { StyleType } from "../helpers/types";
 import { BoxProps } from "./type";
 import styles from "./Box.css";
 
-const Box: FC<BoxProps> = props => {
+const Box: FC<BoxProps> = (props) => {
   const { backgroundColor, children, ...rest } = props;
   const style: StyleType = {};
 

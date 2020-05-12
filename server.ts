@@ -5,7 +5,6 @@ import chalk from "chalk";
 import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
-import { query, sanitizeQuery, validationResult } from "express-validator";
 import { MongoClient, Db } from "mongodb";
 
 import scrapBomba from "./src/backend/scrapers/scrapBomba";
@@ -65,42 +64,22 @@ MongoClient.connect(
 /**
  * GET products
  */
-app.get(
-  "/search",
-  [
-    query("search")
-      .not()
-      .isEmpty()
-      .trim()
-      .escape(),
-    sanitizeQuery("notifyOnReply").toBoolean()
-  ],
-  (req: Request, res: Response) => {
-    const errors = validationResult(req);
-
-    if (!errors.isEmpty()) {
-      res.status(422).json({ errors: errors.array() });
-      return errors;
+app.get("/search", (_req: Request, res: Response) => {
+  return Promise.all([scrapMaximum(), scrapBomba(), scrapDarwin()]).then(
+    (products) => {
+      res.status(200).json({ products: ([] as Product[]).concat(...products) });
     }
+  );
 
-    return Promise.all([scrapMaximum(), scrapBomba(), scrapDarwin()]).then(
-      products => {
-        res
-          .status(200)
-          .json({ products: ([] as Product[]).concat(...products) });
-      }
-    );
+  // Add products to db
+  // db.collection("products").insertOne(
+  //   { tv: ([] as Product[]).concat(...products) },
+  //   (err, _result) => {
+  //     if (err) return console.log(err);
 
-    // Add products to db
-    // db.collection("products").insertOne(
-    //   { tv: ([] as Product[]).concat(...products) },
-    //   (err, _result) => {
-    //     if (err) return console.log(err);
-
-    //     res.redirect("/");
-    //     return undefined;
-    //   }
-    // );
-    // return undefined;
-  }
-);
+  //     res.redirect("/");
+  //     return undefined;
+  //   }
+  // );
+  // return undefined;
+});
