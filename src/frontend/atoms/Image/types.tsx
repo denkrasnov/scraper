@@ -5,4 +5,6 @@ export interface ImageProps {
   src: string;
   objectFit?: ObjectFit;
   borderRadiusLeft?: boolean;
+  width?: string;
+  height?: string;
 }

@@ -3,7 +3,8 @@ import { Colors } from "./types";
 const colors: Colors = {
   BACKGROUND: "var(--background)",
   SHADOW_COLOR: "var(--shadow-color)",
-  BUTTON_PRIMARY: "var(--button-primary)",
+  BUTTON: "var(--button-primary)",
+  BUTTON_TRANSPARENT: "var(--button-primary)",
   BUTTON_SECONDARY: "var(--button-secondary)",
   BUTTON_HOVER: "var(--button-hover)",
   BORDER: "var(--border)",

@@ -7,7 +7,9 @@ exports[`Button renders 1`] = `
   src="__SRC__"
   style={
     Object {
+      "height": undefined,
       "objectFit": undefined,
+      "width": undefined,
     }
   }
   width="100%"
@@ -21,7 +23,9 @@ exports[`Button renders with borderRadiusLeft 1`] = `
   src="__SRC__"
   style={
     Object {
+      "height": undefined,
       "objectFit": undefined,
+      "width": undefined,
     }
   }
   width="100%"

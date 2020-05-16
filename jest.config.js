@@ -10,9 +10,11 @@ module.exports = {
   },
   setupFilesAfterEnv: ["<rootDir>/jest/setupFile.tsx"],
   collectCoverageFrom: [
-    "src/frontend/**/*.{ts,tsx,js}",
+    "src/frontend/**/*.{ts,tsx}",
+    "!**/types.tsx",
     "!src/**/{__stories__,__tests__}/**"
   ],
+  collectCoverage: false,
   coverageThreshold: {
     global: {
       statements: 100,
@@ -20,6 +22,5 @@ module.exports = {
       functions: 100,
       lines: 100
     }
-  },
-  coveragePathIgnorePatterns: ["!*.d.ts"]
+  }
 };

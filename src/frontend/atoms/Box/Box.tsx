@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import colors from "../Colors";
 import { StyleType } from "../helpers/types";
-import { BoxProps } from "./type";
+import { BoxProps } from "./types";
 import styles from "./Box.css";
 
 const Box: FC<BoxProps> = (props) => {

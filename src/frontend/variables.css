@@ -1,7 +1,8 @@
 :root {
   --background: #f9fbfc;
   --shadow-color: rgba(8, 31, 44, 0.12);
-  --button-primary: #224dff;
+  --button: #d8262f;
+  --button-transparent: rgba(216, 38, 47, 0.18);
   --button-secondary: #5a6169;
   --button-hover: #e76471;
   --border: #c8e1ff;

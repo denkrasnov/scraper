@@ -7,4 +7,6 @@ export interface ButtonProps {
   children?: ReactNode;
   onClick?: () => void;
   type?: ButtonType;
+  transparent?: boolean;
+  color?: string;
 }

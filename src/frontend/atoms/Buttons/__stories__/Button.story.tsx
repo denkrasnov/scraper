@@ -5,8 +5,18 @@ import { boolean } from "@storybook/addon-knobs";
 
 import Button from "../Button";
 
-storiesOf("Components|Button", module).add("default", () => (
-  <Button disabled={boolean("Disabled", false)} onClick={action("clicked")}>
-    Search
-  </Button>
-));
+storiesOf("Components|Button", module)
+  .add("default", () => (
+    <Button disabled={boolean("Disabled", false)} onClick={action("clicked")}>
+      Search
+    </Button>
+  ))
+  .add("Transparent", () => (
+    <Button
+      disabled={boolean("Disabled", false)}
+      onClick={action("clicked")}
+      transparent
+    >
+      TV
+    </Button>
+  ));

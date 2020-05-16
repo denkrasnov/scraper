@@ -29,6 +29,8 @@ export type AlignItems =
 
 type FlexWrap = "wrap" | "nowrap";
 
+type Cursor = "pointer";
+
 export interface BoxProps {
   alignItems?: AlignItems;
   backgroundColor?: Color;
@@ -45,4 +47,6 @@ export interface BoxProps {
   width?: string;
   height?: string;
   maxWidth?: string;
+  cursor?: Cursor;
+  marginRight?: string;
 }

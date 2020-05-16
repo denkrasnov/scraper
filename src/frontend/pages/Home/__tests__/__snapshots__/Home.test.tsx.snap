@@ -11,12 +11,13 @@ exports[`Home should render 1`] = `
   >
     <Box
       alignItems="flex-start"
+      flexDirection="column"
       grow={1}
       justifyContent="center"
       margin="20px 0 30px"
       width="100%"
     >
-      <SearchBar />
+      <Menu />
     </Box>
     <SearchResult />
   </Box>

@@ -64,6 +64,7 @@ exports[`SearchBar should render 1`] = `
               >
                 <button
                   className="Button"
+                  style={Object {}}
                   type="submit"
                 >
                   Search
@@ -142,6 +143,7 @@ exports[`SearchBar should submit the Form 1`] = `
               >
                 <button
                   className="Button"
+                  style={Object {}}
                   type="submit"
                 >
                   Search

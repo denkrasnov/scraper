@@ -3,6 +3,17 @@
 exports[`Button should render 1`] = `
 <button
   className="Button"
+  style={Object {}}
+  type="button"
+>
+  __BUTTON_NAME__
+</button>
+`;
+
+exports[`Button should render with transparent 1`] = `
+<button
+  className="transparent"
+  style={Object {}}
   type="button"
 >
   __BUTTON_NAME__
