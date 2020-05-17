@@ -7,6 +7,7 @@ import getNextUrl from "./helpers/getNextUrl";
 import { Product } from "../types";
 
 const error = chalk.bold.red;
+const finished = chalk.bold.green;
 
 export const scrapDarwin = async () => {
   try {
@@ -95,6 +96,9 @@ export const scrapDarwin = async () => {
     const allProducts = await Promise.all(promises);
 
     await browser.close();
+
+    console.log(finished("Darwin finished ✅")); // eslint-disable-line no-console
+
     return allProducts.flat();
   } catch (err) {
     console.log(error(err)); // eslint-disable-line no-console

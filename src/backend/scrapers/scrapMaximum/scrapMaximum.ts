@@ -7,6 +7,7 @@ import { urls } from "./constants";
 import { Product } from "../types";
 
 const error = chalk.bold.red;
+const finished = chalk.bold.green;
 
 const scrapMaximum = async () => {
   try {
@@ -96,6 +97,8 @@ const scrapMaximum = async () => {
     const allProducts = await Promise.all(promises);
 
     await browser.close();
+
+    console.log(finished("Maximum finished ✅")); // eslint-disable-line no-console
 
     return allProducts.flat();
   } catch (err) {

@@ -6,13 +6,13 @@ import { BoxProps } from "./types";
 import styles from "./Box.css";
 
 const Box: FC<BoxProps> = (props) => {
-  const { backgroundColor, children, ...rest } = props;
+  const { backgroundColor, children, onClick, ...rest } = props;
   const style: StyleType = {};
 
   if (backgroundColor) style.backgroundColor = colors[backgroundColor];
 
   return (
-    <div className={styles.Box} style={{ ...style, ...rest }}>
+    <div className={styles.Box} onClick={onClick} style={{ ...style, ...rest }}>
       {children}
     </div>
   );

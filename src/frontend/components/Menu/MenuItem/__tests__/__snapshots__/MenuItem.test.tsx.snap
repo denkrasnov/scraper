@@ -5,6 +5,7 @@ exports[`MenuItem should render 1`] = `
   cursor="pointer"
   flexDirection="column"
   marginRight="60px"
+  onClick={[MockFunction]}
   width="200px"
 >
   <Image

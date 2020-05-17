@@ -5,7 +5,9 @@ import MenuItem from "..";
 
 describe("MenuItem", () => {
   it("should render", () => {
-    const component = shallow(<MenuItem src="/__SRC__" text="__TEXT__" />);
+    const component = shallow(
+      <MenuItem onClick={jest.fn()} src="/__SRC__" text="__TEXT__" />
+    );
 
     expect(component).toMatchSnapshot();
   });

@@ -7,6 +7,8 @@ import { urls } from "./constants";
 import { Product } from "../types";
 
 const error = chalk.bold.red;
+const finished = chalk.bold.green;
+const info = chalk.bold.yellow;
 
 export const scrapBomba = async () => {
   try {
@@ -37,7 +39,7 @@ export const scrapBomba = async () => {
         });
       } catch (err) {
         // Terminate
-        console.log(`${error(err)}: Page ${url}`); // eslint-disable-line no-console
+        console.log(`${info(err)}: Page ${url}`); // eslint-disable-line no-console
         return [];
       }
 
@@ -100,6 +102,8 @@ export const scrapBomba = async () => {
     const allProducts = await Promise.all(promises);
 
     await browser.close();
+
+    console.log(finished("Bomba finished ✅")); // eslint-disable-line no-console
 
     return allProducts.flat();
   } catch (err) {

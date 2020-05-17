@@ -49,4 +49,5 @@ export interface BoxProps {
   maxWidth?: string;
   cursor?: Cursor;
   marginRight?: string;
+  onClick?: () => void;
 }

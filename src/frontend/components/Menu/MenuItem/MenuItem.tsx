@@ -6,13 +6,14 @@ import { H3 } from "~app/atoms/Headings";
 import { MenuItemProps } from "./types";
 
 const MenuItem: FC<MenuItemProps> = (props) => {
-  const { src, text } = props;
+  const { src, text, onClick } = props;
 
   return (
     <Box
       cursor="pointer"
       flexDirection="column"
       marginRight="60px"
+      onClick={onClick}
       width="200px"
     >
       <Image alt="menu-image" height="134px" src={src} />

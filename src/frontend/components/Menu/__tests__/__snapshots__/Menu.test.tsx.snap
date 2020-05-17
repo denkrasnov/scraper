@@ -6,10 +6,12 @@ exports[`Menu should render 1`] = `
   width="100%"
 >
   <MenuItem
+    onClick={[Function]}
     src="test-file-stub"
     text="Televisions"
   />
   <MenuItem
+    onClick={[Function]}
     src="test-file-stub"
     text="Refrigerators"
   />
