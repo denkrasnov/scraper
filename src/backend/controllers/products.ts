@@ -1,19 +1,28 @@
 import { Request, Response, NextFunction } from "express";
 
+import { ShapedProducts } from "../scrapers/types";
+import { Products } from "../models/products";
+
 export const ProductsController = {
-  getTVs: async (_req: Request, _res: Response, next: NextFunction) => {
+  getTVs: async (_req: Request, res: Response, next: NextFunction) => {
     try {
-      // TODO: get all tvs from db
-      console.log("PruductsController.getTVs() called"); // eslint-disable-line no-console
+      const productsDocument = await Products.find({}, { fridge: 0 });
+      const products =
+        ((productsDocument[0] as unknown) as ShapedProducts)?.tv || [];
+
+      res.status(200).json({ products });
     } catch (error) {
       next(error);
     }
   },
 
-  getFridges: async (_req: Request, _res: Response, next: NextFunction) => {
+  getFridges: async (_req: Request, res: Response, next: NextFunction) => {
     try {
-      // TODO: get all fridges from db
-      console.log("PruductsController.getFridges() called"); // eslint-disable-line no-console
+      const productsDocument = await Products.find({}, { tv: 0 });
+      const products =
+        ((productsDocument[0] as unknown) as ShapedProducts)?.fridge || [];
+
+      res.status(200).json({ products });
     } catch (error) {
       next(error);
     }

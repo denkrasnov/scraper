@@ -11,7 +11,7 @@ const Menu = () => {
   return (
     <Box justifyContent="center" width="100%">
       <MenuItem
-        onClick={() => dispatch({ type: ActionTypes.FETCH, payload: "tv" })}
+        onClick={() => dispatch({ type: ActionTypes.FETCH, payload: "tvs" })}
         src={image.tv}
         text="Televisions"
       />

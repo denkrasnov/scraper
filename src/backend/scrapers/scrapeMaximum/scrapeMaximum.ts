@@ -4,12 +4,12 @@ import chalk from "chalk";
 
 import getNextUrl from "./helpers/getNextUrl";
 import { urls } from "./constants";
-import { Product } from "../types";
+import { Product, ShopName } from "../types";
 
 const error = chalk.bold.red;
 const finished = chalk.bold.green;
 
-const scrapMaximum = async () => {
+const scrapeMaximum = async () => {
   try {
     const browser = await puppeteer.launch({
       // headless: false
@@ -67,7 +67,8 @@ const scrapMaximum = async () => {
 
       const extraProducts: Product[] = rawExtraProducts.map((product) => ({
         ...product,
-        id: nanoid(10)
+        id: nanoid(10),
+        shop: ShopName.MAXIMUM
       }));
 
       await extraPage.close();
@@ -89,8 +90,11 @@ const scrapMaximum = async () => {
       return extraProducts.concat(await extractProducts(nextUrl));
     };
 
-    const promises = urls.map(async (url) => {
-      const products = await extractProducts(url);
+    const promises = urls.map(async (urlData) => {
+      const products = {
+        name: urlData.name,
+        items: await extractProducts(urlData.url)
+      };
       return products;
     });
 
@@ -98,13 +102,13 @@ const scrapMaximum = async () => {
 
     await browser.close();
 
-    console.log(finished("Maximum finished ✅")); // eslint-disable-line no-console
+    console.log(finished("Maximum finished ✅"));
 
-    return allProducts.flat();
+    return allProducts;
   } catch (err) {
-    console.log(error(err)); // eslint-disable-line no-console
+    console.log(error(err));
     return [];
   }
 };
 
-export default scrapMaximum;
+export default scrapeMaximum;

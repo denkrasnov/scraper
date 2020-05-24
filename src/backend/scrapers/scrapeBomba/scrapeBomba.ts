@@ -2,15 +2,15 @@ import puppeteer, { Page } from "puppeteer";
 import { nanoid } from "nanoid";
 import chalk from "chalk";
 
+import { ShopName, Product } from "../types";
 import getNextUrl from "./helpers/getNextUrl";
 import { urls } from "./constants";
-import { Product } from "../types";
 
 const error = chalk.bold.red;
 const finished = chalk.bold.green;
 const info = chalk.bold.yellow;
 
-export const scrapBomba = async () => {
+const scrapeBomba = async () => {
   try {
     const browser = await puppeteer.launch({
       // headless: false
@@ -39,7 +39,7 @@ export const scrapBomba = async () => {
         });
       } catch (err) {
         // Terminate
-        console.log(`${info(err)}: Page ${url}`); // eslint-disable-line no-console
+        console.log(`${info(err)}: Page ${url}`);
         return [];
       }
 
@@ -72,7 +72,8 @@ export const scrapBomba = async () => {
 
       const extraProducts: Product[] = rawExtraProducts.map((product) => ({
         ...product,
-        id: nanoid(10)
+        id: nanoid(10),
+        shop: ShopName.BOMBA
       }));
 
       await page.close();
@@ -94,8 +95,11 @@ export const scrapBomba = async () => {
       return extraProducts.concat(await extractProducts(nextUrl));
     };
 
-    const promises = urls.map(async (url) => {
-      const products = await extractProducts(url);
+    const promises = urls.map(async (urlData) => {
+      const products = {
+        name: urlData.name,
+        items: await extractProducts(urlData.url)
+      };
       return products;
     });
 
@@ -103,13 +107,13 @@ export const scrapBomba = async () => {
 
     await browser.close();
 
-    console.log(finished("Bomba finished ✅")); // eslint-disable-line no-console
+    console.log(finished("Bomba finished ✅"));
 
-    return allProducts.flat();
+    return allProducts;
   } catch (err) {
-    console.log(error(err)); // eslint-disable-line no-console
+    console.log(error(err));
     return [];
   }
 };
 
-export default scrapBomba;
+export default scrapeBomba;

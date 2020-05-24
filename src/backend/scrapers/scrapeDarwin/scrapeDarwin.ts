@@ -2,9 +2,9 @@ import puppeteer, { Page } from "puppeteer";
 import { nanoid } from "nanoid";
 import chalk from "chalk";
 
-import { urls } from "./constants";
+import { ShopName, Product } from "../types";
 import getNextUrl from "./helpers/getNextUrl";
-import { Product } from "../types";
+import { urls } from "./constants";
 
 const error = chalk.bold.red;
 const finished = chalk.bold.green;
@@ -66,7 +66,8 @@ export const scrapDarwin = async () => {
 
       const extraProducts: Product[] = rawExtraProducts.map((product) => ({
         ...product,
-        id: nanoid(10)
+        id: nanoid(10),
+        shop: ShopName.DARWIN
       }));
 
       await page.close();
@@ -88,8 +89,11 @@ export const scrapDarwin = async () => {
       return extraProducts.concat(await extractProducts(nextUrl));
     };
 
-    const promises = urls.map(async (url) => {
-      const products = await extractProducts(url);
+    const promises = urls.map(async (urlData) => {
+      const products = {
+        name: urlData.name,
+        items: await extractProducts(urlData.url)
+      };
       return products;
     });
 
@@ -97,11 +101,11 @@ export const scrapDarwin = async () => {
 
     await browser.close();
 
-    console.log(finished("Darwin finished ✅")); // eslint-disable-line no-console
+    console.log(finished("Darwin finished ✅"));
 
-    return allProducts.flat();
+    return allProducts;
   } catch (err) {
-    console.log(error(err)); // eslint-disable-line no-console
+    console.log(error(err));
     return [];
   }
 };

@@ -7,12 +7,7 @@ import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import mongoose from "mongoose";
 
-import { Products } from "./src/backend/models/products";
 import productsRoute from "./src/backend/routes/products";
-import scrapBomba from "./src/backend/scrapers/scrapBomba";
-import scrapDarwin from "./src/backend/scrapers/scrapDarwin";
-import scrapMaximum from "./src/backend/scrapers/scrapMaximum";
-import { Product } from "./src/backend/scrapers/types";
 
 const config = require("./webpack.config");
 require("dotenv").config();
@@ -49,7 +44,8 @@ const dbConnectionUrl = process.env.CONNECTION_URL;
 mongoose
   .connect(dbConnectionUrl!, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
   })
   .catch((error) => console.log(chalk.bold.red(error))); // eslint-disable-line no-console
 
@@ -61,27 +57,6 @@ app.get("/", (_req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-// TODO get products in separate requests for different product types
-app.use("/products", productsRoute);
-
-/**
- * GET products
- */
-app.get("/search", (_req: Request, res: Response) => {
-  return Promise.all([scrapMaximum(), scrapBomba(), scrapDarwin()]).then(
-    async (products) => {
-      // Add products to db
-      const newProducts = new Products({
-        products: ([] as Product[]).concat(...products)
-      });
-
-      await newProducts.save();
-
-      return res
-        .status(200)
-        .json({ products: ([] as Product[]).concat(...products) });
-    }
-  );
-});
+app.use("/search", productsRoute);
 
 app.listen(process.env.PORT, () => {});
