@@ -5,6 +5,7 @@ exports[`ProductCard should render 1`] = `
   <Box
     flexDirection="column"
     height="100%"
+    padding="10px"
   >
     <Box
       height="200px"
@@ -17,11 +18,14 @@ exports[`ProductCard should render 1`] = `
     <Box
       flexDirection="column"
       height="100%"
-      padding="0 10px 10px 10px"
     >
-      <H3>
-        __TITLE__
-      </H3>
+      <Text
+        textAlign="center"
+      >
+        <H3>
+          __TITLE__
+        </H3>
+      </Text>
       <Box
         flex={1}
       />
@@ -49,6 +53,7 @@ exports[`ProductCard should render with alternative product 1`] = `
   <Box
     flexDirection="column"
     height="100%"
+    padding="10px"
   >
     <Box
       height="200px"
@@ -61,11 +66,14 @@ exports[`ProductCard should render with alternative product 1`] = `
     <Box
       flexDirection="column"
       height="100%"
-      padding="0 10px 10px 10px"
     >
-      <H3>
-        __TITLE__
-      </H3>
+      <Text
+        textAlign="center"
+      >
+        <H3>
+          __TITLE__
+        </H3>
+      </Text>
       <Box
         flex={1}
       />

@@ -1,6 +1,7 @@
 :root {
-  --background: #f9fbfc;
+  --background: #f0f0f0;
   --shadow-color: rgba(8, 31, 44, 0.12);
+  --shadow-color-2: rgba(0, 0, 0, 0.05);
   --button: #d8262f;
   --button-transparent: rgba(216, 38, 47, 0.18);
   --button-secondary: #5a6169;

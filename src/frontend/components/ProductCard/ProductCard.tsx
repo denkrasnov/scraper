@@ -14,15 +14,17 @@ const ProductCard: FC<ProductCardProps> = (props) => {
 
   return (
     <Card>
-      <Box flexDirection="column" height="100%">
+      <Box flexDirection="column" height="100%" padding="10px">
         <Box height="200px">
           <Image
             alt="product photo"
             src={noImage ? image.tvPlaceholder : imageUrl}
           />
         </Box>
-        <Box flexDirection="column" height="100%" padding="0 10px 10px 10px">
-          <H3>{title}</H3>
+        <Box flexDirection="column" height="100%">
+          <Text textAlign="center">
+            <H3>{title}</H3>
+          </Text>
           <Box flex={1} />
           <Divider />
           <Box justifyContent="flex-end" margin="15px 0px 5px 0">
