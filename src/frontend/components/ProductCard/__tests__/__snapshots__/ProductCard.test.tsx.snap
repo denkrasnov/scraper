@@ -8,7 +8,7 @@ exports[`ProductCard should render 1`] = `
     padding="10px"
   >
     <Box
-      height="200px"
+      minHeight="200px"
     >
       <Image
         alt="product photo"
@@ -56,7 +56,7 @@ exports[`ProductCard should render with alternative product 1`] = `
     padding="10px"
   >
     <Box
-      height="200px"
+      minHeight="200px"
     >
       <Image
         alt="product photo"

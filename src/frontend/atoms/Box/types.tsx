@@ -46,6 +46,7 @@ export interface BoxProps {
   marginBottom?: string;
   width?: string;
   height?: string;
+  minHeight?: string;
   maxWidth?: string;
   cursor?: Cursor;
   marginRight?: string;

@@ -15,7 +15,7 @@ const ProductCard: FC<ProductCardProps> = (props) => {
   return (
     <Card>
       <Box flexDirection="column" height="100%" padding="10px">
-        <Box height="200px">
+        <Box minHeight="200px">
           <Image
             alt="product photo"
             src={noImage ? image.tvPlaceholder : imageUrl}
