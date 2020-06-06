@@ -3,31 +3,27 @@
 exports[`Button renders 1`] = `
 <img
   alt="__ALT__"
-  className="Image"
+  className="root objectFit-cover"
   src="__SRC__"
   style={
     Object {
-      "height": undefined,
-      "objectFit": undefined,
-      "width": undefined,
+      "height": "100px",
+      "width": "100px",
     }
   }
-  width="100%"
 />
 `;
 
 exports[`Button renders with borderRadiusLeft 1`] = `
 <img
   alt="__ALT__"
-  className="borderRadiusLeft"
+  className="root borderRadiusLeft"
   src="__SRC__"
   style={
     Object {
       "height": undefined,
-      "objectFit": undefined,
       "width": undefined,
     }
   }
-  width="100%"
 />
 `;

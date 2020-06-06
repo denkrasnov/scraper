@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 
 import Box from "../../Box";
 import Text from "../../Text";
-import colors from "../colors";
+import { colors } from "../colors";
 import { Color } from "../types";
 
 storiesOf("Components|Colors", module).add("default", () => {
@@ -33,7 +33,7 @@ storiesOf("Components|Colors", module).add("default", () => {
     </div>
   ));
   return (
-    <Box flexWrap="wrap" justifyContent="space-between">
+    <Box flexWrap="wrap" justifyContent="spaceBetween">
       {colorItems}
     </Box>
   );

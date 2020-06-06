@@ -1,25 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home should render 1`] = `
-<Fragment>
+<Box
+  flexDirection="column"
+  height="100%"
+>
   <Header />
   <Divider />
   <Box
+    background="BACKGROUND"
     flexDirection="column"
-    marginBottom="25px"
-    padding="0 5%"
+    height="100%"
+    marginBottom="s24"
   >
     <Box
-      alignItems="flex-start"
+      alignItems="flexStart"
       flexDirection="column"
-      grow={1}
       justifyContent="center"
-      margin="20px 0 30px"
+      marginBottom="s32"
+      marginTop="s20"
       width="100%"
     >
       <Menu />
     </Box>
     <SearchResult />
   </Box>
-</Fragment>
+</Box>
 `;

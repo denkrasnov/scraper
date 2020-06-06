@@ -14,21 +14,21 @@ const ProductCard: FC<ProductCardProps> = (props) => {
 
   return (
     <Card>
-      <Box flexDirection="column" height="100%" padding="10px">
-        <Box minHeight="200px">
+      <Box flexDirection="column" height="100%" padding="s8">
+        <Box justifyContent="center" minHeight="200px">
           <Image
             alt="product photo"
             src={noImage ? image.tvPlaceholder : imageUrl}
+            width="100%"
           />
         </Box>
         <Box flexDirection="column" height="100%">
           <Text textAlign="center">
             <H3>{title}</H3>
           </Text>
-          <Box flex={1} />
           <Divider />
-          <Box justifyContent="flex-end" margin="15px 0px 5px 0">
-            <Text color="MAIN_RED" fontSize="fs400" fontWeight="fw700">
+          <Box justifyContent="flexEnd" marginBottom="s4" marginTop="s16">
+            <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
               lei {price}
             </Text>
           </Box>

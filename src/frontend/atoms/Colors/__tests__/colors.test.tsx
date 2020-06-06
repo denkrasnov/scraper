@@ -1,4 +1,4 @@
-import colors from "..";
+import { colors } from "../colors";
 
 describe("colors", () => {
   it("should render", () => {

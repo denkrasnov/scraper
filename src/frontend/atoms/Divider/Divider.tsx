@@ -1,12 +1,13 @@
 import React, { FC } from "react";
 
+import mapPropsToStyles from "../helpers/mapPropsToStyles";
 import { DividerProps } from "./types";
 import styles from "./Divider.css";
 
 const Divider: FC<DividerProps> = (props) => {
-  const { vertical } = props;
+  const classes = mapPropsToStyles(props, styles);
 
-  return <div className={vertical ? styles.vertical : styles.Divider} />;
+  return <div className={classes} />;
 };
 
 export default Divider;

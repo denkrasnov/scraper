@@ -1,21 +1,16 @@
 import React, { FC } from "react";
 
-import colors from "../Colors";
-import { StyleType } from "../helpers/types";
-import { sizes, weights } from "./fonts";
+import mapPropsToStyles from "../helpers/mapPropsToStyles";
+import styles from "./Text.css";
 import { TextProps } from "./types";
 
 const Text: FC<TextProps> = (props) => {
-  const { children, color, tag, fontSize, fontWeight, ...rest } = props;
+  const { children, tag, ...restProps } = props;
   const Element = tag || "span";
 
-  const style: StyleType = {};
+  const classes = mapPropsToStyles(restProps, styles);
 
-  if (fontSize) style.fontSize = sizes[fontSize];
-  if (fontWeight) style.fontWeight = weights[fontWeight];
-  if (color) style.color = colors[color];
-
-  return <Element style={{ ...style, ...rest }}>{children}</Element>;
+  return <Element className={classes}>{children}</Element>;
 };
 
 export default Text;

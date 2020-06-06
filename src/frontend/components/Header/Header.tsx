@@ -6,13 +6,8 @@ import Box from "~app/atoms/Box";
 const Header: FC = () => {
   return (
     <header>
-      <Box
-        alignItems="center"
-        backgroundColor="WHITE"
-        height="60px"
-        justifyContent="center"
-      >
-        <Text color="MAIN_RED" fontSize="fs400" fontWeight="fw700">
+      <Box alignItems="center" height="60px" justifyContent="center">
+        <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
           compare
         </Text>
       </Box>

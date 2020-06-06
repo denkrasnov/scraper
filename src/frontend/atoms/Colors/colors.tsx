@@ -1,10 +1,10 @@
 import { Colors } from "./types";
 
-const colors: Colors = {
+export const colors: Colors = {
   BACKGROUND: "var(--background)",
   SHADOW_COLOR: "var(--shadow-color)",
-  BUTTON: "var(--button-primary)",
-  BUTTON_TRANSPARENT: "var(--button-primary)",
+  BUTTON: "var(--button)",
+  BUTTON_TRANSPARENT: "var(--button-transparent)",
   BUTTON_SECONDARY: "var(--button-secondary)",
   BUTTON_HOVER: "var(--button-hover)",
   BORDER: "var(--border)",
@@ -18,5 +18,3 @@ const colors: Colors = {
   MAIN_RED: "var(--main-red)",
   WHITE: "var(--white)"
 };
-
-export default colors;

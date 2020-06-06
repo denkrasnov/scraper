@@ -1,0 +1,41 @@
+@import "../Colors/color.css";
+
+.textAlign-center {
+  text-align: center;
+}
+
+.fontSize-fs10 {
+  font-size: 10px;
+}
+
+.fontSize-fs12 {
+  font-size: 12px;
+}
+
+.fontSize-fs14 {
+  font-size: 14px;
+}
+
+.fontSize-fs16 {
+  font-size: 16px;
+}
+
+.fontSize-fs18 {
+  font-size: 18px;
+}
+
+.fontSize-fs20 {
+  font-size: 10px;
+}
+
+.fontWeight-fw200 {
+  font-weight: 200;
+}
+
+.fontWeight-fw400 {
+  font-weight: 400;
+}
+
+.fontWeight-fw700 {
+  font-weight: 700;
+}

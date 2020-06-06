@@ -1,4 +1,4 @@
-export type ObjectFit = "contain" | "cover" | "fill" | "scale-down";
+export type ObjectFit = "cover" | "fill" | "scale-down";
 
 export interface ImageProps {
   alt: string;

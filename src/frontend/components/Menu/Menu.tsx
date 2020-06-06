@@ -13,14 +13,14 @@ const Menu = () => {
       <MenuItem
         onClick={() => dispatch({ type: ActionTypes.FETCH, payload: "tvs" })}
         src={image.tv}
-        text="Televisions"
+        text="Телевизоры"
       />
       <MenuItem
         onClick={() =>
           dispatch({ type: ActionTypes.FETCH, payload: "fridges" })
         }
         src={image.fridge}
-        text="Refrigerators"
+        text="Холодильники"
       />
     </Box>
   );

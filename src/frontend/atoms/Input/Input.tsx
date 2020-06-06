@@ -7,7 +7,7 @@ const Input: FC<InputProps> = (props) => {
   const { onChange, name, placeholder, value } = props;
   return (
     <input
-      className={styles.Input}
+      className={styles.root}
       name={name}
       onChange={onChange}
       placeholder={placeholder}

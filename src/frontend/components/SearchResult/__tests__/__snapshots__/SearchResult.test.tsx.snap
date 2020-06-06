@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchResult should render 1`] = `
-<Grid
-  gridGap="25px"
-  gridTemplateColumns="repeat(auto-fit, minmax(280px, 1fr))"
-/>
+<Box
+  display="block"
+  margin="s20"
+>
+  <Grid />
+</Box>
 `;
 
 exports[`SearchResult should render Error 1`] = `
@@ -20,15 +22,17 @@ exports[`SearchResult should render Loading 1`] = `
 `;
 
 exports[`SearchResult should render products 1`] = `
-<Grid
-  gridGap="25px"
-  gridTemplateColumns="repeat(auto-fit, minmax(280px, 1fr))"
+<Box
+  display="block"
+  margin="s20"
 >
-  <ProductCard
-    imageUrl="__IMAGE_URL__"
-    key="__ID__"
-    price="100"
-    title="__TITLE__"
-  />
-</Grid>
+  <Grid>
+    <ProductCard
+      imageUrl="__IMAGE_URL__"
+      key="__ID__"
+      price="100"
+      title="__TITLE__"
+    />
+  </Grid>
+</Box>
 `;

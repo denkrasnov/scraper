@@ -14,15 +14,13 @@ exports[`SearchBar should render 1`] = `
       }
     >
       <Box
-        margin="auto"
         maxWidth="739px"
         width="100%"
       >
         <div
-          className="Box"
+          className="root"
           style={
             Object {
-              "margin": "auto",
               "maxWidth": "739px",
               "width": "100%",
             }
@@ -39,7 +37,7 @@ exports[`SearchBar should render 1`] = `
               value=""
             >
               <input
-                className="Input"
+                className="root"
                 name="search"
                 onChange={[Function]}
                 placeholder="Search"
@@ -48,23 +46,16 @@ exports[`SearchBar should render 1`] = `
               />
             </Input>
           </Field>
-          <Box
-            padding="0 0 0 10px"
-          >
+          <Box>
             <div
-              className="Box"
-              style={
-                Object {
-                  "padding": "0 0 0 10px",
-                }
-              }
+              className="root"
+              style={Object {}}
             >
               <Button
                 type="submit"
               >
                 <button
-                  className="Button"
-                  style={Object {}}
+                  className="root"
                   type="submit"
                 >
                   Search
@@ -93,15 +84,13 @@ exports[`SearchBar should submit the Form 1`] = `
       }
     >
       <Box
-        margin="auto"
         maxWidth="739px"
         width="100%"
       >
         <div
-          className="Box"
+          className="root"
           style={
             Object {
-              "margin": "auto",
               "maxWidth": "739px",
               "width": "100%",
             }
@@ -118,7 +107,7 @@ exports[`SearchBar should submit the Form 1`] = `
               value="query"
             >
               <input
-                className="Input"
+                className="root"
                 name="search"
                 onChange={[Function]}
                 placeholder="Search"
@@ -127,23 +116,16 @@ exports[`SearchBar should submit the Form 1`] = `
               />
             </Input>
           </Field>
-          <Box
-            padding="0 0 0 10px"
-          >
+          <Box>
             <div
-              className="Box"
-              style={
-                Object {
-                  "padding": "0 0 0 10px",
-                }
-              }
+              className="root"
+              style={Object {}}
             >
               <Button
                 type="submit"
               >
                 <button
-                  className="Button"
-                  style={Object {}}
+                  className="root"
                   type="submit"
                 >
                   Search

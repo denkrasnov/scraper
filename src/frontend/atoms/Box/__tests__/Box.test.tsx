@@ -13,7 +13,15 @@ describe("Box", () => {
 
   it("should render with attributes", () => {
     const component = shallow(
-      <Box backgroundColor="BACKGROUND">{children}</Box>
+      <Box
+        background="BACKGROUND"
+        height="10px"
+        maxWidth="10px"
+        minHeight="10px"
+        width="10px"
+      >
+        {children}
+      </Box>
     );
     expect(component).toMatchSnapshot();
   });

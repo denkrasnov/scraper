@@ -19,7 +19,7 @@ const SearchBar: FC = () => {
       {({ handleSubmit }) => {
         return (
           <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-            <Box margin="auto" maxWidth="739px" width="100%">
+            <Box maxWidth="739px" width="100%">
               <Field
                 name="search"
                 validate={(value) => (value && value.trim() ? undefined : true)}
@@ -35,7 +35,7 @@ const SearchBar: FC = () => {
                   );
                 }}
               </Field>
-              <Box padding="0 0 0 10px">
+              <Box>
                 <Button type="submit">Search</Button>
               </Box>
             </Box>

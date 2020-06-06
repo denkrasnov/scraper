@@ -1,10 +1,22 @@
-.Image {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+.root {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   object-fit: contain;
 }
 
 .borderRadiusLeft {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.objectFit-cover {
+  object-fit: cover;
+}
+
+.objectFit-fill {
+  object-fit: fill;
+}
+
+.objectFit-scaleDown {
+  object-fit: scale-down;
 }

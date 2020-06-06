@@ -2,7 +2,7 @@
 
 exports[`Text should render 1`] = `
 <span
-  style={Object {}}
+  className="root"
 >
   __TEXT__
 </span>
@@ -10,13 +10,7 @@ exports[`Text should render 1`] = `
 
 exports[`Text should render with attributes 1`] = `
 <span
-  style={
-    Object {
-      "color": "var(--body-text)",
-      "fontSize": "10px",
-      "fontWeight": 400,
-    }
-  }
+  className="root color-BODY_TEXT fontSize-fs10 fontWeight-fw400"
 >
   __TEXT__
 </span>

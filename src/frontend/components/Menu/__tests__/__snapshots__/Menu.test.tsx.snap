@@ -8,12 +8,12 @@ exports[`Menu should render 1`] = `
   <MenuItem
     onClick={[Function]}
     src="test-file-stub"
-    text="Televisions"
+    text="Телевизоры"
   />
   <MenuItem
     onClick={[Function]}
     src="test-file-stub"
-    text="Refrigerators"
+    text="Холодильники"
   />
 </Box>
 `;

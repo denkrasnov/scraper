@@ -1,18 +1,32 @@
 import React, { FC } from "react";
 
-import colors from "../Colors";
-import { StyleType } from "../helpers/types";
+import mapPropsToStyles from "../helpers/mapPropsToStyles";
+import { StyleType } from "../types";
 import { BoxProps } from "./types";
 import styles from "./Box.css";
 
 const Box: FC<BoxProps> = (props) => {
-  const { backgroundColor, children, onClick, ...rest } = props;
+  const {
+    children,
+    onClick,
+    width,
+    height,
+    minHeight,
+    maxWidth,
+    ...restProps
+  } = props;
+
+  const classes = mapPropsToStyles(restProps, styles);
+
   const style: StyleType = {};
 
-  if (backgroundColor) style.backgroundColor = colors[backgroundColor];
+  if (width) style.width = width;
+  if (height) style.height = height;
+  if (minHeight) style.minHeight = minHeight;
+  if (maxWidth) style.maxWidth = maxWidth;
 
   return (
-    <div className={styles.Box} onClick={onClick} style={{ ...style, ...rest }}>
+    <div className={classes} onClick={onClick} style={style}>
       {children}
     </div>
   );

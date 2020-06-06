@@ -5,14 +5,16 @@ exports[`ProductCard should render 1`] = `
   <Box
     flexDirection="column"
     height="100%"
-    padding="10px"
+    padding="s8"
   >
     <Box
+      justifyContent="center"
       minHeight="200px"
     >
       <Image
         alt="product photo"
         src="__IMAGE_URL__"
+        width="100%"
       />
     </Box>
     <Box
@@ -26,17 +28,15 @@ exports[`ProductCard should render 1`] = `
           __TITLE__
         </H3>
       </Text>
-      <Box
-        flex={1}
-      />
       <Divider />
       <Box
-        justifyContent="flex-end"
-        margin="15px 0px 5px 0"
+        justifyContent="flexEnd"
+        marginBottom="s4"
+        marginTop="s16"
       >
         <Text
           color="MAIN_RED"
-          fontSize="fs400"
+          fontSize="fs16"
           fontWeight="fw700"
         >
           lei 
@@ -53,14 +53,16 @@ exports[`ProductCard should render with alternative product 1`] = `
   <Box
     flexDirection="column"
     height="100%"
-    padding="10px"
+    padding="s8"
   >
     <Box
+      justifyContent="center"
       minHeight="200px"
     >
       <Image
         alt="product photo"
         src="test-file-stub"
+        width="100%"
       />
     </Box>
     <Box
@@ -74,17 +76,15 @@ exports[`ProductCard should render with alternative product 1`] = `
           __TITLE__
         </H3>
       </Text>
-      <Box
-        flex={1}
-      />
       <Divider />
       <Box
-        justifyContent="flex-end"
-        margin="15px 0px 5px 0"
+        justifyContent="flexEnd"
+        marginBottom="s4"
+        marginTop="s16"
       >
         <Text
           color="MAIN_RED"
-          fontSize="fs400"
+          fontSize="fs16"
           fontWeight="fw700"
         >
           lei 

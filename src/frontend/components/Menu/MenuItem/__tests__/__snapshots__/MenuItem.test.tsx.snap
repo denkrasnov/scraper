@@ -4,7 +4,7 @@ exports[`MenuItem should render 1`] = `
 <Box
   cursor="pointer"
   flexDirection="column"
-  marginRight="60px"
+  marginRight="s48"
   onClick={[MockFunction]}
   width="200px"
 >

@@ -13,21 +13,20 @@ const SearchResult: FC = () => {
   }
 
   return (
-    <Grid
-      gridGap="25px"
-      gridTemplateColumns="repeat(auto-fit, minmax(280px, 1fr))"
-    >
-      {products &&
-        products.map((product) => (
-          <ProductCard
-            key={product.id}
-            imageUrl={product.imageUrl}
-            noImage={product.noImage}
-            price={product.price}
-            title={product.title}
-          />
-        ))}
-    </Grid>
+    <Box display="block" margin="s20">
+      <Grid>
+        {products &&
+          products.map((product) => (
+            <ProductCard
+              key={product.id}
+              imageUrl={product.imageUrl}
+              noImage={product.noImage}
+              price={product.price}
+              title={product.title}
+            />
+          ))}
+      </Grid>
+    </Box>
   );
 };
 

@@ -2,7 +2,7 @@
 
 exports[`Box should render 1`] = `
 <div
-  className="Box"
+  className="root"
   style={Object {}}
 >
   <div />
@@ -11,10 +11,13 @@ exports[`Box should render 1`] = `
 
 exports[`Box should render with attributes 1`] = `
 <div
-  className="Box"
+  className="root background-BACKGROUND"
   style={
     Object {
-      "backgroundColor": "var(--background)",
+      "height": "10px",
+      "maxWidth": "10px",
+      "minHeight": "10px",
+      "width": "10px",
     }
   }
 >

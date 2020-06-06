@@ -2,8 +2,7 @@
 
 exports[`Grid should render 1`] = `
 <div
-  className="Grid"
-  style={Object {}}
+  className="root"
 >
   <div />
 </div>

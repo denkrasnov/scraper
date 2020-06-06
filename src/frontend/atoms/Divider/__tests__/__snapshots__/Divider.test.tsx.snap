@@ -2,12 +2,12 @@
 
 exports[`Divider should render 1`] = `
 <div
-  className="Divider"
+  className="root"
 />
 `;
 
 exports[`Divider should render in a vertical position 1`] = `
 <div
-  className="vertical"
+  className="root vertical"
 />
 `;

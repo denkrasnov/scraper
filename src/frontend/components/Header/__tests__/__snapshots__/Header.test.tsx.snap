@@ -4,13 +4,12 @@ exports[`Header should render 1`] = `
 <header>
   <Box
     alignItems="center"
-    backgroundColor="WHITE"
     height="60px"
     justifyContent="center"
   >
     <Text
       color="MAIN_RED"
-      fontSize="fs400"
+      fontSize="fs16"
       fontWeight="fw700"
     >
       compare

@@ -5,18 +5,15 @@ import { Color } from "../Colors/types";
 export type FontWeight = "fw200" | "fw400" | "fw700";
 
 export type FontSize =
-  | "fs100" // 10px, step: 2
-  | "fs200"
-  | "fs300"
-  | "fs400"
-  | "fs500"
-  | "fs600"
-  | "fs700"
-  | "fs800"
-  | "fs1000";
-
-export type Sizes = { [key in FontSize]: string };
-export type Weights = { [key in FontWeight]: number };
+  | "fs10"
+  | "fs12"
+  | "fs14"
+  | "fs16"
+  | "fs18"
+  | "fs20"
+  | "fs22"
+  | "fs24"
+  | "fs26";
 
 type Tag = "p" | "span";
 

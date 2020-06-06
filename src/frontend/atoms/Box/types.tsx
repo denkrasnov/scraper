@@ -1,28 +1,22 @@
 import { ReactNode } from "react";
 
 import { Color } from "../Colors/types";
+import { Space } from "../types";
 
-type Display =
-  | "block"
-  | "inline-block"
-  | "inline"
-  | "flex"
-  | "inline-flex"
-  | "none";
+type Display = "block" | "inlineBlock" | "inline" | "flex" | "inlineFlex";
 
-type FlexDirection = "column" | "row";
+type FlexDirection = "column";
 
 type JustifyContent =
-  | "flex-start"
-  | "flex-end"
+  | "flexEnd"
   | "center"
-  | "space-between"
-  | "space-around"
-  | "space-evenly";
+  | "spaceBetween"
+  | "spaceAround"
+  | "spaceEvenly";
 
 export type AlignItems =
-  | "flex-start"
-  | "flex-end"
+  | "flexStart"
+  | "flexEnd"
   | "center"
   | "baseline"
   | "stretch";
@@ -31,24 +25,26 @@ type FlexWrap = "wrap" | "nowrap";
 
 type Cursor = "pointer";
 
+type FlexGrow = "gr1";
+
 export interface BoxProps {
   alignItems?: AlignItems;
-  backgroundColor?: Color;
+  background?: Color;
   children?: ReactNode;
   display?: Display;
   flexDirection?: FlexDirection;
   flexWrap?: FlexWrap;
-  grow?: number;
-  flex?: number;
+  flexGrow?: FlexGrow;
   justifyContent?: JustifyContent;
-  padding?: string;
-  margin?: string;
-  marginBottom?: string;
+  padding?: Space;
+  margin?: Space;
+  marginTop?: Space;
+  marginBottom?: Space;
+  marginRight?: Space;
   width?: string;
   height?: string;
   minHeight?: string;
   maxWidth?: string;
   cursor?: Cursor;
-  marginRight?: string;
   onClick?: () => void;
 }

@@ -1,3 +1,5 @@
+@import "./theme.css";
+
 *,
 *::before,
 *::after {
@@ -5,11 +7,19 @@
 }
 
 html {
+  height: 100%;
+  width: 100%;
   font: 400 13px/20px "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
 }
 
 body {
-  background-color: var(--background);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
 }

@@ -2,7 +2,7 @@
 
 exports[`Card should render 1`] = `
 <div
-  className="Card"
+  className="root"
 >
   Something to display
 </div>

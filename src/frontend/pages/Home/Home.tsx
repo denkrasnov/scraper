@@ -8,23 +8,28 @@ import Box from "~app/atoms/Box";
 
 const Home = () => {
   return (
-    <>
+    <Box flexDirection="column" height="100%">
       <Header />
       <Divider />
-      <Box flexDirection="column" marginBottom="25px" padding="0 5%">
+      <Box
+        background="BACKGROUND"
+        flexDirection="column"
+        height="100%"
+        marginBottom="s24"
+      >
         <Box
-          alignItems="flex-start"
+          alignItems="flexStart"
           flexDirection="column"
-          grow={1}
           justifyContent="center"
-          margin="20px 0 30px"
+          marginBottom="s32"
+          marginTop="s20"
           width="100%"
         >
           <Menu />
         </Box>
         <SearchResult />
       </Box>
-    </>
+    </Box>
   );
 };
 

@@ -14,7 +14,7 @@ describe("Text", () => {
 
   it("should render with attributes", () => {
     const component = shallow(
-      <Text color="BODY_TEXT" fontSize="fs100" fontWeight="fw400">
+      <Text color="BODY_TEXT" fontSize="fs10" fontWeight="fw400">
         {children}
       </Text>
     );

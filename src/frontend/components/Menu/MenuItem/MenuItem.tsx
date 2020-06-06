@@ -12,7 +12,7 @@ const MenuItem: FC<MenuItemProps> = (props) => {
     <Box
       cursor="pointer"
       flexDirection="column"
-      marginRight="60px"
+      marginRight="s48"
       onClick={onClick}
       width="200px"
     >

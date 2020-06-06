@@ -8,5 +8,4 @@ export interface ButtonProps {
   onClick?: () => void;
   type?: ButtonType;
   transparent?: boolean;
-  color?: string;
 }

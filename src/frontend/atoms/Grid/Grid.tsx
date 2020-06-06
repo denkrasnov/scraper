@@ -1,15 +1,14 @@
 import React, { FC } from "react";
 
+import mapPropsToStyles from "../helpers/mapPropsToStyles";
 import { GridProps } from "./types";
 import styles from "./Grid.css";
 
 const Grid: FC<GridProps> = (props) => {
-  const { children, ...rest } = props;
-  return (
-    <div className={styles.Grid} style={{ ...rest }}>
-      {children}
-    </div>
-  );
+  const { children, ...restProps } = props;
+  const classes = mapPropsToStyles(restProps, styles);
+
+  return <div className={classes}>{children}</div>;
 };
 
 export default Grid;
