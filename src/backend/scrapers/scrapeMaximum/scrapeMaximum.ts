@@ -12,6 +12,7 @@ const finished = chalk.bold.green;
 const scrapeMaximum = async () => {
   try {
     const browser = await puppeteer.launch({
+      args: ["--incognito"]
       // headless: false
     });
 
@@ -106,7 +107,7 @@ const scrapeMaximum = async () => {
 
     return allProducts;
   } catch (err) {
-    console.log(error(err));
+    console.log(error("Maximum ERROR:", err));
     return [];
   }
 };

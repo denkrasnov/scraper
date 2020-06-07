@@ -16,11 +16,4 @@ describe("Button", () => {
     );
     expect(component).toMatchSnapshot();
   });
-
-  it("renders with borderRadiusLeft", () => {
-    const component = shallow(
-      <Image alt="__ALT__" borderRadiusLeft src="__SRC__" />
-    );
-    expect(component).toMatchSnapshot();
-  });
 });

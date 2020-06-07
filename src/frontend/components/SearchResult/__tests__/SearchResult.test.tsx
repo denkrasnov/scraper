@@ -10,12 +10,6 @@ describe("SearchResult", () => {
     jest.clearAllMocks();
   });
 
-  it("should render", () => {
-    const component = shallow(<SearchResult />);
-
-    expect(component).toMatchSnapshot();
-  });
-
   it("should render products", () => {
     jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
       {
@@ -25,13 +19,15 @@ describe("SearchResult", () => {
             id: "__ID__",
             title: "__TITLE__",
             imageUrl: "__IMAGE_URL__",
-            price: "100"
+            price: "100",
+            shop: "__SHOP__"
           }
         ]
       },
       () => {}
     ]);
     const component = shallow(<SearchResult />);
+
     expect(component).toMatchSnapshot();
   });
 
@@ -43,6 +39,7 @@ describe("SearchResult", () => {
       },
       () => {}
     ]);
+
     const component = shallow(<SearchResult />);
     expect(component).toMatchSnapshot();
   });
@@ -56,6 +53,7 @@ describe("SearchResult", () => {
       () => {}
     ]);
     const component = shallow(<SearchResult />);
+
     expect(component).toMatchSnapshot();
   });
 });

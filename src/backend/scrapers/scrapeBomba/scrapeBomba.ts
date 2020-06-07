@@ -13,6 +13,7 @@ const info = chalk.bold.yellow;
 const scrapeBomba = async () => {
   try {
     const browser = await puppeteer.launch({
+      args: ["--incognito"]
       // headless: false
     });
 
@@ -111,7 +112,7 @@ const scrapeBomba = async () => {
 
     return allProducts;
   } catch (err) {
-    console.log(error(err));
+    console.log(error("Bomba ERROR:", err));
     return [];
   }
 };

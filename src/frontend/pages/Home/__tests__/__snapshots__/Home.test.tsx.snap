@@ -10,7 +10,7 @@ exports[`Home should render 1`] = `
   <Box
     background="BACKGROUND"
     flexDirection="column"
-    height="100%"
+    flexGrow="gr1"
     marginBottom="s24"
   >
     <Box

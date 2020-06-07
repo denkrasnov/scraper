@@ -12,6 +12,7 @@ const finished = chalk.bold.green;
 export const scrapDarwin = async () => {
   try {
     const browser = await puppeteer.launch({
+      args: ["--incognito"]
       // headless: false
     });
 
@@ -105,7 +106,7 @@ export const scrapDarwin = async () => {
 
     return allProducts;
   } catch (err) {
-    console.log(error(err));
+    console.log(error("Darwin ERROR:", err));
     return [];
   }
 };

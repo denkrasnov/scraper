@@ -1,12 +1,13 @@
-import React, { FC } from "react";
+import React, { forwardRef } from "react";
 
 import mapPropsToStyles from "../helpers/mapPropsToStyles";
 import { StyleType } from "../types";
 import { BoxProps } from "./types";
 import styles from "./Box.css";
 
-const Box: FC<BoxProps> = (props) => {
+const Box = forwardRef((props: BoxProps, ref: React.Ref<HTMLDivElement>) => {
   const {
+    bottom,
     children,
     onClick,
     width,
@@ -24,12 +25,15 @@ const Box: FC<BoxProps> = (props) => {
   if (height) style.height = height;
   if (minHeight) style.minHeight = minHeight;
   if (maxWidth) style.maxWidth = maxWidth;
+  if (bottom) style.bottom = bottom;
 
   return (
-    <div className={classes} onClick={onClick} style={style}>
+    <div ref={ref} className={classes} onClick={onClick} style={style}>
       {children}
     </div>
   );
-};
+});
+
+Box.displayName = "Box";
 
 export default Box;

@@ -82,3 +82,11 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+.position-relative {
+  position: relative;
+}
+
+.alignSelf-center {
+  align-self: center;
+}

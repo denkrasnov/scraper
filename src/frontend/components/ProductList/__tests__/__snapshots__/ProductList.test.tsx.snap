@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard should render 1`] = `
+<Box
+  display="block"
+  margin="s20"
+>
+  <Grid>
+    <ProductCard
+      imageUrl="__IMAGE_URL__"
+      key="id"
+      price="100"
+      shop="__SHOP__"
+      title="__TITLE__"
+    />
+    <Box
+      bottom="200px"
+      position="relative"
+    />
+  </Grid>
+</Box>
+`;

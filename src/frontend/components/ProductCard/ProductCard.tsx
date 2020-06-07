@@ -7,27 +7,38 @@ import { H3 } from "~app/atoms/Headings";
 import Text from "~app/atoms/Text";
 import Divider from "~app/atoms/Divider";
 import { ProductCardProps } from "./types";
-import { image } from "~app/assets";
 
 const ProductCard: FC<ProductCardProps> = (props) => {
-  const { title, imageUrl, price, noImage } = props;
+  const { title, imageUrl, price, noImage, shop } = props;
 
   return (
     <Card>
-      <Box flexDirection="column" height="100%" padding="s8">
-        <Box justifyContent="center" minHeight="200px">
-          <Image
-            alt="product photo"
-            src={noImage ? image.tvPlaceholder : imageUrl}
-            width="100%"
-          />
+      <Box
+        flexDirection="column"
+        height="100%"
+        justifyContent="spaceBetween"
+        padding="s12"
+      >
+        <Box height="200px" justifyContent="center" minHeight="200px">
+          {noImage ? (
+            <Box alignSelf="center">
+              <Text color="BORDER_GRAY" fontSize="fs24" fontWeight="fw700">
+                No photo
+              </Text>
+            </Box>
+          ) : (
+            <Image alt="product photo" src={imageUrl} width="100%" />
+          )}
         </Box>
-        <Box flexDirection="column" height="100%">
+        <Box flexDirection="column">
           <Text textAlign="center">
             <H3>{title}</H3>
           </Text>
           <Divider />
-          <Box justifyContent="flexEnd" marginBottom="s4" marginTop="s16">
+          <Box justifyContent="spaceBetween" marginBottom="s4" marginTop="s16">
+            <Text color="BORDER_DARK" fontSize="fs16">
+              {shop}
+            </Text>
             <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
               lei {price}
             </Text>

@@ -14,7 +14,7 @@ const Home = () => {
       <Box
         background="BACKGROUND"
         flexDirection="column"
-        height="100%"
+        flexGrow="gr1"
         marginBottom="s24"
       >
         <Box

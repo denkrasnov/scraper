@@ -38,6 +38,7 @@ export interface Product {
   price: string;
   imageUrl: string;
   noImage?: boolean;
+  shop: string;
 }
 
 export interface Products {

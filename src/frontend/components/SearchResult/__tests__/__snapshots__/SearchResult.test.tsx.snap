@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchResult should render 1`] = `
-<Box
-  display="block"
-  margin="s20"
->
-  <Grid />
-</Box>
-`;
-
 exports[`SearchResult should render Error 1`] = `
 <Box>
   Error...
@@ -22,17 +13,17 @@ exports[`SearchResult should render Loading 1`] = `
 `;
 
 exports[`SearchResult should render products 1`] = `
-<Box
-  display="block"
-  margin="s20"
->
-  <Grid>
-    <ProductCard
-      imageUrl="__IMAGE_URL__"
-      key="__ID__"
-      price="100"
-      title="__TITLE__"
-    />
-  </Grid>
-</Box>
+<ProductList
+  products={
+    Array [
+      Object {
+        "id": "__ID__",
+        "imageUrl": "__IMAGE_URL__",
+        "price": "100",
+        "shop": "__SHOP__",
+        "title": "__TITLE__",
+      },
+    ]
+  }
+/>
 `;

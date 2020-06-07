@@ -13,17 +13,3 @@ exports[`Button renders 1`] = `
   }
 />
 `;
-
-exports[`Button renders with borderRadiusLeft 1`] = `
-<img
-  alt="__ALT__"
-  className="root borderRadiusLeft"
-  src="__SRC__"
-  style={
-    Object {
-      "height": undefined,
-      "width": undefined,
-    }
-  }
-/>
-`;

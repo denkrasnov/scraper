@@ -15,6 +15,7 @@ describe("Box", () => {
     const component = shallow(
       <Box
         background="BACKGROUND"
+        bottom="10px"
         height="10px"
         maxWidth="10px"
         minHeight="10px"
