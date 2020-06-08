@@ -13,7 +13,8 @@ describe("ProductCard", () => {
       imageUrl: "__IMAGE_URL__",
       price: "100",
       shop: "__SHOP__",
-      title: "__TITLE__"
+      title: "__TITLE__",
+      productUrl: "__URL__"
     }
   ];
   (useInfiniteScroll as jest.Mock).mockReturnValue([products, () => {}]);

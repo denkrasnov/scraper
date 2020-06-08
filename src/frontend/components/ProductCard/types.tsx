@@ -1,4 +1,7 @@
 import { Product } from "~app/services/fetchProducts/types";
 
 export interface ProductCardProps
-  extends Pick<Product, "imageUrl" | "title" | "price" | "noImage" | "shop"> {}
+  extends Pick<
+    Product,
+    "imageUrl" | "title" | "price" | "noImage" | "shop" | "productUrl"
+  > {}

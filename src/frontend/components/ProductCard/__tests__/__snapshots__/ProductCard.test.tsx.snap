@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductCard should render 1`] = `
-<Card>
+<Card
+  href="__URL__"
+>
   <Box
     flexDirection="column"
     height="100%"
@@ -56,7 +58,9 @@ exports[`ProductCard should render 1`] = `
 `;
 
 exports[`ProductCard should render when noImage 1`] = `
-<Card>
+<Card
+  href="__URL__"
+>
   <Box
     flexDirection="column"
     height="100%"

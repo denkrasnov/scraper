@@ -39,6 +39,7 @@ export interface Product {
   imageUrl: string;
   noImage?: boolean;
   shop: string;
+  productUrl: string;
 }
 
 export interface Products {

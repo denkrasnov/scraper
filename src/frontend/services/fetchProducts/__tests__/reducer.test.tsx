@@ -31,7 +31,8 @@ describe("reducer", () => {
         title: "__TITLE__",
         imageUrl: "__IMAGE_URL__",
         price: "100",
-        shop: "__SHOP__"
+        shop: "__SHOP__",
+        productUrl: "__URL__"
       }
     ];
     const state = reducer(INITIAL_STATE, {

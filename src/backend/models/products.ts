@@ -6,7 +6,8 @@ const Product = {
   imageUrl: String,
   id: String,
   noImage: Boolean,
-  shop: String
+  shop: String,
+  productUrl: String
 };
 
 const productsSchema = new Schema({

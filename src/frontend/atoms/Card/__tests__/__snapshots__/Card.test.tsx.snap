@@ -1,9 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card should render 1`] = `
-<div
-  className="root"
+<a
+  className="link"
+  href="#"
+  rel="noopener noreferrer"
+  target="_blank"
 >
-  Something to display
-</div>
+  <div
+    className="root"
+  >
+    Something to display
+  </div>
+</a>
 `;

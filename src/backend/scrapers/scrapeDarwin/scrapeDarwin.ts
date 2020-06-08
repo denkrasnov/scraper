@@ -43,22 +43,26 @@ export const scrapDarwin = async () => {
         if (products.length > 0) {
           return Array.from(products).map((product) => {
             const titleElement = product.querySelector("figcaption a");
-            const titleText = titleElement && titleElement.textContent;
-
             const priceNewElement = product.querySelector(
               "div.bottom-wrap span.price-new > b"
             );
-            const priceNewText = priceNewElement && priceNewElement.textContent;
-
             const imageElement: HTMLImageElement | null = product.querySelector(
               "div.img-wrap img"
             );
+            const imageLinkElement: HTMLLinkElement | null = product.querySelector(
+              "div.img-wrap a"
+            );
+
+            const titleText = titleElement && titleElement.textContent;
+            const priceNewText = priceNewElement && priceNewElement.textContent;
+            const productUrl = imageLinkElement && imageLinkElement.href;
 
             return {
               title: titleText?.trim(),
               price: priceNewText?.trim(),
               imageUrl: imageElement?.src,
-              noImage: true
+              noImage: true,
+              productUrl
             };
           });
         }

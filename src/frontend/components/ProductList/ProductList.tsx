@@ -19,6 +19,7 @@ const ProductList: FC<ProductListProps> = (props) => {
             imageUrl={product.imageUrl}
             noImage={product.noImage}
             price={product.price}
+            productUrl={product.productUrl}
             shop={product.shop}
             title={product.title}
           />

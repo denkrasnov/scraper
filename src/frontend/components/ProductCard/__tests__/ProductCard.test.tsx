@@ -9,6 +9,7 @@ describe("ProductCard", () => {
       <ProductCard
         imageUrl="__IMAGE_URL__"
         price="100"
+        productUrl="__URL__"
         shop="__SHOP__"
         title="__TITLE__"
       />
@@ -22,6 +23,7 @@ describe("ProductCard", () => {
         imageUrl="__IMAGE_URL__"
         noImage
         price="100"
+        productUrl="__URL__"
         shop="__SHOP__"
         title="__TITLE__"
       />

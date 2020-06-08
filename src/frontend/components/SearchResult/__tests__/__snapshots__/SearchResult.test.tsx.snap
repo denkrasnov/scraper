@@ -1,14 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchResult should render Error 1`] = `
-<Box>
+<Box
+  justifyContent="center"
+  marginTop="s48"
+>
   Error...
 </Box>
 `;
 
 exports[`SearchResult should render Loading 1`] = `
-<Box>
-  Loading...
+<Box
+  justifyContent="center"
+  marginTop="s48"
+>
+  <Loader />
 </Box>
 `;
 
@@ -20,6 +26,7 @@ exports[`SearchResult should render products 1`] = `
         "id": "__ID__",
         "imageUrl": "__IMAGE_URL__",
         "price": "100",
+        "productUrl": "__URL__",
         "shop": "__SHOP__",
         "title": "__TITLE__",
       },

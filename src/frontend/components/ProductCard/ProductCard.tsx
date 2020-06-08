@@ -9,10 +9,10 @@ import Divider from "~app/atoms/Divider";
 import { ProductCardProps } from "./types";
 
 const ProductCard: FC<ProductCardProps> = (props) => {
-  const { title, imageUrl, price, noImage, shop } = props;
+  const { title, imageUrl, price, noImage, shop, productUrl } = props;
 
   return (
-    <Card>
+    <Card href={productUrl}>
       <Box
         flexDirection="column"
         height="100%"

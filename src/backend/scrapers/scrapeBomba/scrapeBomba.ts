@@ -50,21 +50,25 @@ const scrapeBomba = async () => {
         if (products.length > 0) {
           return Array.from(products).map((product) => {
             const titleElement = product.querySelector("div.product-name a");
-            const titleText = titleElement && titleElement.textContent;
-
             const priceNewElement = product.querySelector(
               "div.product-sector-three > div.product-price div.aac-price-main span"
             );
-            const priceNewText = priceNewElement && priceNewElement.textContent;
-
             const imageElement: HTMLImageElement | null = product.querySelector(
               "div.product-img img"
             );
+            const imageLinkElement: HTMLLinkElement | null = product.querySelector(
+              "div.product-img a"
+            );
+
+            const titleText = titleElement && titleElement.textContent;
+            const priceNewText = priceNewElement && priceNewElement.textContent;
+            const productUrl = imageLinkElement && imageLinkElement.href;
 
             return {
               title: titleText && titleText.trim(),
               price: priceNewText && priceNewText.trim(),
-              imageUrl: imageElement && imageElement.src
+              imageUrl: imageElement && imageElement.src,
+              productUrl
             };
           });
         }

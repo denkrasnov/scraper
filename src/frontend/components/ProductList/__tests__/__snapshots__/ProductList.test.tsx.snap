@@ -10,6 +10,7 @@ exports[`ProductCard should render 1`] = `
       imageUrl="__IMAGE_URL__"
       key="id"
       price="100"
+      productUrl="__URL__"
       shop="__SHOP__"
       title="__TITLE__"
     />

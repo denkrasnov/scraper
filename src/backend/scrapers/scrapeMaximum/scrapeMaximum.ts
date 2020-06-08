@@ -44,22 +44,24 @@ const scrapeMaximum = async () => {
             const titleElement = product.querySelector(
               "div.product__item__title"
             );
-            const titleText = titleElement && titleElement.textContent;
-
+            const titleLinkElement: HTMLLinkElement | null = product.querySelector(
+              "div.product__item__title a"
+            );
             const priceNewElement = product.querySelector(
               "div.clearfix div.product__item__price-current"
             );
-
-            const priceNewText = priceNewElement && priceNewElement.textContent;
-
             const imageElement: HTMLImageElement | null = product.querySelector(
               "div.product__item__image img"
             );
 
+            const productUrl = titleLinkElement && titleLinkElement.href;
+            const titleText = titleElement && titleElement.textContent;
+            const priceNewText = priceNewElement && priceNewElement.textContent;
             return {
               title: titleText?.trim(),
               price: priceNewText?.trim(),
-              imageUrl: imageElement?.src
+              imageUrl: imageElement?.src,
+              productUrl
             };
           });
         }

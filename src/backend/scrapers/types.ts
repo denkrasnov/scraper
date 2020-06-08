@@ -4,9 +4,9 @@ export enum ProductName {
 }
 
 export enum ShopName {
-  BOMBA = "bomba",
-  DARWIN = "darwin",
-  MAXIMUM = "maximum"
+  BOMBA = "bomba.md",
+  DARWIN = "darwin.md",
+  MAXIMUM = "maximum.md"
 }
 
 export interface Product {
@@ -16,6 +16,7 @@ export interface Product {
   price?: string | null;
   noImage?: boolean;
   shop: string;
+  productUrl: string | null;
 }
 
 export type RawProducts = {
