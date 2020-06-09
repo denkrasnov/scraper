@@ -5,7 +5,7 @@ import { CardProps } from "./types";
 import styles from "./Card.css";
 
 const Card: FC<CardProps> = (props) => {
-  const { children, href, ...restProps } = props;
+  const { children, href, dataAttr, ...restProps } = props;
   const classes = mapPropsToStyles(restProps, styles);
 
   return (
@@ -14,6 +14,7 @@ const Card: FC<CardProps> = (props) => {
       href={href || "#"}
       rel="noopener noreferrer"
       target="_blank"
+      {...dataAttr}
     >
       <div className={classes}>{children}</div>
     </a>

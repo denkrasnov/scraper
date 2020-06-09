@@ -14,6 +14,7 @@ const Box = forwardRef((props: BoxProps, ref: React.Ref<HTMLDivElement>) => {
     height,
     minHeight,
     maxWidth,
+    dataAttr,
     ...restProps
   } = props;
 
@@ -28,7 +29,13 @@ const Box = forwardRef((props: BoxProps, ref: React.Ref<HTMLDivElement>) => {
   if (bottom) style.bottom = bottom;
 
   return (
-    <div ref={ref} className={classes} onClick={onClick} style={style}>
+    <div
+      ref={ref}
+      {...dataAttr}
+      className={classes}
+      onClick={onClick}
+      style={style}
+    >
       {children}
     </div>
   );

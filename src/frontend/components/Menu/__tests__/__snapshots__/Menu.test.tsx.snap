@@ -6,11 +6,21 @@ exports[`Menu should render 1`] = `
   width="100%"
 >
   <MenuItem
+    dataAttr={
+      Object {
+        "data-e2e-id": "menuItem.tv",
+      }
+    }
     onClick={[Function]}
     src="test-file-stub"
     text="Телевизоры"
   />
   <MenuItem
+    dataAttr={
+      Object {
+        "data-e2e-id": "menuItem.fridge",
+      }
+    }
     onClick={[Function]}
     src="test-file-stub"
     text="Холодильники"

@@ -11,11 +11,13 @@ const Menu = () => {
   return (
     <Box justifyContent="center" width="100%">
       <MenuItem
+        dataAttr={{ "data-e2e-id": "menuItem.tv" }}
         onClick={() => dispatch({ type: ActionTypes.FETCH, payload: "tvs" })}
         src={image.tv}
         text="Телевизоры"
       />
       <MenuItem
+        dataAttr={{ "data-e2e-id": "menuItem.fridge" }}
         onClick={() =>
           dispatch({ type: ActionTypes.FETCH, payload: "fridges" })
         }

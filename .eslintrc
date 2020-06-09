@@ -55,6 +55,10 @@
         "depth": 3
       }
     ],
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "react/jsx-props-no-spreading": ["error", {
+      "html": "ignore"
+    }],
     "prettier/prettier": ["error", {
       "endOfLine": "auto",
       "trailingComma": "none"

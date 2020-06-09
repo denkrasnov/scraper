@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+import { DataAttr } from "~app/common/types";
 import { Color } from "../Colors/types";
 import { Space } from "../types";
 
@@ -37,6 +38,7 @@ export interface BoxProps {
   background?: Color;
   children?: ReactNode;
   display?: Display;
+  dataAttr?: DataAttr;
   flexDirection?: FlexDirection;
   flexWrap?: FlexWrap;
   flexGrow?: FlexGrow;

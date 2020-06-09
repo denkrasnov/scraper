@@ -12,7 +12,7 @@ const ProductCard: FC<ProductCardProps> = (props) => {
   const { title, imageUrl, price, noImage, shop, productUrl } = props;
 
   return (
-    <Card href={productUrl}>
+    <Card dataAttr={{ "data-e2e-id": "productCard" }} href={productUrl}>
       <Box
         flexDirection="column"
         height="100%"

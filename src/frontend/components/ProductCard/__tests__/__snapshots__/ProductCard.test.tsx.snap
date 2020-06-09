@@ -2,6 +2,11 @@
 
 exports[`ProductCard should render 1`] = `
 <Card
+  dataAttr={
+    Object {
+      "data-e2e-id": "productCard",
+    }
+  }
   href="__URL__"
 >
   <Box
@@ -59,6 +64,11 @@ exports[`ProductCard should render 1`] = `
 
 exports[`ProductCard should render when noImage 1`] = `
 <Card
+  dataAttr={
+    Object {
+      "data-e2e-id": "productCard",
+    }
+  }
   href="__URL__"
 >
   <Box

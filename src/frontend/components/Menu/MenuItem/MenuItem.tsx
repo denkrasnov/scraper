@@ -6,11 +6,12 @@ import { H3 } from "~app/atoms/Headings";
 import { MenuItemProps } from "./types";
 
 const MenuItem: FC<MenuItemProps> = (props) => {
-  const { src, text, onClick } = props;
+  const { dataAttr, src, text, onClick } = props;
 
   return (
     <Box
       cursor="pointer"
+      dataAttr={dataAttr}
       flexDirection="column"
       marginRight="s48"
       onClick={onClick}
