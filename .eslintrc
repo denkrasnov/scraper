@@ -42,7 +42,8 @@
       "ignorePackages",
       {
         "ts": "never",
-        "tsx": "never"
+        "tsx": "never",
+        "js": "never"
       }
     ],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
@@ -84,7 +85,7 @@
     "import/resolver": {
       "babel-module": {},
       "node": {
-        "extensions": [ ".ts", ".tsx"]
+        "extensions": [".js", ".ts", ".tsx"]
       },
       "eslint-import-resolver-typescript": true
     }

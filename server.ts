@@ -8,8 +8,8 @@ import webpackHotMiddleware from "webpack-hot-middleware";
 import mongoose from "mongoose";
 
 import productsRoute from "./src/backend/routes/products";
+import config from "./webpack.dev";
 
-const config = require("./webpack.config");
 require("dotenv").config();
 
 const app: Application = express();
