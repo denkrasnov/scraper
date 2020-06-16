@@ -1,6 +1,7 @@
 /* eslint-env node */
 const merge = require("webpack-merge");
 const webpack = require("webpack");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const common = require("./webpack.common");
 
@@ -11,7 +12,6 @@ module.exports = merge(common, {
     "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
     "./src/frontend/index.tsx"
   ],
-
   resolve: {
     alias: {
       "react-dom": "@hot-loader/react-dom"
@@ -41,5 +41,11 @@ module.exports = merge(common, {
       }
     ]
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html"
+    })
+  ]
 });
