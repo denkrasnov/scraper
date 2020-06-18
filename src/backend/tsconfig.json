@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",                          
+    "module": "commonjs",                    
+    "lib": ["es6", "es2017", "dom", "es2019"],                     
+    "allowJs": true,
+    "outDir": "../../build/script",          
+    "strict": true,         
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, 
+    "resolveJsonModule": true
+  },
+  "include": [ "../../src/backend/**/*", "../../server.ts" ],
+}

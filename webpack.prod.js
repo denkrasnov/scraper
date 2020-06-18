@@ -1,5 +1,4 @@
 /* eslint-env node */
-const path = require("path");
 const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -9,11 +8,6 @@ module.exports = merge(common, {
   mode: "production",
   devtool: "source-map",
   entry: "./src/frontend/index.tsx",
-  output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/",
-    filename: "bundle.js"
-  },
   module: {
     rules: [
       {

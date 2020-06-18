@@ -41,7 +41,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "newLine": "LF",
   }, 
-  "include": [ "./src/**/*", "./server.ts", "./webpack.config.ts" ],
+  "include": [ "./src/frontend/**/*",  ],
   "exclude": [
     "./public/",
     "./src/**/*.test.ts",

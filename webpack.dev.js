@@ -1,7 +1,6 @@
 /* eslint-env node */
 const merge = require("webpack-merge");
 const webpack = require("webpack");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const common = require("./webpack.common");
 
@@ -41,11 +40,5 @@ module.exports = merge(common, {
       }
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    })
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 });

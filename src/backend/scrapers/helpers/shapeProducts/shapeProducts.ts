@@ -1,13 +1,14 @@
-import { ShapedProducts, RawProducts } from "../../types";
+import { ShapedProducts, RawProducts, ObjectType } from "../../types";
 
-const shapeProducts = (products: RawProducts): ShapedProducts | {} => {
-  const shapedProducts = products.flat().reduce((acc, product) => {
-    return product.name in acc
+const shapeProducts = (products: RawProducts): ShapedProducts | ObjectType => {
+  const shapedProducts = products.flat().reduce<ObjectType>((acc, product) => {
+    const { name, items } = product;
+    return name in acc
       ? {
           ...acc,
-          [`${product.name}`]: [...acc[`${product.name}`], ...product.items]
+          [name]: [...acc[name], ...items]
         }
-      : { ...acc, [product.name]: product.items };
+      : { ...acc, [name]: items };
   }, {});
 
   return shapedProducts;

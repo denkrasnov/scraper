@@ -28,3 +28,5 @@ export interface ShapedProducts {
   tv: Product[];
   fridge: Product[];
 }
+
+export type ObjectType = { [key: string]: any };
