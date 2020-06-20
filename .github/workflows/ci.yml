@@ -30,9 +30,9 @@ jobs:
     - name: npm run lint
       run: |
         npm run lint 
-    - name: npm test:coverage
+    - name: npm run test:coverage
       run: |
-        npm test:coverage 
+        npm run test:coverage 
       env:
         CI: true
       
