@@ -5,6 +5,10 @@
   "main": "server.js",
   "license": "Proprietary",
   "private": true,
+  "engines": {
+    "npm": "6.14.5",
+    "node": "12.13.0"
+  },
   "scripts": {
     "build": "webpack --hide-modules --config webpack.prod.js && tsc -p ./src/backend/ ",
     "start": "node ./build/script/server.js",
