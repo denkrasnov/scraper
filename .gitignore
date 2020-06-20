@@ -1,8 +1,10 @@
 node_modules/
 *~
 #*
-.vscode/*
+.vscode/
 coverage/
-build/*
+build/
 
 .env
+
+.DS_Store
