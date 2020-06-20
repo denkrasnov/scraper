@@ -15,7 +15,7 @@
     "start:dev": "nodemon  --config \"./nodemon.json\"/",
     "storybook": "start-storybook -p 6006 -c ./storybook",
     "test": "jest --colors",
-    "test:coverage": "jest --coverage --colors --no-cache",
+    "test:coverage": "jest --coverage --colors",
     "e2e": "testcafe chrome:headless e2e/",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "prelint": "npm run check:types",

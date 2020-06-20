@@ -8,7 +8,7 @@ exports[`Header should render 1`] = `
     justifyContent="center"
   >
     <Text
-      color="BODY_TEXT"
+      color="MAIN_RED"
       fontSize="fs16"
       fontWeight="fw700"
     >

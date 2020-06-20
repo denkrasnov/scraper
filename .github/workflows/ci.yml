@@ -24,9 +24,15 @@ jobs:
     - name: npm ci
       run: |
         npm ci
-    - name: npm test
+    - name: npm run check:types
       run: |
-        npm test 
+        npm run check:types 
+    - name: npm run lint
+      run: |
+        npm run lint 
+    - name: npm test:coverage
+      run: |
+        npm test:coverage 
       env:
         CI: true
       
