@@ -61,7 +61,7 @@
       "html": "ignore"
     }],
     "prettier/prettier": ["error", {
-      "endOfLine": "auto",
+      "endOfLine": "lf",
       "trailingComma": "none"
     }]
   },
