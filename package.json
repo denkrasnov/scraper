@@ -31,9 +31,8 @@
     }
   },
   "lint-staged": {
-    "*.{tsx,ts,js}": [
-      "npm run format"
-    ]
+    "*.{tsx,ts,js}": "npm run format"
+    
   },
   "browserslist": [
     "last 2 version",
