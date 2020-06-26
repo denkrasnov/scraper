@@ -154,9 +154,7 @@
   },
   "release": {
     "plugins": [
-      ["@semantic-release/git", {
-        "assets": ["package.json"]
-      }],
+      "@semantic-release/git",
       ["@semantic-release/npm", {
         "npmPublish": false
       }]
