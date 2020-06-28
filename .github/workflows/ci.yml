@@ -34,7 +34,6 @@ jobs:
       run: npm start & sleep 10
 
     - name: E2E tests
-      run: npm start & sleep 10
       uses: DevExpress/testcafe-action@latest
       with:
         args: "chrome:headless e2e/"
