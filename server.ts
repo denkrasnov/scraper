@@ -13,7 +13,9 @@ const app: Application = express();
 
 process.stdout.write(`
  ${chalk.bgHex("#224dff").white("--- Compare md ---")}
- The server is available on ${chalk.hex("#f7c132")(`${process.env.PORT}`)}
+ The server is available on ${chalk.hex("#f7c132")(`${process.env.PORT}`)} on ${
+  process.env.NODE_ENV
+} env
 \n`);
 
 app.use(bodyParser.json());
