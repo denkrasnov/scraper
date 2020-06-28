@@ -26,14 +26,15 @@ jobs:
 
     - name: Test coverage
       run: npm run test:coverage
-
-    - name: E2E tests
-      uses: DevExpress/testcafe-action@latest
-      with:
-        args: "chrome:headless e2e/"
       
     - name: Build
       run: npm run build --if-present
+
+    - name: E2E tests
+      run: npm start & sleep 10
+      uses: DevExpress/testcafe-action@latest
+      with:
+        args: "chrome:headless e2e/"
 
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
