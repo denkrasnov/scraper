@@ -6,6 +6,9 @@ on:
       - master 
 jobs:
   check-and-release:
+    env:
+      NODE_ENV: ${{ secrets.NODE_ENV }}
+      PORT: ${{ secrets.PORT }}
     runs-on: ubuntu-latest
     
     steps:
