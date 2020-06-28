@@ -34,6 +34,7 @@ jobs:
       env:
         NODE_ENV: ${{ secrets.NODE_ENV }}
         PORT: ${{ secrets.PORT }}
+        CONNECTION_URL: ${{ secrets.CONNECTION_URL }}
       run: npm start & sleep 10
 
     - name: E2E tests
