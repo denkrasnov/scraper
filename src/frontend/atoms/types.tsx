@@ -1,4 +1,4 @@
-export type StyleType = { [key: string]: string | number };
+export type StyleType = { [key: string]: string | number | undefined };
 
 export type Space =
   | "s2"

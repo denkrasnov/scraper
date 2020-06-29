@@ -9,20 +9,12 @@ exports[`Home should render 1`] = `
   <Divider />
   <Box
     background="BACKGROUND"
+    display="block"
     flexDirection="column"
     flexGrow="gr1"
     marginBottom="s24"
   >
-    <Box
-      alignItems="flexStart"
-      flexDirection="column"
-      justifyContent="center"
-      marginBottom="s32"
-      marginTop="s20"
-      width="100%"
-    >
-      <Menu />
-    </Box>
+    <Menu />
     <SearchResult />
   </Box>
 </Box>

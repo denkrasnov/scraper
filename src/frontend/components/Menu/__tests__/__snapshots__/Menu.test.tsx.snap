@@ -3,6 +3,8 @@
 exports[`Menu should render 1`] = `
 <Box
   justifyContent="center"
+  marginBottom="s32"
+  marginTop="s20"
   width="100%"
 >
   <MenuItem

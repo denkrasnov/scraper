@@ -8,8 +8,14 @@ import MenuItem from "./MenuItem";
 
 const Menu = () => {
   const [, dispatch] = useFullContext();
+
   return (
-    <Box justifyContent="center" width="100%">
+    <Box
+      justifyContent="center"
+      marginBottom="s32"
+      marginTop="s20"
+      width="100%"
+    >
       <MenuItem
         dataAttr={{ "data-e2e-id": "menuItem.tv" }}
         onClick={() => dispatch({ type: ActionTypes.FETCH, payload: "tvs" })}
