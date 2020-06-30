@@ -1,13 +1,14 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { boolean } from "@storybook/addon-knobs";
 
 import Box from "../../Box";
 import Card from "../Card";
 
 storiesOf("Components|Card", module).add("default", () => {
   return (
-    <Box>
-      <Card>
+    <Box height="500px">
+      <Card fullHeight={boolean("fullHeight", false)}>
         <Box
           alignItems="center"
           height="200px"

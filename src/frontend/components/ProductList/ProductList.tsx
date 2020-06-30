@@ -12,7 +12,7 @@ const ProductList: FC<ProductListProps> = (props) => {
 
   return (
     <Box display="block" margin="s20">
-      <Grid>
+      <Grid gridProducts>
         {items.map((product) => (
           <ProductCard
             key={product.id}

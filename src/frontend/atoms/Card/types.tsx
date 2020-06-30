@@ -6,4 +6,5 @@ export interface CardProps {
   children: ReactNode;
   dataAttr?: DataAttr;
   href?: string;
+  fullHeight?: boolean;
 }

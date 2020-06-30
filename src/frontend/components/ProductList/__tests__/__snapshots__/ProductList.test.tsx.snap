@@ -5,7 +5,9 @@ exports[`ProductCard should render 1`] = `
   display="block"
   margin="s20"
 >
-  <Grid>
+  <Grid
+    gridProducts={true}
+  >
     <ProductCard
       imageUrl="__IMAGE_URL__"
       key="id"

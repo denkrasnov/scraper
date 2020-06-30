@@ -1,5 +1,8 @@
 .root {
   display: grid;
+}
+
+.gridProducts {
   grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }

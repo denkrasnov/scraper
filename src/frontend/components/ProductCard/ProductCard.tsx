@@ -12,7 +12,11 @@ const ProductCard: FC<ProductCardProps> = (props) => {
   const { title, imageUrl, price, noImage, shop, productUrl } = props;
 
   return (
-    <Card dataAttr={{ "data-e2e-id": "productCard" }} href={productUrl}>
+    <Card
+      dataAttr={{ "data-e2e-id": "productCard" }}
+      fullHeight
+      href={productUrl}
+    >
       <Box
         flexDirection="column"
         height="100%"
@@ -34,6 +38,7 @@ const ProductCard: FC<ProductCardProps> = (props) => {
           <Text textAlign="center">
             <H3>{title}</H3>
           </Text>
+          {/* <Box flexGrow="gr1" /> */}
           <Divider />
           <Box justifyContent="spaceBetween" marginBottom="s4" marginTop="s16">
             <Text color="BORDER_DARK" fontSize="fs16">
