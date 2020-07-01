@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render 1`] = `
+<label
+  className="checkbox"
+>
+  <input
+    name="__TEST__"
+    type="checkbox"
+    value="__VALUE__"
+  />
+  <div />
+</label>
+`;
+
+exports[`Checkbox should render with label 1`] = `
+<label
+  className="checkbox"
+>
+  <input
+    name="__TEST__"
+    type="checkbox"
+    value="__TEST__"
+  />
+  <div>
+    __LABEL__
+  </div>
+</label>
+`;
