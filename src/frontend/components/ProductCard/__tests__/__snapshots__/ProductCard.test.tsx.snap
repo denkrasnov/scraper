@@ -1,133 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductCard should render 1`] = `
-<Card
+<Touchable
   dataAttr={
     Object {
       "data-e2e-id": "productCard",
     }
   }
-  fullHeight={true}
   href="__URL__"
+  productHover={true}
 >
-  <Box
-    flexDirection="column"
-    height="100%"
-    justifyContent="spaceBetween"
-    padding="s12"
+  <Card
+    fullHeight={true}
+    rounded={true}
   >
     <Box
-      height="200px"
-      justifyContent="center"
-      minHeight="200px"
-    >
-      <Image
-        alt="product photo"
-        src="__IMAGE_URL__"
-        width="100%"
-      />
-    </Box>
-    <Box
       flexDirection="column"
+      height="100%"
+      justifyContent="spaceBetween"
+      padding="s12"
     >
-      <Text
-        textAlign="center"
-      >
-        <H3>
-          __TITLE__
-        </H3>
-      </Text>
-      <Divider />
       <Box
-        justifyContent="spaceBetween"
-        marginBottom="s4"
-        marginTop="s16"
+        height="200px"
+        justifyContent="center"
+        minHeight="200px"
+      >
+        <Image
+          alt="product photo"
+          src="__IMAGE_URL__"
+          width="100%"
+        />
+      </Box>
+      <Box
+        flexDirection="column"
       >
         <Text
-          color="BORDER_DARK"
-          fontSize="fs16"
+          textAlign="center"
         >
-          __SHOP__
+          <H3>
+            __TITLE__
+          </H3>
         </Text>
-        <Text
-          color="MAIN_RED"
-          fontSize="fs16"
-          fontWeight="fw700"
+        <Divider />
+        <Box
+          justifyContent="spaceBetween"
+          marginBottom="s4"
+          marginTop="s16"
         >
-          lei 
-          100
-        </Text>
+          <Text
+            color="BORDER_DARK"
+            fontSize="fs16"
+          >
+            __SHOP__
+          </Text>
+          <Text
+            color="MAIN_RED"
+            fontSize="fs16"
+            fontWeight="fw700"
+          >
+            lei 
+            100
+          </Text>
+        </Box>
       </Box>
     </Box>
-  </Box>
-</Card>
+  </Card>
+</Touchable>
 `;
 
 exports[`ProductCard should render when noImage 1`] = `
-<Card
+<Touchable
   dataAttr={
     Object {
       "data-e2e-id": "productCard",
     }
   }
-  fullHeight={true}
   href="__URL__"
+  productHover={true}
 >
-  <Box
-    flexDirection="column"
-    height="100%"
-    justifyContent="spaceBetween"
-    padding="s12"
+  <Card
+    fullHeight={true}
+    rounded={true}
   >
     <Box
-      height="200px"
-      justifyContent="center"
-      minHeight="200px"
-    >
-      <Box
-        alignSelf="center"
-      >
-        <Text
-          color="BORDER_GRAY"
-          fontSize="fs24"
-          fontWeight="fw700"
-        >
-          No photo
-        </Text>
-      </Box>
-    </Box>
-    <Box
       flexDirection="column"
+      height="100%"
+      justifyContent="spaceBetween"
+      padding="s12"
     >
-      <Text
-        textAlign="center"
-      >
-        <H3>
-          __TITLE__
-        </H3>
-      </Text>
-      <Divider />
       <Box
-        justifyContent="spaceBetween"
-        marginBottom="s4"
-        marginTop="s16"
+        height="200px"
+        justifyContent="center"
+        minHeight="200px"
+      >
+        <Box
+          alignSelf="center"
+        >
+          <Text
+            color="BORDER_GRAY"
+            fontSize="fs24"
+            fontWeight="fw700"
+          >
+            No photo
+          </Text>
+        </Box>
+      </Box>
+      <Box
+        flexDirection="column"
       >
         <Text
-          color="BORDER_DARK"
-          fontSize="fs16"
+          textAlign="center"
         >
-          __SHOP__
+          <H3>
+            __TITLE__
+          </H3>
         </Text>
-        <Text
-          color="MAIN_RED"
-          fontSize="fs16"
-          fontWeight="fw700"
+        <Divider />
+        <Box
+          justifyContent="spaceBetween"
+          marginBottom="s4"
+          marginTop="s16"
         >
-          lei 
-          100
-        </Text>
+          <Text
+            color="BORDER_DARK"
+            fontSize="fs16"
+          >
+            __SHOP__
+          </Text>
+          <Text
+            color="MAIN_RED"
+            fontSize="fs16"
+            fontWeight="fw700"
+          >
+            lei 
+            100
+          </Text>
+        </Box>
       </Box>
     </Box>
-  </Box>
-</Card>
+  </Card>
+</Touchable>
 `;

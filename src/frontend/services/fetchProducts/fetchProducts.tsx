@@ -20,7 +20,7 @@ const fetchProducts = (): [State, Dispatch<Action>] => {
         if (!didCancel) {
           dispatch({
             type: ActionTypes.FETCH_SUCCESS,
-            payload: result.data.products
+            payload: result.data
           });
         }
       } catch (error) {

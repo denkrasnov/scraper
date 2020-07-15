@@ -16,7 +16,7 @@ describe("fetchProducts", () => {
     payload: "tvs"
   } as Fetch;
   const resultState = { ...INITIAL_STATE, query: "tvs" };
-  const response = { data: { products: [{ title: "__TITLE__" }] } };
+  const response = { data: { name: "tv", products: [{ title: "__TITLE__" }] } };
   const errorResponse = { error: "fetch failed" };
 
   it("should return data with a successful request", async () => {
@@ -33,7 +33,7 @@ describe("fetchProducts", () => {
 
     expect(result.current[0]).toEqual({
       ...resultState,
-      products: response.data.products
+      products: response.data
     });
   });
 

@@ -1,3 +1,5 @@
+import { ProductName } from "../../../backend/scrapers/types";
+
 export enum ActionTypes {
   FETCH = "FETCH",
   FETCH_INIT = "FETCH_INIT",
@@ -5,10 +7,11 @@ export enum ActionTypes {
   FETCH_SUCCESS = "FETCH_SUCCESS"
 }
 
-export interface State extends Products {
+export interface State {
   isLoading: boolean;
   isError: string;
   query: string;
+  products: Products | null;
 }
 
 export interface Fetch {
@@ -18,7 +21,7 @@ export interface Fetch {
 
 interface ActionSuccess {
   type: ActionTypes.FETCH_SUCCESS;
-  payload: Product[] | null;
+  payload: Products;
 }
 
 interface ActionInit {
@@ -43,7 +46,8 @@ export interface Product {
 }
 
 export interface Products {
-  products: Product[] | null;
+  name: ProductName;
+  items: Product[];
 }
 
 export interface Response {

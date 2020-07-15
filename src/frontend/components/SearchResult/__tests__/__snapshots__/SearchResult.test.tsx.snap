@@ -18,19 +18,36 @@ exports[`SearchResult should render Loading 1`] = `
 </Box>
 `;
 
+exports[`SearchResult should render null when items is empty 1`] = `""`;
+
+exports[`SearchResult should render null when products not present 1`] = `""`;
+
 exports[`SearchResult should render products 1`] = `
-<ProductList
-  products={
-    Array [
-      Object {
-        "id": "__ID__",
-        "imageUrl": "__IMAGE_URL__",
-        "price": "100",
-        "productUrl": "__URL__",
-        "shop": "__SHOP__",
-        "title": "__TITLE__",
-      },
-    ]
-  }
-/>
+<Grid
+  main={true}
+>
+  <Filter
+    options={
+      Array [
+        "\`42",
+        "\`55",
+      ]
+    }
+    productName="tv"
+  />
+  <ProductList
+    products={
+      Array [
+        Object {
+          "id": "__ID__",
+          "imageUrl": "__IMAGE_URL__",
+          "price": "100",
+          "productUrl": "__URL__",
+          "shop": "__SHOP__",
+          "title": "__TITLE__",
+        },
+      ]
+    }
+  />
+</Grid>
 `;

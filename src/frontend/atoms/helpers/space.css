@@ -177,3 +177,39 @@
 .marginTop-s48 {
   margin-top: var(--s48);
 }
+
+.marginLeft-s2 {
+  margin-left: var(--s2);
+}
+
+.marginLeft-s4 {
+  margin-left: var(--s4);
+}
+
+.marginLeft-s8 {
+  margin-left: var(--s8);
+}
+
+.marginLeft-s12 {
+  margin-left: var(--s12);
+}
+
+.marginLeft-s16 {
+  margin-left: var(--s16);
+}
+
+.marginLeft-s20 {
+  margin-left: var(--s20);
+}
+
+.marginLeft-s24 {
+  margin-left: var(--s24);
+}
+
+.marginLeft-s32 {
+  margin-left: var(--s32);
+}
+
+.marginLeft-s48 {
+  margin-left: var(--s48);
+}

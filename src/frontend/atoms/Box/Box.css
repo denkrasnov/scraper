@@ -90,3 +90,11 @@
 .alignSelf-center {
   align-self: center;
 }
+
+.gridArea-main {
+  grid-area: main;
+}
+
+.gridArea-filter {
+  grid-area: filter;
+}

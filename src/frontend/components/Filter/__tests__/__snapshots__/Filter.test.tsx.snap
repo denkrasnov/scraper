@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should render 1`] = `
+<Box
+  display="inlineBlock"
+  gridArea="filter"
+  marginBottom="s20"
+  marginLeft="s20"
+  marginTop="s20"
+>
+  <Card>
+    <Box
+      flexDirection="column"
+      padding="s12"
+    >
+      <Box
+        marginBottom="s4"
+      >
+        <Text
+          fontSize="fs14"
+          fontWeight="fw700"
+        >
+          Диагональ
+        </Text>
+      </Box>
+      <Divider />
+      <Box
+        key="__OPTION_1__"
+        marginTop="s12"
+      >
+        <Checkbox
+          label="__OPTION_1__"
+          name="__OPTION_1__"
+          value="__OPTION_1__"
+        />
+      </Box>
+      <Box
+        key="__OPTION_2__"
+        marginTop="s12"
+      >
+        <Checkbox
+          label="__OPTION_2__"
+          name="__OPTION_2__"
+          value="__OPTION_2__"
+        />
+      </Box>
+    </Box>
+  </Card>
+</Box>
+`;

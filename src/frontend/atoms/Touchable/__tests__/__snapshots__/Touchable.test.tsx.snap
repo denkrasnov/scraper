@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Touchable should render 1`] = `
+<a
+  className="root"
+  href="#"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Children
+</a>
+`;
+
+exports[`Touchable should render with href 1`] = `
+<a
+  className="root"
+  href="__URL__"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Children
+</a>
+`;

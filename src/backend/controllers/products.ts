@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 
-import { ShapedProducts } from "../scrapers/types";
+import { ShapedProducts, ProductName } from "../scrapers/types";
 import { Products } from "../models/products";
 
 export const ProductsController = {
@@ -10,7 +10,7 @@ export const ProductsController = {
       const products =
         ((productsDocument[0] as unknown) as ShapedProducts)?.tv || [];
 
-      res.status(200).json({ products });
+      res.status(200).json({ name: ProductName.TV, items: products });
     } catch (error) {
       next(error);
     }
@@ -22,7 +22,7 @@ export const ProductsController = {
       const products =
         ((productsDocument[0] as unknown) as ShapedProducts)?.fridge || [];
 
-      res.status(200).json({ products });
+      res.status(200).json({ name: ProductName.FRIDGE, items: products });
     } catch (error) {
       next(error);
     }

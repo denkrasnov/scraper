@@ -2,8 +2,10 @@ import React, { FC } from "react";
 
 import Box from "~app/atoms/Box";
 import Loader from "~app/atoms/Loader";
+import Grid from "~app/atoms/Grid";
 import { useFullContext } from "~app/services/ContextProvider";
 import ProductList from "../ProductList";
+import Filter from "~app/components/Filter";
 
 const SearchResult: FC = () => {
   const [{ products, isLoading, isError }] = useFullContext();
@@ -16,7 +18,12 @@ const SearchResult: FC = () => {
     );
   }
 
-  return products && <ProductList products={products} />;
+  return products?.items.length ? (
+    <Grid main>
+      <Filter options={["`42", "`55"]} productName={products.name} />
+      <ProductList products={products.items} />
+    </Grid>
+  ) : null;
 };
 
 export default SearchResult;

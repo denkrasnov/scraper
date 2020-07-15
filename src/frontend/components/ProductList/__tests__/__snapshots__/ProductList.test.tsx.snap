@@ -3,6 +3,7 @@
 exports[`ProductCard should render 1`] = `
 <Box
   display="block"
+  gridArea="main"
   margin="s20"
 >
   <Grid

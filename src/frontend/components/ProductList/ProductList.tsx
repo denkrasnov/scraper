@@ -9,9 +9,8 @@ import { ProductListProps } from "./types";
 const ProductList: FC<ProductListProps> = (props) => {
   const { products } = props;
   const [items, setRef] = useInfiniteScroll(products);
-
   return (
-    <Box display="block" margin="s20">
+    <Box display="block" gridArea="main" margin="s20">
       <Grid gridProducts>
         {items.map((product) => (
           <ProductCard

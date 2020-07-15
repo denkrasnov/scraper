@@ -32,6 +32,8 @@ type FlexGrow = "gr1";
 
 type Position = "relative";
 
+type GreadArea = "main" | "filter";
+
 export interface BoxProps {
   alignItems?: AlignItems;
   alignSelf?: AlignSelf;
@@ -42,6 +44,7 @@ export interface BoxProps {
   flexDirection?: FlexDirection;
   flexWrap?: FlexWrap;
   flexGrow?: FlexGrow;
+  gridArea?: GreadArea;
   justifyContent?: JustifyContent;
   position?: Position;
   bottom?: string;
@@ -50,6 +53,7 @@ export interface BoxProps {
   marginTop?: Space;
   marginBottom?: Space;
   marginRight?: Space;
+  marginLeft?: Space;
   width?: string;
   height?: string;
   minHeight?: string;

@@ -16,6 +16,7 @@
   border-radius: 4px;
   outline: none;
   transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+  position: relative;
 }
 
 .checkbox > input:checked {
@@ -23,12 +24,12 @@
   background-color: var(--main-red);
 }
 
-.checkbox > div::before {
+.checkbox > input::before {
   content: "";
   display: block;
   position: absolute;
-  top: 5px;
-  left: 10px;
+  top: 1px;
+  left: 6px;
   width: 7px;
   height: 12px;
   border: solid var(--white);
@@ -37,6 +38,6 @@
   opacity: 0;
 }
 
-.checkbox > input:checked + div::before {
+.checkbox > input:checked::before {
   opacity: 1;
 }

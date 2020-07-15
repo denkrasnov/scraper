@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 
 import * as AppContext from "~app/services/ContextProvider";
 import { INITIAL_STATE } from "~app/services/fetchProducts/constants";
+import { ProductName } from "../../../../backend/scrapers/types";
 import SearchResult from "..";
 
 describe("SearchResult", () => {
@@ -14,16 +15,45 @@ describe("SearchResult", () => {
     jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
       {
         ...INITIAL_STATE,
-        products: [
-          {
-            id: "__ID__",
-            title: "__TITLE__",
-            imageUrl: "__IMAGE_URL__",
-            price: "100",
-            shop: "__SHOP__",
-            productUrl: "__URL__"
-          }
-        ]
+        products: {
+          name: ProductName.TV,
+          items: [
+            {
+              id: "__ID__",
+              title: "__TITLE__",
+              imageUrl: "__IMAGE_URL__",
+              price: "100",
+              shop: "__SHOP__",
+              productUrl: "__URL__"
+            }
+          ]
+        }
+      },
+      () => {}
+    ]);
+    const component = shallow(<SearchResult />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render null when products not present", () => {
+    jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
+      {
+        ...INITIAL_STATE,
+        products: null
+      },
+      () => {}
+    ]);
+    const component = shallow(<SearchResult />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render null when items is empty", () => {
+    jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
+      {
+        ...INITIAL_STATE,
+        products: { name: ProductName.TV, items: [] }
       },
       () => {}
     ]);
