@@ -20,7 +20,7 @@ exports[`Filter should render 1`] = `
           fontSize="fs14"
           fontWeight="fw700"
         >
-          Диагональ
+          Diagonala
         </Text>
       </Box>
       <Divider />
