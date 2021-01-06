@@ -17,7 +17,10 @@ export interface Product {
   noImage?: boolean;
   shop: string;
   productUrl: string | null;
+  specifications?: SpecificationsTV;
 }
+
+export interface RawProduct extends Omit<Product, "id" | "shop"> {}
 
 export type RawProducts = {
   name: string;
@@ -27,6 +30,10 @@ export type RawProducts = {
 export interface ShapedProducts {
   tv: Product[];
   fridge: Product[];
+}
+
+export interface SpecificationsTV {
+  screenSize: string | undefined;
 }
 
 export type ObjectType = { [key: string]: any };

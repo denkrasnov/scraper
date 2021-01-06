@@ -20,7 +20,7 @@ const Menu = () => {
         dataAttr={{ "data-e2e-id": "menuItem.tv" }}
         onClick={() => dispatch({ type: ActionTypes.FETCH, payload: "tvs" })}
         src={image.tv}
-        text="Телевизоры"
+        text="Televizoare"
       />
       <MenuItem
         dataAttr={{ "data-e2e-id": "menuItem.fridge" }}
@@ -28,7 +28,7 @@ const Menu = () => {
           dispatch({ type: ActionTypes.FETCH, payload: "fridges" })
         }
         src={image.fridge}
-        text="Холодильники"
+        text="Frigidere"
       />
     </Box>
   );

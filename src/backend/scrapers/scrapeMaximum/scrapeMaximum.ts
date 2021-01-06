@@ -2,7 +2,8 @@ import puppeteer, { Page } from "puppeteer";
 import { nanoid } from "nanoid";
 import chalk from "chalk";
 
-import getNextUrl from "./helpers/getNextUrl";
+import { scrapeSpecifications } from "./scrapeSpecifications";
+import { getNextUrl } from "./helpers/getNextUrl";
 import { urls } from "./constants";
 import { Product, ShopName } from "../types";
 
@@ -12,8 +13,8 @@ const finished = chalk.bold.green;
 const scrapeMaximum = async () => {
   try {
     const browser = await puppeteer.launch({
-      args: ["--incognito"]
-      // headless: false
+      args: ["--incognito"],
+      headless: false
     });
 
     const extractProducts = async (url: string): Promise<Product[]> => {
@@ -103,6 +104,21 @@ const scrapeMaximum = async () => {
 
     const allProducts = await Promise.all(promises);
 
+    // console.log("allProducts--------:", allProducts);
+
+    const tvSpecs = allProducts[0].items.map(async (item, index) => {
+      let spec;
+      if (index === 0) {
+        spec = await scrapeSpecifications(browser, item.productUrl);
+      }
+      console.log("spec------>", spec);
+      return {
+        ...item
+      };
+    });
+
+    const allTvSpecs = await Promise.all(tvSpecs);
+    console.log("allTvSpecs--->", allTvSpecs);
     await browser.close();
 
     console.log(finished("Maximum finished ✅"));

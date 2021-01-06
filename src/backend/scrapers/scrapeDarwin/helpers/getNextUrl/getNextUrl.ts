@@ -1,4 +1,4 @@
-const getNextUrl = (pageNumber: number | "" | null, url: string) => {
+export const getNextUrl = (pageNumber: number | "" | null, url: string) => {
   const index = url.indexOf("?");
   const nextPageParam = `?page=${pageNumber ? pageNumber + 1 : 2}`;
 
@@ -6,5 +6,3 @@ const getNextUrl = (pageNumber: number | "" | null, url: string) => {
     ? `${url}${nextPageParam}`
     : `${url.substring(0, index)}${nextPageParam}`;
 };
-
-export default getNextUrl;

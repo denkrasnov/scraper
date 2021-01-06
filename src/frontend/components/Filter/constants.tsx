@@ -2,5 +2,5 @@
 import { ProductName } from "../../../backend/scrapers/types";
 
 export const filterName = {
-  [ProductName.TV]: "Диагональ"
+  [ProductName.TV]: "Diagonala"
 };

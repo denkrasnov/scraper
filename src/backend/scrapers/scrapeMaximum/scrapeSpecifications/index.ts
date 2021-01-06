@@ -1,0 +1,1 @@
+export { scrapeSpecifications } from "./scrapeSpecifications";

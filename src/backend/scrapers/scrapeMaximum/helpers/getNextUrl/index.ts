@@ -1,1 +1,1 @@
-export { default } from "./getNextUrl";
+export { getNextUrl } from "./getNextUrl";

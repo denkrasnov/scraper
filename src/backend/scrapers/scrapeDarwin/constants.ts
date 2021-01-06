@@ -1,9 +1,8 @@
 import { ProductName } from "../types";
 
-const tv = "https://darwin.md/ru/tv-foto/tv";
+const tv = "https://darwin.md/tv-foto/tv";
 
-const fridge =
-  "https://darwin.md/ru/electrocasnice/electrocasnice-mari/frigidere";
+const fridge = "https://darwin.md/electrocasnice/electrocasnice-mari/frigidere";
 
 export const urls = [
   { url: tv, name: ProductName.TV },

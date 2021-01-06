@@ -5,6 +5,8 @@ import chalk from "chalk";
 import mongoose from "mongoose";
 
 import productsRoute from "./src/backend/routes/products";
+// import scrape from "./src/backend/scrapers";
+// import { runTest } from "./src/backend/scrapers/scrapeTest";
 
 require("dotenv").config();
 
@@ -13,7 +15,11 @@ const app: Application = express();
 
 process.stdout.write(`
  ${chalk.bgHex("#224dff").white("--- Compare md ---")}
- The server is available on ${chalk.hex("#f7c132")(`${process.env.PORT}`)}
+ The server is available on ${chalk.hex("#f7c132")(
+   `${
+     isDevelopment ? `http://localhost:${process.env.PORT}` : process.env.PORT
+   }`
+ )}
 \n`);
 
 app.use(bodyParser.json());
@@ -28,6 +34,9 @@ mongoose
     useUnifiedTopology: true,
     useFindAndModify: false
   })
+  // .then(() => {
+  //   setTimeout(() => runTest(), 5000);
+  // })
   .catch((error) => console.log(chalk.bold.red(error))); // eslint-disable-line no-console
 
 mongoose.connection.on("error", (error) => {

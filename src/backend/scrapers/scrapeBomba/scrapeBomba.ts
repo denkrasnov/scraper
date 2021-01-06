@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import chalk from "chalk";
 
 import { ShopName, Product } from "../types";
-import getNextUrl from "./helpers/getNextUrl";
+import { getNextUrl } from "./helpers/getNextUrl";
 import { urls } from "./constants";
 
 const error = chalk.bold.red;

@@ -43,6 +43,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
     "@hot-loader/react-dom": "^16.11.0",
+    "apify": "^0.21.8",
+    "app-root-dir": "^1.0.2",
     "axios": "^0.19.0",
     "body-parser": "^1.18.3",
     "chalk": "^4.1.0",
@@ -79,6 +81,7 @@
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.3.19",
     "@testing-library/react-hooks": "^3.2.1",
+    "@types/app-root-dir": "^0.1.0",
     "@types/classnames": "^2.2.10",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.5",
