@@ -49,7 +49,6 @@ export const runTest = () => {
       maxConcurrency: 10,
       maxRequestRetries: 1,
       launchPuppeteerOptions: {
-        stealth: true,
         // @ts-ignore
         headless: true
       }
@@ -153,7 +152,6 @@ export const runTest = () => {
       maxConcurrency: 10,
       maxRequestRetries: 1,
       launchPuppeteerOptions: {
-        stealth: true,
         // @ts-ignore
         headless: true
       }
