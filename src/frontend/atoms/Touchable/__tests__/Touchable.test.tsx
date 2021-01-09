@@ -15,4 +15,10 @@ describe("Touchable", () => {
 
     expect(component).toMatchSnapshot();
   });
+
+  it("should render with width", () => {
+    const component = shallow(<Touchable width="100%">Children</Touchable>);
+
+    expect(component).toMatchSnapshot();
+  });
 });

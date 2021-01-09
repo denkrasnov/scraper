@@ -5,6 +5,7 @@ exports[`Touchable should render 1`] = `
   className="root"
   href="#"
   rel="noopener noreferrer"
+  style={Object {}}
   target="_blank"
 >
   Children
@@ -16,6 +17,23 @@ exports[`Touchable should render with href 1`] = `
   className="root"
   href="__URL__"
   rel="noopener noreferrer"
+  style={Object {}}
+  target="_blank"
+>
+  Children
+</a>
+`;
+
+exports[`Touchable should render with width 1`] = `
+<a
+  className="root"
+  href="#"
+  rel="noopener noreferrer"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
   target="_blank"
 >
   Children

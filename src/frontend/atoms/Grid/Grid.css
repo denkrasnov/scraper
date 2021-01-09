@@ -9,6 +9,13 @@
 
 .main {
   grid-gap: 25px;
-  grid-template-columns: 200px auto;
-  grid-template-areas: "filter main";
+  grid-template-columns: 200px auto 200px;
+  grid-template-areas: "filter main ads";
+}
+
+@media (max-width: 992px) {
+  .main {
+    grid-template-columns: auto;
+    grid-template-areas: "main";
+  }
 }

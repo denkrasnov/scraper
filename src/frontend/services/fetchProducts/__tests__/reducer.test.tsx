@@ -30,12 +30,10 @@ describe("reducer", () => {
       name: ProductName.TV,
       items: [
         {
-          id: "__ID__",
-          title: "__TITLE__",
-          imageUrl: "__IMAGE_URL__",
-          price: "100",
-          shop: "__SHOP__",
-          productUrl: "__URL__"
+          imageURL: "__IMAGE_URL__",
+          date: "9:00",
+          header: "__TITLE__",
+          newsUrl: "__URL__"
         }
       ]
     };

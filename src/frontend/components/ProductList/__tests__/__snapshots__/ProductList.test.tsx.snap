@@ -6,21 +6,19 @@ exports[`ProductCard should render 1`] = `
   gridArea="main"
   margin="s20"
 >
-  <Grid
-    gridProducts={true}
+  <Box
+    key="__TITLE__"
+    marginBottom="s8"
   >
     <ProductCard
-      imageUrl="__IMAGE_URL__"
-      key="id"
-      price="100"
-      productUrl="__URL__"
-      shop="__SHOP__"
-      title="__TITLE__"
+      date="9:00"
+      header="__TITLE__"
+      imageURL="__IMAGE_URL__"
     />
-    <Box
-      bottom="200px"
-      position="relative"
-    />
-  </Grid>
+  </Box>
+  <Box
+    bottom="200px"
+    position="relative"
+  />
 </Box>
 `;

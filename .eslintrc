@@ -75,6 +75,7 @@
         "no-unused-vars": "off",
         "no-undef": "off",
         "no-restricted-globals": "off",
+        "no-shadow": "off",
         "space-infix-ops": "off",
         "react/prop-types": "off",
         "react/default-props-match-prop-types": "off"

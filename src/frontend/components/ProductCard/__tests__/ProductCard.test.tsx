@@ -7,25 +7,22 @@ describe("ProductCard", () => {
   it("should render", () => {
     const component = shallow(
       <ProductCard
-        imageUrl="__IMAGE_URL__"
-        price="100"
-        productUrl="__URL__"
-        shop="__SHOP__"
-        title="__TITLE__"
+        date="9:00"
+        header="__TITLE__"
+        imageURL="__IMAGE_URL__"
+        newsURL="__URL__"
       />
     );
     expect(component).toMatchSnapshot();
   });
 
-  it("should render when noImage", () => {
+  it("should render when no image url", () => {
     const component = shallow(
       <ProductCard
-        imageUrl="__IMAGE_URL__"
-        noImage
-        price="100"
-        productUrl="__URL__"
-        shop="__SHOP__"
-        title="__TITLE__"
+        date="9:00"
+        header="__TITLE__"
+        imageURL=""
+        newsURL="__URL__"
       />
     );
     expect(component).toMatchSnapshot();

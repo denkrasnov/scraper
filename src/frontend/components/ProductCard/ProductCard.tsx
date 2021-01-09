@@ -10,47 +10,45 @@ import Divider from "~app/atoms/Divider";
 import { ProductCardProps } from "./types";
 
 const ProductCard: FC<ProductCardProps> = (props) => {
-  const { title, imageUrl, price, noImage, shop, productUrl } = props;
+  const { date, header, imageURL, newsURL } = props;
 
   return (
     <Touchable
       dataAttr={{ "data-e2e-id": "productCard" }}
-      href={productUrl}
+      href={newsURL}
       productHover
+      width="100%"
     >
       <Card fullHeight rounded>
-        <Box
-          flexDirection="column"
-          height="100%"
-          justifyContent="spaceBetween"
-          padding="s12"
-        >
-          <Box height="200px" justifyContent="center" minHeight="200px">
-            {noImage ? (
+        <Box padding="s12" width="100%">
+          <Box height="120px" marginRight="s12" minHeight="120px">
+            {!imageURL ? (
               <Box alignSelf="center">
                 <Text color="BORDER_GRAY" fontSize="fs24" fontWeight="fw700">
                   No photo
                 </Text>
               </Box>
             ) : (
-              <Image alt="product photo" src={imageUrl} width="100%" />
+              <Image alt="product photo" src={imageURL} width="100%" />
             )}
           </Box>
-          <Box flexDirection="column">
-            <Text textAlign="center">
-              <H3>{title}</H3>
-            </Text>
+          <Box flexDirection="column" width="100%">
+            <Box alignItems="center" flexGrow="gr1">
+              <Text>
+                <H3>{header}</H3>
+              </Text>
+            </Box>
             <Divider />
             <Box
               justifyContent="spaceBetween"
               marginBottom="s4"
               marginTop="s16"
             >
-              <Text color="BORDER_DARK" fontSize="fs16">
-                {shop}
-              </Text>
               <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
-                lei {price}
+                TV8
+              </Text>
+              <Text color="BORDER_DARK" fontSize="fs16" fontWeight="fw700">
+                {date}
               </Text>
             </Box>
           </Box>

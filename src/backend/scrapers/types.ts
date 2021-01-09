@@ -37,3 +37,14 @@ export interface SpecificationsTV {
 }
 
 export type ObjectType = { [key: string]: any };
+
+// START NEW
+export interface NewsCollection {
+  news: News[];
+}
+export interface News {
+  date?: string;
+  header?: string;
+  imageURL?: string;
+  newsURL?: string;
+}

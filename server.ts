@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import express, { Application, Request, Response } from "express";
 import path from "path";
 import bodyParser from "body-parser";
@@ -5,8 +6,8 @@ import chalk from "chalk";
 import mongoose from "mongoose";
 
 import productsRoute from "./src/backend/routes/products";
-// import scrape from "./src/backend/scrapers";
-// import { runTest } from "./src/backend/scrapers/scrapeTest";
+import { error } from "./src/backend/scrapers/helpers/status";
+import { startCron } from "./src/backend/scrapers";
 
 require("dotenv").config();
 
@@ -34,13 +35,11 @@ mongoose
     useUnifiedTopology: true,
     useFindAndModify: false
   })
-  // .then(() => {
-  //   setTimeout(() => runTest(), 5000);
-  // })
-  .catch((error) => console.log(chalk.bold.red(error))); // eslint-disable-line no-console
+  .then(() => startCron())
+  .catch((err) => console.log(error(err)));
 
-mongoose.connection.on("error", (error) => {
-  console.log(chalk.bold.red(error)); // eslint-disable-line no-console
+mongoose.connection.on("error", (err) => {
+  console.log(error(err));
 });
 
 if (isDevelopment) {
@@ -65,6 +64,9 @@ if (isDevelopment) {
   );
 
   app.use(webpackHotMiddleware(compiler));
+
+  app.use("/news", productsRoute);
+
   app.get("/", (_req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "build/index.html"));
   });
@@ -74,7 +76,5 @@ if (isDevelopment) {
     res.sendFile(path.join(__dirname, "../index.html"));
   });
 }
-
-app.use("/search", productsRoute);
 
 app.listen(process.env.PORT, () => {});

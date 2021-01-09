@@ -7,7 +7,6 @@ import { Action, State, ActionTypes, Response } from "./types";
 
 const fetchProducts = (): [State, Dispatch<Action>] => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
-  const { query } = state;
 
   useEffect(() => {
     let didCancel = false;
@@ -15,7 +14,7 @@ const fetchProducts = (): [State, Dispatch<Action>] => {
     const fetchData = async () => {
       dispatch({ type: ActionTypes.FETCH_INIT });
       try {
-        const result: Response = await axios.get(`/search/${query}`);
+        const result: Response = await axios.get(`/news`);
 
         if (!didCancel) {
           dispatch({
@@ -30,14 +29,12 @@ const fetchProducts = (): [State, Dispatch<Action>] => {
       }
     };
 
-    if (query) {
-      fetchData();
-    }
+    fetchData();
 
     return () => {
       didCancel = true;
     };
-  }, [query]);
+  }, []);
 
   return [state, dispatch];
 };

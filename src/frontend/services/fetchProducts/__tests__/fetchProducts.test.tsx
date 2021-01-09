@@ -25,7 +25,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.get).toHaveBeenCalledWith("/search/tvs");
+    expect(mockAxios.get).toHaveBeenCalledWith("/news");
 
     mockAxios.mockResponse(response);
 
@@ -43,7 +43,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.get).toHaveBeenCalledWith("/search/tvs");
+    expect(mockAxios.get).toHaveBeenCalledWith("/news");
     mockAxios.mockError(errorResponse);
 
     await waitForNextUpdate();
@@ -61,7 +61,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.get).toHaveBeenCalledWith("/search/tvs");
+    expect(mockAxios.get).toHaveBeenCalledWith("/news");
     mockAxios.mockResponse(response);
 
     // eg. a user decided to leave the page
@@ -77,7 +77,7 @@ describe("fetchProducts", () => {
       result.current[1](dispatchArguments);
     });
 
-    expect(mockAxios.get).toHaveBeenCalledWith("/search/tvs");
+    expect(mockAxios.get).toHaveBeenCalledWith("/news");
     mockAxios.mockError(errorResponse);
 
     // eg. a user decided to leave the page

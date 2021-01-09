@@ -9,21 +9,20 @@ exports[`ProductCard should render 1`] = `
   }
   href="__URL__"
   productHover={true}
+  width="100%"
 >
   <Card
     fullHeight={true}
     rounded={true}
   >
     <Box
-      flexDirection="column"
-      height="100%"
-      justifyContent="spaceBetween"
       padding="s12"
+      width="100%"
     >
       <Box
-        height="200px"
-        justifyContent="center"
-        minHeight="200px"
+        height="120px"
+        marginRight="s12"
+        minHeight="120px"
       >
         <Image
           alt="product photo"
@@ -33,14 +32,18 @@ exports[`ProductCard should render 1`] = `
       </Box>
       <Box
         flexDirection="column"
+        width="100%"
       >
-        <Text
-          textAlign="center"
+        <Box
+          alignItems="center"
+          flexGrow="gr1"
         >
-          <H3>
-            __TITLE__
-          </H3>
-        </Text>
+          <Text>
+            <H3>
+              __TITLE__
+            </H3>
+          </Text>
+        </Box>
         <Divider />
         <Box
           justifyContent="spaceBetween"
@@ -48,18 +51,18 @@ exports[`ProductCard should render 1`] = `
           marginTop="s16"
         >
           <Text
-            color="BORDER_DARK"
-            fontSize="fs16"
-          >
-            __SHOP__
-          </Text>
-          <Text
             color="MAIN_RED"
             fontSize="fs16"
             fontWeight="fw700"
           >
-            lei 
-            100
+            TV8
+          </Text>
+          <Text
+            color="BORDER_DARK"
+            fontSize="fs16"
+            fontWeight="fw700"
+          >
+            9:00
           </Text>
         </Box>
       </Box>
@@ -68,7 +71,7 @@ exports[`ProductCard should render 1`] = `
 </Touchable>
 `;
 
-exports[`ProductCard should render when noImage 1`] = `
+exports[`ProductCard should render when no image url 1`] = `
 <Touchable
   dataAttr={
     Object {
@@ -77,21 +80,20 @@ exports[`ProductCard should render when noImage 1`] = `
   }
   href="__URL__"
   productHover={true}
+  width="100%"
 >
   <Card
     fullHeight={true}
     rounded={true}
   >
     <Box
-      flexDirection="column"
-      height="100%"
-      justifyContent="spaceBetween"
       padding="s12"
+      width="100%"
     >
       <Box
-        height="200px"
-        justifyContent="center"
-        minHeight="200px"
+        height="120px"
+        marginRight="s12"
+        minHeight="120px"
       >
         <Box
           alignSelf="center"
@@ -107,14 +109,18 @@ exports[`ProductCard should render when noImage 1`] = `
       </Box>
       <Box
         flexDirection="column"
+        width="100%"
       >
-        <Text
-          textAlign="center"
+        <Box
+          alignItems="center"
+          flexGrow="gr1"
         >
-          <H3>
-            __TITLE__
-          </H3>
-        </Text>
+          <Text>
+            <H3>
+              __TITLE__
+            </H3>
+          </Text>
+        </Box>
         <Divider />
         <Box
           justifyContent="spaceBetween"
@@ -122,18 +128,18 @@ exports[`ProductCard should render when noImage 1`] = `
           marginTop="s16"
         >
           <Text
-            color="BORDER_DARK"
-            fontSize="fs16"
-          >
-            __SHOP__
-          </Text>
-          <Text
             color="MAIN_RED"
             fontSize="fs16"
             fontWeight="fw700"
           >
-            lei 
-            100
+            TV8
+          </Text>
+          <Text
+            color="BORDER_DARK"
+            fontSize="fs16"
+            fontWeight="fw700"
+          >
+            9:00
           </Text>
         </Box>
       </Box>

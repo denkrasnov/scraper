@@ -1,18 +1,14 @@
 import { Schema, model } from "mongoose";
 
 const Product = {
-  title: String,
-  price: String,
-  imageUrl: String,
-  id: String,
-  noImage: Boolean,
-  shop: String,
-  productUrl: String
+  header: String,
+  imageURL: String,
+  newsURL: String,
+  date: String
 };
 
 const productsSchema = new Schema({
-  tv: [Product],
-  fridge: [Product]
+  news: [Product]
 });
 
 export const Products = model("products", productsSchema);

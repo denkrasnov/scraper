@@ -2,7 +2,6 @@ import React from "react";
 
 import Header from "~app/components/Header";
 import SearchResult from "~app/components/SearchResult";
-import Menu from "~app/components/Menu";
 import Divider from "~app/atoms/Divider";
 import Box from "~app/atoms/Box";
 
@@ -18,7 +17,6 @@ const Home = () => {
         flexGrow="gr1"
         marginBottom="s24"
       >
-        <Menu />
         <SearchResult />
       </Box>
     </Box>

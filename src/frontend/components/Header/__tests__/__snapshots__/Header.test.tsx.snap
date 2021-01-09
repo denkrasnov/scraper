@@ -12,7 +12,7 @@ exports[`Header should render 1`] = `
       fontSize="fs16"
       fontWeight="fw700"
     >
-      compare
+      newsfeed
     </Text>
   </Box>
 </header>

@@ -1,5 +1,4 @@
 import puppeteer, { Page } from "puppeteer";
-import { nanoid } from "nanoid";
 import chalk from "chalk";
 
 import { scrapeSpecifications } from "./scrapeSpecifications";
@@ -71,7 +70,7 @@ const scrapeMaximum = async () => {
 
       const extraProducts: Product[] = rawExtraProducts.map((product) => ({
         ...product,
-        id: nanoid(10),
+        id: "",
         shop: ShopName.MAXIMUM
       }));
 

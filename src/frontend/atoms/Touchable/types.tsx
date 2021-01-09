@@ -7,4 +7,5 @@ export interface TouchableProps {
   dataAttr?: DataAttr;
   href?: string;
   productHover?: boolean;
+  width?: string;
 }

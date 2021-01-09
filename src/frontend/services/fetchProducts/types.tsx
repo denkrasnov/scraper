@@ -1,4 +1,4 @@
-import { ProductName } from "../../../backend/scrapers/types";
+import { ProductName, News } from "../../../backend/scrapers/types";
 
 export enum ActionTypes {
   FETCH = "FETCH",
@@ -35,19 +35,9 @@ interface ActionError {
 
 export type Action = ActionSuccess | ActionInit | ActionError | Fetch;
 
-export interface Product {
-  id: string;
-  title: string;
-  price: string;
-  imageUrl: string;
-  noImage?: boolean;
-  shop: string;
-  productUrl: string;
-}
-
 export interface Products {
   name: ProductName;
-  items: Product[];
+  items: News[];
 }
 
 export interface Response {

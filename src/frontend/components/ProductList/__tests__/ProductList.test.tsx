@@ -9,12 +9,10 @@ jest.mock("infinite-scroll-react-hook", () => jest.fn(() => [[], () => {}]));
 describe("ProductCard", () => {
   const products = [
     {
-      id: "id",
-      imageUrl: "__IMAGE_URL__",
-      price: "100",
-      shop: "__SHOP__",
-      title: "__TITLE__",
-      productUrl: "__URL__"
+      imageURL: "__IMAGE_URL__",
+      date: "9:00",
+      header: "__TITLE__",
+      newsUrl: "__URL__"
     }
   ];
   (useInfiniteScroll as jest.Mock).mockReturnValue([products, () => {}]);

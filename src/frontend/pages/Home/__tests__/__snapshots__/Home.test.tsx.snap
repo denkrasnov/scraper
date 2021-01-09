@@ -14,7 +14,6 @@ exports[`Home should render 1`] = `
     flexGrow="gr1"
     marginBottom="s24"
   >
-    <Menu />
     <SearchResult />
   </Box>
 </Box>
