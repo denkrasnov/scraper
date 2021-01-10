@@ -5,13 +5,16 @@ import Box from "~app/atoms/Box";
 
 const Header: FC = () => {
   return (
-    <header>
-      <Box alignItems="center" height="60px" justifyContent="center">
-        <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
-          newsfeed
-        </Text>
-      </Box>
-    </header>
+    <Box
+      alignItems="center"
+      dataAttr={{ "data-e2e-id": "header" }}
+      height="60px"
+      justifyContent="center"
+    >
+      <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
+        newsfeed
+      </Text>
+    </Box>
   );
 };
 

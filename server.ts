@@ -65,8 +65,6 @@ if (isDevelopment) {
 
   app.use(webpackHotMiddleware(compiler));
 
-  app.use("/news", productsRoute);
-
   app.get("/", (_req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "build/index.html"));
   });
@@ -76,5 +74,7 @@ if (isDevelopment) {
     res.sendFile(path.join(__dirname, "../index.html"));
   });
 }
+
+app.use("/news", productsRoute);
 
 app.listen(process.env.PORT, () => {});
