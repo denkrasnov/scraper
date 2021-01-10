@@ -9,6 +9,7 @@ import styles from "./Box.css";
 const Box = forwardRef((props: BoxProps, ref: React.Ref<HTMLDivElement>) => {
   const {
     bottom,
+    top,
     children,
     onClick,
     width,
@@ -21,7 +22,7 @@ const Box = forwardRef((props: BoxProps, ref: React.Ref<HTMLDivElement>) => {
 
   const classes = mapPropsToStyles(restProps, styles);
 
-  const style: StyleType = { width, height, minHeight, maxWidth, bottom };
+  const style: StyleType = { width, height, minHeight, maxWidth, bottom, top };
 
   return (
     <div

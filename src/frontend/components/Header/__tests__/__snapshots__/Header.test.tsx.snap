@@ -1,22 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render 1`] = `
-<Box
-  alignItems="center"
-  dataAttr={
-    Object {
-      "data-e2e-id": "header",
+<Fragment>
+  <Box
+    alignItems="center"
+    background="WHITE"
+    dataAttr={
+      Object {
+        "data-e2e-id": "header",
+      }
     }
-  }
-  height="60px"
-  justifyContent="center"
->
-  <Text
-    color="MAIN_RED"
-    fontSize="fs16"
-    fontWeight="fw700"
+    height="60px"
+    justifyContent="center"
+    position="sticky"
+    top="0"
   >
-    newsfeed
-  </Text>
-</Box>
+    <Text
+      color="MAIN_RED"
+      fontSize="fs16"
+      fontWeight="fw700"
+    >
+      newsfeed
+    </Text>
+  </Box>
+  <Divider />
+</Fragment>
 `;

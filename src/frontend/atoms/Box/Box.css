@@ -87,6 +87,10 @@
   position: relative;
 }
 
+.position-sticky {
+  position: sticky;
+}
+
 .alignSelf-center {
   align-self: center;
 }

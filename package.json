@@ -22,7 +22,7 @@
     "format": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx --fix . && stylelint \"**/*.css\" --fix",
     "lint:eslint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx --max-warnings 0 .",
     "lint:stylelint": "stylelint \"**/*.css\"",
-    "check:types": "tsc -p tsconfig.json --noEmit"
+    "check:types": "tsc -p tsconfig.json --noEmit && tsc -p ./src/backend/tsconfig.json --noEmit"
   },
   "husky": {
     "hooks": {
@@ -52,6 +52,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.14.0",
     "final-form": "^4.18.5",
+    "heroku-keep-awake": "^1.1.2",
     "infinite-scroll-react-hook": "^0.1.3",
     "mongoose": "^5.9.14",
     "node-cron": "^2.0.3",

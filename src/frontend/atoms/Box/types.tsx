@@ -30,7 +30,7 @@ type Cursor = "pointer";
 
 type FlexGrow = "gr1";
 
-type Position = "relative";
+type Position = "relative" | "sticky";
 
 type GreadArea = "main" | "filter";
 
@@ -48,6 +48,7 @@ export interface BoxProps {
   justifyContent?: JustifyContent;
   position?: Position;
   bottom?: string;
+  top?: string;
   padding?: Space;
   margin?: Space;
   marginTop?: Space;
