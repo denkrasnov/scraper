@@ -15,7 +15,7 @@ require("dotenv").config();
 const isDevelopment = process.env.NODE_ENV !== "production";
 const app: Application = express();
 
-const DYNO_URL = "https://comparemd.herokuapp.com/";
+const DYNO_URL = "http://comparemd.herokuapp.com/";
 
 process.stdout.write(`
  ${chalk.bgHex("#224dff").white("--- Compare md ---")}
