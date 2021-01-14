@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home should render 1`] = `
-<Fragment>
+<Grid
+  main={true}
+>
   <Header />
   <Box
     flexDirection="column"
+    gridArea="body"
     height="100%"
   >
     <Box
@@ -17,5 +20,5 @@ exports[`Home should render 1`] = `
       <SearchResult />
     </Box>
   </Box>
-</Fragment>
+</Grid>
 `;

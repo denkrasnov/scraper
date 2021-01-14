@@ -24,7 +24,7 @@ exports[`SearchResult should render null when products not present 1`] = `""`;
 
 exports[`SearchResult should render products 1`] = `
 <Grid
-  main={true}
+  result={true}
 >
   <ProductList
     products={

@@ -32,7 +32,7 @@ type FlexGrow = "gr1";
 
 type Position = "relative" | "sticky";
 
-type GreadArea = "main" | "filter";
+type GreadArea = "main" | "filter" | "result" | "header" | "body";
 
 export interface BoxProps {
   alignItems?: AlignItems;

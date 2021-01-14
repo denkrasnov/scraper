@@ -95,10 +95,18 @@
   align-self: center;
 }
 
-.gridArea-main {
-  grid-area: main;
+.gridArea-result {
+  grid-area: result;
 }
 
 .gridArea-filter {
   grid-area: filter;
+}
+
+.gridArea-header {
+  grid-area: header;
+}
+
+.gridArea-body {
+  grid-area: body;
 }

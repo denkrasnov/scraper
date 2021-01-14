@@ -7,15 +7,23 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.main {
+.result {
   grid-gap: 25px;
   grid-template-columns: 200px auto 200px;
-  grid-template-areas: "filter main ads";
+  grid-template-areas: "filter result ads";
+}
+
+.main {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+  "header"
+  "body";
 }
 
 @media (max-width: 992px) {
-  .main {
+  .result {
     grid-template-columns: auto;
-    grid-template-areas: "main";
+    grid-template-areas: "result";
   }
 }

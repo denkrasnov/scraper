@@ -4,7 +4,6 @@ import path from "path";
 import bodyParser from "body-parser";
 import chalk from "chalk";
 import mongoose from "mongoose";
-import { wakeDyno } from "heroku-keep-awake";
 
 import productsRoute from "./src/backend/routes/products";
 import { error } from "./src/backend/scrapers/helpers/status";
@@ -14,8 +13,6 @@ require("dotenv").config();
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 const app: Application = express();
-
-const DYNO_URL = "http://comparemd.herokuapp.com/";
 
 process.stdout.write(`
  ${chalk.bgHex("#224dff").white("--- Compare md ---")}
@@ -80,10 +77,4 @@ if (isDevelopment) {
 
 app.use("/news", productsRoute);
 
-app.listen(process.env.PORT, () => {
-  wakeDyno(DYNO_URL, {
-    interval: 29,
-    logging: false,
-    stopTimes: { start: "00:00", end: "06:00" }
-  });
-});
+app.listen(process.env.PORT, () => {});

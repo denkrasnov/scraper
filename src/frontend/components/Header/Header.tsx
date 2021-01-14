@@ -6,22 +6,21 @@ import Box from "~app/atoms/Box";
 
 const Header: FC = () => {
   return (
-    <>
+    <Box display="block" gridArea="header" position="sticky" top="0">
       <Box
         alignItems="center"
         background="WHITE"
         dataAttr={{ "data-e2e-id": "header" }}
         height="60px"
         justifyContent="center"
-        position="sticky"
-        top="0"
+        width="100%"
       >
         <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
           newsfeed
         </Text>
       </Box>
       <Divider />
-    </>
+    </Box>
   );
 };
 

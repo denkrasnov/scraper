@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render 1`] = `
-<Fragment>
+<Box
+  display="block"
+  gridArea="header"
+  position="sticky"
+  top="0"
+>
   <Box
     alignItems="center"
     background="WHITE"
@@ -12,8 +17,7 @@ exports[`Header should render 1`] = `
     }
     height="60px"
     justifyContent="center"
-    position="sticky"
-    top="0"
+    width="100%"
   >
     <Text
       color="MAIN_RED"
@@ -24,5 +28,5 @@ exports[`Header should render 1`] = `
     </Text>
   </Box>
   <Divider />
-</Fragment>
+</Box>
 `;

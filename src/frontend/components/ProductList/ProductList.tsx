@@ -10,7 +10,7 @@ const ProductList: FC<ProductListProps> = (props) => {
   const [items, setRef] = useInfiniteScroll(products);
 
   return (
-    <Box display="block" gridArea="main" margin="s20">
+    <Box display="block" gridArea="result" margin="s20">
       {items.map((product) => (
         <Box key={product.header} marginBottom="s8">
           <ProductCard

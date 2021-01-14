@@ -3,12 +3,13 @@ import React from "react";
 import Header from "~app/components/Header";
 import SearchResult from "~app/components/SearchResult";
 import Box from "~app/atoms/Box";
+import Grid from "~app/atoms/Grid";
 
 const Home = () => {
   return (
-    <>
+    <Grid main>
       <Header />
-      <Box flexDirection="column" height="100%">
+      <Box flexDirection="column" gridArea="body" height="100%">
         <Box
           background="BACKGROUND"
           display="block"
@@ -19,7 +20,7 @@ const Home = () => {
           <SearchResult />
         </Box>
       </Box>
-    </>
+    </Grid>
   );
 };
 

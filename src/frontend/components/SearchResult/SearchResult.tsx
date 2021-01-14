@@ -18,7 +18,7 @@ const SearchResult: FC = () => {
   }
 
   return products?.items.length ? (
-    <Grid main>
+    <Grid result>
       <ProductList products={products.items} />
     </Grid>
   ) : null;
