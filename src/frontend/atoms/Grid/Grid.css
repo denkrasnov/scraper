@@ -16,9 +16,9 @@
 .main {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  grid-template-areas: 
-  "header"
-  "body";
+  grid-template-areas:
+    "header"
+    "body";
 }
 
 @media (max-width: 992px) {
