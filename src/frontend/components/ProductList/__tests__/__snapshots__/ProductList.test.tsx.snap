@@ -11,6 +11,31 @@ exports[`ProductCard should render 1`] = `
     marginBottom="s8"
   >
     <ProductCard
+      channel="TV8"
+      date="9:00"
+      header="__TITLE__"
+      imageURL="__IMAGE_URL__"
+    />
+  </Box>
+  <Box
+    bottom="200px"
+    position="relative"
+  />
+</Box>
+`;
+
+exports[`ProductCard should render when not desktop 1`] = `
+<Box
+  display="block"
+  gridArea="result"
+  marginTop="s8"
+>
+  <Box
+    key="__TITLE__"
+    marginBottom="s8"
+  >
+    <ProductCard
+      channel="TV8"
       date="9:00"
       header="__TITLE__"
       imageURL="__IMAGE_URL__"

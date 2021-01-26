@@ -7,7 +7,7 @@ import Card from "../Card";
 
 storiesOf("Components|Card", module).add("default", () => {
   return (
-    <Box height="500px">
+    <Box height="500px" margin="s12">
       <Card
         fullHeight={boolean("fullHeight", false)}
         rounded={boolean("rounded", false)}

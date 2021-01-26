@@ -7,10 +7,11 @@ import Box from "~app/atoms/Box";
 import { H3 } from "~app/atoms/Headings";
 import Text from "~app/atoms/Text";
 import Divider from "~app/atoms/Divider";
+import getImage from "./helpers/getImage";
 import { ProductCardProps } from "./types";
 
 const ProductCard: FC<ProductCardProps> = (props) => {
-  const { date, header, imageURL, newsURL } = props;
+  const { date, header, imageURL, newsURL, channel } = props;
 
   return (
     <Touchable
@@ -19,7 +20,7 @@ const ProductCard: FC<ProductCardProps> = (props) => {
       productHover
       width="100%"
     >
-      <Card fullHeight rounded>
+      <Card fullHeight>
         <Box padding="s12" width="100%">
           <Box height="120px" marginRight="s12" minHeight="120px">
             {!imageURL ? (
@@ -39,14 +40,8 @@ const ProductCard: FC<ProductCardProps> = (props) => {
               </Text>
             </Box>
             <Divider />
-            <Box
-              justifyContent="spaceBetween"
-              marginBottom="s4"
-              marginTop="s16"
-            >
-              <Text color="MAIN_RED" fontSize="fs16" fontWeight="fw700">
-                TV8
-              </Text>
+            <Box justifyContent="spaceBetween" marginTop="s8">
+              <Image alt="channel" src={getImage(channel)} width="30px" />
               <Text color="BORDER_DARK" fontSize="fs16" fontWeight="fw700">
                 {date}
               </Text>

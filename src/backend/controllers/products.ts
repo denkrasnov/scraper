@@ -10,7 +10,7 @@ export const ProductsController = {
       const news =
         ((productsDocument[0] as unknown) as NewsCollection)?.news || [];
 
-      res.status(200).json({ name: ProductName.TV, items: news });
+      res.status(200).json({ name: ProductName.MD, items: news });
     } catch (error) {
       next(error);
     }

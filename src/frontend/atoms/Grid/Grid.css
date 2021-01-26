@@ -9,7 +9,7 @@
 
 .result {
   grid-gap: 25px;
-  grid-template-columns: 200px auto 200px;
+  grid-template-columns: minmax(200px, auto) minmax(auto, 1000px) minmax(200px, auto);
   grid-template-areas: "filter result ads";
 }
 

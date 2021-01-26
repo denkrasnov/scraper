@@ -30,10 +30,11 @@ exports[`SearchResult should render products 1`] = `
     products={
       Array [
         Object {
+          "channel": "TV8",
           "date": "9:00",
           "header": "__TITLE__",
           "imageURL": "__IMAGE_URL__",
-          "newsUrl": "__URL__",
+          "newsURL": "__URL__",
         },
       ]
     }

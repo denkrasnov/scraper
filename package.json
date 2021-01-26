@@ -61,6 +61,7 @@
     "react-dom": "^16.12.0",
     "react-final-form": "^6.3.0",
     "react-hot-loader": "^4.12.18",
+    "react-responsive": "^8.2.0",
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
@@ -91,6 +92,7 @@
     "@types/puppeteer": "^2.0.1",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
+    "@types/react-responsive": "^8.0.2",
     "@types/storybook__react": "^5.2.1",
     "@types/testing-library__react-hooks": "^3.1.0",
     "@types/webpack": "^4.41.17",

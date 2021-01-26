@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 
 import * as AppContext from "~app/services/ContextProvider";
 import { INITIAL_STATE } from "~app/services/fetchProducts/constants";
-import { ProductName } from "../../../../backend/scrapers/types";
+import { ProductName, Channels } from "../../../../backend/scrapers/types";
 import SearchResult from "..";
 
 describe("SearchResult", () => {
@@ -16,13 +16,14 @@ describe("SearchResult", () => {
       {
         ...INITIAL_STATE,
         products: {
-          name: ProductName.TV,
+          name: ProductName.MD,
           items: [
             {
               imageURL: "__IMAGE_URL__",
               date: "9:00",
               header: "__TITLE__",
-              newsUrl: "__URL__"
+              newsURL: "__URL__",
+              channel: Channels.TV8
             }
           ]
         }
@@ -51,7 +52,7 @@ describe("SearchResult", () => {
     jest.spyOn(AppContext, "useFullContext").mockImplementationOnce(() => [
       {
         ...INITIAL_STATE,
-        products: { name: ProductName.TV, items: [] }
+        products: { name: ProductName.MD, items: [] }
       },
       () => {}
     ]);

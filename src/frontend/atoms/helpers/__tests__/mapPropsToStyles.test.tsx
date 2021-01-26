@@ -37,6 +37,12 @@ describe("mapPropsToStyles", () => {
     expect(result).toBe(withRoot.root);
   });
 
+  it("should return when prop is undefined", () => {
+    const result = mapPropsToStyles({ foo: undefined }, styles);
+
+    expect(result).toBe("");
+  });
+
   it("should throw Error", () => {
     expect(() => {
       mapPropsToStyles({ foo: [] }, styles);

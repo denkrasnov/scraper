@@ -13,7 +13,6 @@ exports[`ProductCard should render 1`] = `
 >
   <Card
     fullHeight={true}
-    rounded={true}
   >
     <Box
       padding="s12"
@@ -47,16 +46,13 @@ exports[`ProductCard should render 1`] = `
         <Divider />
         <Box
           justifyContent="spaceBetween"
-          marginBottom="s4"
-          marginTop="s16"
+          marginTop="s8"
         >
-          <Text
-            color="MAIN_RED"
-            fontSize="fs16"
-            fontWeight="fw700"
-          >
-            TV8
-          </Text>
+          <Image
+            alt="channel"
+            src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
+            width="30px"
+          />
           <Text
             color="BORDER_DARK"
             fontSize="fs16"
@@ -84,7 +80,6 @@ exports[`ProductCard should render when no image url 1`] = `
 >
   <Card
     fullHeight={true}
-    rounded={true}
   >
     <Box
       padding="s12"
@@ -124,16 +119,13 @@ exports[`ProductCard should render when no image url 1`] = `
         <Divider />
         <Box
           justifyContent="spaceBetween"
-          marginBottom="s4"
-          marginTop="s16"
+          marginTop="s8"
         >
-          <Text
-            color="MAIN_RED"
-            fontSize="fs16"
-            fontWeight="fw700"
-          >
-            TV8
-          </Text>
+          <Image
+            alt="channel"
+            src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
+            width="30px"
+          />
           <Text
             color="BORDER_DARK"
             fontSize="fs16"

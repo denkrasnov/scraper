@@ -1,7 +1,7 @@
 import reducer from "../reducer";
 import { INITIAL_STATE } from "../constants";
 import { ActionTypes } from "../types";
-import { ProductName } from "../../../../backend/scrapers/types";
+import { ProductName, Channels } from "../../../../backend/scrapers/types";
 
 describe("reducer", () => {
   it("should return correct state when FETCH", () => {
@@ -27,13 +27,14 @@ describe("reducer", () => {
 
   it("should return correct state when FETCH_SUCCESS", () => {
     const productPayload = {
-      name: ProductName.TV,
+      name: ProductName.MD,
       items: [
         {
           imageURL: "__IMAGE_URL__",
           date: "9:00",
           header: "__TITLE__",
-          newsUrl: "__URL__"
+          newsUrl: "__URL__",
+          channel: Channels.TV8
         }
       ]
     };

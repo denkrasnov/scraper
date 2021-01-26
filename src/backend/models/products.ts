@@ -1,14 +1,15 @@
 import { Schema, model } from "mongoose";
 
-const Product = {
+const Article = {
   header: String,
   imageURL: String,
   newsURL: String,
-  date: String
+  date: String,
+  channel: String
 };
 
 const productsSchema = new Schema({
-  news: [Product]
+  news: [Article]
 });
 
 export const Products = model("products", productsSchema);

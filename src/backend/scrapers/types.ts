@@ -1,50 +1,19 @@
 export enum ProductName {
-  TV = "tv",
-  FRIDGE = "fridge"
+  MD = "MD"
 }
 
-export enum ShopName {
-  BOMBA = "bomba.md",
-  DARWIN = "darwin.md",
-  MAXIMUM = "maximum.md"
+export enum Channels {
+  TV8 = "TV8",
+  NTV = "NTV",
+  JurnalTV = "JurnalTV"
 }
-
-export interface Product {
-  id: string;
-  title?: string | null;
-  imageUrl?: string | null;
-  price?: string | null;
-  noImage?: boolean;
-  shop: string;
-  productUrl: string | null;
-  specifications?: SpecificationsTV;
-}
-
-export interface RawProduct extends Omit<Product, "id" | "shop"> {}
-
-export type RawProducts = {
-  name: string;
-  items: Product[];
-}[][];
-
-export interface ShapedProducts {
-  tv: Product[];
-  fridge: Product[];
-}
-
-export interface SpecificationsTV {
-  screenSize: string | undefined;
-}
-
-export type ObjectType = { [key: string]: any };
-
-// START NEW
 export interface NewsCollection {
-  news: News[];
+  news: Article[];
 }
-export interface News {
+export interface Article {
   date?: string;
   header?: string;
   imageURL?: string;
   newsURL?: string;
+  channel: Channels;
 }

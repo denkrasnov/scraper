@@ -14,6 +14,9 @@ function mapPropsToStyles(
         case "string":
           className = `${prop}-${value}`;
           break;
+        case "undefined":
+          className = "";
+          break;
         default:
           throw new Error(`Unknown typeof value: ${value}`);
       }

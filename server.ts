@@ -8,6 +8,7 @@ import mongoose from "mongoose";
 import productsRoute from "./src/backend/routes/products";
 import { error } from "./src/backend/scrapers/helpers/status";
 import { startCron } from "./src/backend/scrapers";
+// import scrape from "./src/backend/scrapers/scrape";
 
 require("dotenv").config();
 
@@ -35,7 +36,12 @@ mongoose
     useUnifiedTopology: true,
     useFindAndModify: false
   })
-  .then(() => startCron())
+  .then(() => {
+    // setTimeout(() => {
+    //   scrape();
+    // }, 6000);
+    startCron();
+  })
   .catch((err) => console.log(error(err)));
 
 mongoose.connection.on("error", (err) => {

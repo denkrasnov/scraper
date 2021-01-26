@@ -2,10 +2,6 @@
   transition: transform 330ms ease-in-out;
 }
 
-.productHover:hover {
-  transform: scale(1.04);
-}
-
 .root:link {
   color: inherit;
   text-decoration: none;
@@ -24,4 +20,10 @@
 .root:active {
   color: inherit;
   text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  .productHover:hover {
+    transform: scale(1.04);
+  }
 }

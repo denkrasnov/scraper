@@ -10,7 +10,7 @@ describe("Filter", () => {
     const component = shallow(
       <Filter
         options={["__OPTION_1__", "__OPTION_2__"]}
-        productName={ProductName.TV}
+        productName={ProductName.MD}
       />
     );
     expect(component).toMatchSnapshot();

@@ -9,7 +9,7 @@ import Box from "../../Box";
 storiesOf("Components|Touchable", module).add("default", () => {
   return (
     <Box margin="s20">
-      <Touchable productHover={boolean("productHover effect", false)}>
+      <Touchable productHover={boolean("Hover effect", false)}>
         <Card>
           <Box
             alignItems="center"

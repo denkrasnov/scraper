@@ -1,5 +1,5 @@
-import { News } from "../../../backend/scrapers/types";
+import { Article } from "../../../backend/scrapers/types";
 
 export interface ProductListProps {
-  products: News[];
+  products: Article[];
 }

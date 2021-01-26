@@ -1,9 +1,15 @@
 import { Products } from "../models/products";
 import { error } from "./helpers/status";
 import getTV8News from "./TV8";
+import getNTVNews from "./NTV";
+import getJurnalTVNews from "./JurnalTV";
 
 const scrape = async () => {
-  const products = await Promise.all([getTV8News()]);
+  const products = await Promise.all([
+    getTV8News(),
+    getNTVNews(),
+    getJurnalTVNews()
+  ]);
   const news = products.flat();
 
   try {

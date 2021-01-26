@@ -3,13 +3,13 @@ import puppeteer, { Page } from "puppeteer";
 
 import { error, success } from "../helpers/status";
 import { TV8 } from "./constants";
-import { News } from "../types";
+import { Article, Channels } from "../types";
 
-const extractNews = () => {
+const extractNews = (channel: Channels) => {
   const extractedElements = document.querySelectorAll(
     "ul.widget-latest-posts-tv8 > li"
   );
-  const news: News[] = [];
+  const news: Article[] = [];
 
   Array.from(extractedElements).forEach((item) => {
     const headerLink: HTMLLinkElement | null = item.querySelector(
@@ -22,7 +22,7 @@ const extractNews = () => {
       item.querySelector("div.widget-meta ul > li.meta-date > span")
         ?.textContent || undefined;
 
-    news.push({ header, imageURL, newsURL, date });
+    news.push({ header, imageURL, newsURL, date, channel });
   });
 
   return news;
@@ -30,15 +30,15 @@ const extractNews = () => {
 
 const scrapeInfiniteScrollItems = async (
   page: Page,
-  extractItems: () => News[],
+  extractItems: (channel: Channels) => Article[],
   itemTargetCount: number,
   scrollDelay = 1000
 ) => {
-  let items: News[] = [];
+  let news: Article[] = [];
   try {
     let previousHeight: number | null;
-    while (items.length < itemTargetCount) {
-      items = await page.evaluate(extractItems);
+    while (news.length < itemTargetCount) {
+      news = await page.evaluate(extractItems, Channels.TV8);
 
       previousHeight =
         (await page.evaluate(() => {
@@ -68,7 +68,7 @@ const scrapeInfiniteScrollItems = async (
   } catch (e) {
     console.log(error("❌ ScrollItems --ERROR--:", e));
   }
-  return items;
+  return news;
 };
 
 const getTV8News = async () => {
@@ -80,10 +80,9 @@ const getTV8News = async () => {
       args: ["--incognito", "--no-sandbox"]
     });
     const page = await browser.newPage();
-    page.setViewport({ width: 1280, height: 926 });
+    // page.setViewport({ width: 1280, height: 926 });
     await page.setDefaultNavigationTimeout(60000);
     await page.setRequestInterception(true);
-
     page.on("request", (req) => {
       if (req.resourceType() === "font" || req.resourceType() === "image") {
         req.abort();
@@ -92,13 +91,11 @@ const getTV8News = async () => {
       }
     });
 
-    // Navigate to the demo page.
     await page.goto(TV8);
 
     // Scroll and extract items from the page.
     const news = await scrapeInfiniteScrollItems(page, extractNews, 60);
 
-    // Close the browser.
     await browser.close();
 
     console.log(success("✅ TV8 --FINISH--"));
