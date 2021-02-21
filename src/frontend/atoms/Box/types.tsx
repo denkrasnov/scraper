@@ -9,6 +9,7 @@ type Display = "block" | "inlineBlock" | "inline" | "flex" | "inlineFlex";
 type FlexDirection = "column";
 
 type JustifyContent =
+  | "flexStart"
   | "flexEnd"
   | "center"
   | "spaceBetween"

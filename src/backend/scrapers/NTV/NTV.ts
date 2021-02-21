@@ -2,9 +2,9 @@ import puppeteer from "puppeteer";
 
 import { error, success } from "../helpers/status";
 import { NTV } from "./constants";
-import { Article, Channels } from "../types";
+import { Article, Channel } from "../types";
 
-const extractNews = (channel: Channels) => {
+const extractNews = (channel: Channel) => {
   const articlesElements = document.querySelectorAll(
     "ul#catcontainer div#dle-content > li"
   );
@@ -58,7 +58,7 @@ const getNTVNews = async () => {
     await page.goto(NTV);
 
     // Scroll and extract items from the page.
-    const news = await page.evaluate(extractNews, Channels.NTV);
+    const news = await page.evaluate(extractNews, Channel.NTV);
 
     // Close the browser.
     await browser.close();

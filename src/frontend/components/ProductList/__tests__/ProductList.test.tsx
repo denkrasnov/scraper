@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import useInfiniteScroll from "infinite-scroll-react-hook";
 
 import isDesktop from "~app/atoms/hooks/isDesktop";
-import { Channels } from "../../../../backend/scrapers/types";
+import { Channel } from "../../../../backend/scrapers/types";
 import ProductList from "..";
 
 jest.mock("infinite-scroll-react-hook", () => jest.fn(() => [[], () => {}]));
@@ -16,18 +16,22 @@ describe("ProductCard", () => {
       date: "9:00",
       header: "__TITLE__",
       newsUrl: "__URL__",
-      channel: Channels.TV8
+      channel: Channel.TV8
     }
   ];
   (useInfiniteScroll as jest.Mock).mockReturnValue([products, () => {}]);
 
   it("should render", () => {
     const component = shallow(<ProductList products={products} />);
-
     expect(component).toMatchSnapshot();
   });
 
-  it("should render when not desktop", () => {
+  it("should render when no products prop", () => {
+    const component = shallow(<ProductList />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render when mobile", () => {
     (isDesktop as jest.Mock).mockReturnValueOnce(false);
     const component = shallow(<ProductList products={products} />);
 

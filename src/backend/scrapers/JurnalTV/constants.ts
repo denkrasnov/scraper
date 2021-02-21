@@ -1,1 +1,1 @@
-export const JurnalTV = "https://jurnaltv.md/page/ultima-ora/1";
+export const JurnalTV = "https://www.jurnaltv.md/category/politic";

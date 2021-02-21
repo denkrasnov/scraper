@@ -1,27 +1,50 @@
 import React, { FC } from "react";
+import { useQuery, gql } from "@apollo/client";
 
+import { Article, ProductName, Channel } from "../../../backend/scrapers/types";
 import Box from "~app/atoms/Box";
 import Loader from "~app/atoms/Loader";
 import Grid from "~app/atoms/Grid";
-import { useFullContext } from "~app/services/ContextProvider";
 import ProductList from "../ProductList";
+import Filter from "../Filter";
+
+const FETCH_NEWS = gql`
+  query FetchNews {
+    news {
+      _id
+      date
+      header
+      imageURL
+      newsURL
+      channel
+    }
+  }
+`;
 
 const SearchResult: FC = () => {
-  const [{ products, isLoading, isError }] = useFullContext();
+  const { loading, error, data } = useQuery<{ news: Article[] }>(FETCH_NEWS);
 
-  if (isLoading || isError) {
+  if (loading || error || !data) {
     return (
       <Box justifyContent="center" marginTop="s48">
-        {isLoading ? <Loader /> : "Error..."}
+        {loading ? <Loader /> : "Error..."}
       </Box>
     );
   }
 
-  return products?.items.length ? (
+  const { news } = data;
+
+  return (
     <Grid result>
-      <ProductList products={products.items} />
+      <Filter
+        items={news}
+        options={[Channel.NTV, Channel.TV8, Channel.JurnalTV]}
+        productName={ProductName.MD}
+      >
+        <ProductList />
+      </Filter>
     </Grid>
-  ) : null;
+  );
 };
 
 export default SearchResult;

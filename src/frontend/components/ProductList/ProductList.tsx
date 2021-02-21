@@ -7,7 +7,7 @@ import ProductCard from "../ProductCard";
 import { ProductListProps } from "./types";
 
 const ProductList: FC<ProductListProps> = (props) => {
-  const { products } = props;
+  const { products = [] } = props;
   const [items, setRef] = useInfiniteScroll(products);
   const desktop = isDesktop();
 

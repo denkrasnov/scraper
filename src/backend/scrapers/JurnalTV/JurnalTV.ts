@@ -3,29 +3,32 @@ import puppeteer, { Page } from "puppeteer";
 import { getNextUrl } from "./getNextUrl";
 import { error, success } from "../helpers/status";
 import { JurnalTV } from "./constants";
-import { Article, Channels } from "../types";
+import { Article, Channel } from "../types";
 
 const extractNews = async (page: Page, url: string): Promise<Article[]> => {
   await page.goto(url);
 
   // Scrape the data
-  const news = await page.evaluate((channel: Channels): Article[] => {
+  const news = await page.evaluate((channel: Channel): Article[] => {
     const articlesElements = document.querySelectorAll(
-      "div.last-articles-list > div.row"
+      "div.tab-content > div.tab-pane.active div.row > div.col.px-2"
     );
 
     if (articlesElements.length > 0) {
       return Array.from(articlesElements).map((article) => {
-        const date =
-          article.querySelector("div.col-md-1 > div.article-time")
-            ?.textContent || undefined;
-        const headerElement = article.querySelector<HTMLLinkElement>(
-          "div.col-md-8 > div.article-title > h3 > a"
+        const dateElements = article.querySelectorAll(
+          "div.product > div.product-meta span"
         );
-        const header = headerElement?.textContent || undefined;
+        const time = dateElements[1]?.textContent?.trim();
+        const day = dateElements[0]?.textContent?.trim();
+        const date = `${time} ${day}`;
+        const headerElement = article.querySelector<HTMLLinkElement>(
+          "div.product > h6 > a"
+        );
+        const header = headerElement?.textContent?.trim() || undefined;
         const newsURL = headerElement?.href || undefined;
         const imageURL = article.querySelector<HTMLImageElement>(
-          "div.col-md-3 > div.article-image img"
+          "div.product > div.product-image > a > img"
         )?.src;
 
         return {
@@ -38,16 +41,16 @@ const extractNews = async (page: Page, url: string): Promise<Article[]> => {
       });
     }
     return [];
-  }, Channels.JurnalTV);
+  }, Channel.JurnalTV);
 
   // Go fetch the next page search/x+1
   const matchArray = url
-    ? url.match(/ultima-ora\/(\d+)/)
-    : page.url().match(/ultima-ora\/(\d+)/);
+    ? url.match(/politic\/(\d+)/)
+    : page.url().match(/politic\/(\d+)/);
   const number = matchArray && matchArray[1];
   const pageNumber = number && parseInt(number, 10);
 
-  if (news.length < 1 || pageNumber === 6) {
+  if (news.length < 1 || pageNumber === 3) {
     // Terminate
     return news;
   }
@@ -59,8 +62,8 @@ const extractNews = async (page: Page, url: string): Promise<Article[]> => {
 
 const getJurnalTVNews = async () => {
   console.log(success("✅ JurnalTV --START--"));
+
   try {
-    // Set up browser and page.
     const browser = await puppeteer.launch({
       // headless: false,
       args: ["--incognito", "--no-sandbox"]
@@ -79,7 +82,6 @@ const getJurnalTVNews = async () => {
       }
     });
 
-    // Scroll and extract items from the page.
     const news = await extractNews(page, JurnalTV);
 
     // Close the browser.

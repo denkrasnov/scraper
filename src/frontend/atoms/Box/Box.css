@@ -23,6 +23,10 @@
   display: inline-flex;
 }
 
+.justifyContent-flexStart {
+  justify-content: flex-start;
+}
+
 .justifyContent-flexEnd {
   justify-content: flex-end;
 }

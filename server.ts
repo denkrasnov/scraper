@@ -4,11 +4,15 @@ import path from "path";
 import bodyParser from "body-parser";
 import chalk from "chalk";
 import mongoose from "mongoose";
+import { graphqlHTTP } from "express-graphql";
+import { buildSchema } from "graphql";
 
 import productsRoute from "./src/backend/routes/products";
 import { error } from "./src/backend/scrapers/helpers/status";
-import { startCron } from "./src/backend/scrapers";
-// import scrape from "./src/backend/scrapers/scrape";
+// import { startCron } from "./src/backend/scrapers";
+import { Products } from "./src/backend/models/products";
+import { NewsCollection } from "./src/backend/scrapers/types";
+import scrape from "./src/backend/scrapers/scrape";
 
 require("dotenv").config();
 
@@ -16,7 +20,7 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 const app: Application = express();
 
 process.stdout.write(`
- ${chalk.bgHex("#224dff").white("--- Compare md ---")}
+ ${chalk.bgHex("#224dff").white("--- newsfeed ---")}
  The server is available on ${chalk.hex("#f7c132")(
    `${
      isDevelopment ? `http://localhost:${process.env.PORT}` : process.env.PORT
@@ -37,10 +41,10 @@ mongoose
     useFindAndModify: false
   })
   .then(() => {
-    // setTimeout(() => {
-    //   scrape();
-    // }, 6000);
-    startCron();
+    setTimeout(() => {
+      scrape();
+      // startCron();s
+    }, 8000);
   })
   .catch((err) => console.log(error(err)));
 
@@ -82,5 +86,46 @@ if (isDevelopment) {
 }
 
 app.use("/news", productsRoute);
+
+/* ------ GRAPHQL START ------ */
+
+const schema = buildSchema(`
+  type Query {
+    hello: String!
+    news: [Article]!
+  }
+
+  type Article {
+    _id: ID!
+    date: String
+    header: String
+    imageURL: String
+    newsURL: String
+    channel: String
+  }
+`);
+
+const resolvers = {
+  hello: () => "Hello",
+  news: async (_args: any, context: any) => {
+    const { products } = context;
+    const productsDocument = await products.find({});
+    const news =
+      ((productsDocument[0] as unknown) as NewsCollection)?.news || [];
+    return news;
+  }
+};
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+    rootValue: resolvers,
+    context: { products: Products },
+    graphiql: true
+  })
+);
+
+/* ------ GRAPHQL END ------ */
 
 app.listen(process.env.PORT, () => {});

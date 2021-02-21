@@ -8,12 +8,10 @@
 }
 
 .result {
-  grid-gap: 25px;
-  grid-template-columns: minmax(200px, auto) minmax(auto, 1000px) minmax(
-      200px,
-      auto
-    );
-  grid-template-areas: "filter result ads";
+  grid-template-columns: auto;
+  grid-template-areas:
+    "filter"
+    "result";
 }
 
 .main {
@@ -24,9 +22,13 @@
     "body";
 }
 
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   .result {
-    grid-template-columns: auto;
-    grid-template-areas: "result";
+    grid-gap: 25px;
+    grid-template-columns: minmax(200px, auto) minmax(auto, 1000px) minmax(
+        200px,
+        auto
+      );
+    grid-template-areas: "filter result ads";
   }
 }

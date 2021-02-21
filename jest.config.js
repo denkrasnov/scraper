@@ -11,7 +11,7 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/jest/setupFile.tsx"],
   collectCoverageFrom: [
     "src/frontend/**/*.{ts,tsx}",
-    "!**/types.tsx",
+    "!**/{types,index}.tsx",
     "!src/**/{__stories__,__tests__}/**"
   ],
   collectCoverage: false,

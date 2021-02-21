@@ -3,9 +3,9 @@ import puppeteer, { Page } from "puppeteer";
 
 import { error, success } from "../helpers/status";
 import { TV8 } from "./constants";
-import { Article, Channels } from "../types";
+import { Article, Channel } from "../types";
 
-const extractNews = (channel: Channels) => {
+const extractNews = (channel: Channel) => {
   const extractedElements = document.querySelectorAll(
     "ul.widget-latest-posts-tv8 > li"
   );
@@ -30,7 +30,7 @@ const extractNews = (channel: Channels) => {
 
 const scrapeInfiniteScrollItems = async (
   page: Page,
-  extractItems: (channel: Channels) => Article[],
+  extractItems: (channel: Channel) => Article[],
   itemTargetCount: number,
   scrollDelay = 1000
 ) => {
@@ -38,7 +38,7 @@ const scrapeInfiniteScrollItems = async (
   try {
     let previousHeight: number | null;
     while (news.length < itemTargetCount) {
-      news = await page.evaluate(extractItems, Channels.TV8);
+      news = await page.evaluate(extractItems, Channel.TV8);
 
       previousHeight =
         (await page.evaluate(() => {

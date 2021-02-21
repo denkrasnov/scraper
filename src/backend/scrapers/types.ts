@@ -2,7 +2,7 @@ export enum ProductName {
   MD = "MD"
 }
 
-export enum Channels {
+export enum Channel {
   TV8 = "TV8",
   NTV = "NTV",
   JurnalTV = "JurnalTV"
@@ -15,5 +15,5 @@ export interface Article {
   header?: string;
   imageURL?: string;
   newsURL?: string;
-  channel: Channels;
+  channel: Channel;
 }
