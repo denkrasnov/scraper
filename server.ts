@@ -9,10 +9,9 @@ import { buildSchema } from "graphql";
 
 import productsRoute from "./src/backend/routes/products";
 import { error } from "./src/backend/scrapers/helpers/status";
-// import { startCron } from "./src/backend/scrapers";
+import { startCron } from "./src/backend/scrapers";
 import { Products } from "./src/backend/models/products";
 import { NewsCollection } from "./src/backend/scrapers/types";
-import scrape from "./src/backend/scrapers/scrape";
 
 require("dotenv").config();
 
@@ -42,8 +41,7 @@ mongoose
   })
   .then(() => {
     setTimeout(() => {
-      scrape();
-      // startCron();s
+      startCron();
     }, 8000);
   })
   .catch((err) => console.log(error(err)));
