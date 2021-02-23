@@ -7,7 +7,7 @@ import Box from "~app/atoms/Box";
 import { H3 } from "~app/atoms/Headings";
 import Text from "~app/atoms/Text";
 import Divider from "~app/atoms/Divider";
-import getImage from "./helpers/getImage";
+import { channelLogo } from "~app/common/constants";
 import { ProductCardProps } from "./types";
 
 const ProductCard: FC<ProductCardProps> = (props) => {
@@ -41,7 +41,7 @@ const ProductCard: FC<ProductCardProps> = (props) => {
             </Box>
             <Divider />
             <Box justifyContent="spaceBetween" marginTop="s8">
-              <Image alt="channel" src={getImage(channel)} width="30px" />
+              <Image alt="channel" src={channelLogo[channel]} width="30px" />
               <Text color="BORDER_DARK" fontSize="fs16" fontWeight="fw700">
                 {date}
               </Text>

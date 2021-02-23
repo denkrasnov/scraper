@@ -53,19 +53,6 @@ describe("Filter", () => {
     expect(component).toMatchSnapshot();
   });
 
-  // it("should render when child", () => {
-  //   const component = shallow(
-  //     <Filter
-  //       items={news}
-  //       options={["__OPTION_1__", "__OPTION_2__"]}
-  //       productName={ProductName.MD}
-  //     >
-  //       {null}
-  //     </Filter>
-  //   );
-  //   expect(component).toMatchSnapshot();
-  // });
-
   it("should call filter", () => {
     const filterMock = jest.fn();
     (useFilter as jest.Mock).mockReturnValueOnce([[], filterMock]);

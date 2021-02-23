@@ -34,7 +34,12 @@ exports[`Filter should render 1`] = `
             marginTop="s12"
           >
             <Checkbox
-              label="__OPTION_1__"
+              label={
+                <Image
+                  alt="channel logo"
+                  width="30px"
+                />
+              }
               name="__OPTION_1__"
               onChange={[Function]}
               value="__OPTION_1__"
@@ -45,7 +50,12 @@ exports[`Filter should render 1`] = `
             marginTop="s12"
           >
             <Checkbox
-              label="__OPTION_2__"
+              label={
+                <Image
+                  alt="channel logo"
+                  width="30px"
+                />
+              }
               name="__OPTION_2__"
               onChange={[Function]}
               value="__OPTION_2__"
@@ -93,7 +103,12 @@ exports[`Filter should render when mobile 1`] = `
             marginTop="s12"
           >
             <Checkbox
-              label="__OPTION_1__"
+              label={
+                <Image
+                  alt="channel logo"
+                  width="30px"
+                />
+              }
               name="__OPTION_1__"
               onChange={[Function]}
               value="__OPTION_1__"
@@ -104,7 +119,12 @@ exports[`Filter should render when mobile 1`] = `
             marginTop="s12"
           >
             <Checkbox
-              label="__OPTION_2__"
+              label={
+                <Image
+                  alt="channel logo"
+                  width="30px"
+                />
+              }
               name="__OPTION_2__"
               onChange={[Function]}
               value="__OPTION_2__"

@@ -86,10 +86,8 @@ if (isDevelopment) {
 app.use("/news", productsRoute);
 
 /* ------ GRAPHQL START ------ */
-
 const schema = buildSchema(`
   type Query {
-    hello: String!
     news: [Article]!
   }
 
@@ -104,13 +102,12 @@ const schema = buildSchema(`
 `);
 
 const resolvers = {
-  hello: () => "Hello",
   news: async (_args: any, context: any) => {
     const { products } = context;
     const productsDocument = await products.find({});
     const news =
       ((productsDocument[0] as unknown) as NewsCollection)?.news || [];
-    return news;
+    return news.filter((item) => !!item);
   }
 };
 

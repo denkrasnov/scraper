@@ -10,7 +10,7 @@ const scrape = async () => {
     getNTVNews(),
     getJurnalTVNews()
   ]);
-  const news = products.flat();
+  const news = products.flat().filter((item) => !!item);
 
   try {
     await Products.collection.drop();

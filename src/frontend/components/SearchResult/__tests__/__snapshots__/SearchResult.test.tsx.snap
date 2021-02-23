@@ -36,9 +36,7 @@ exports[`SearchResult should render products 1`] = `
     }
     options={
       Array [
-        "NTV",
         "TV8",
-        "JurnalTV",
       ]
     }
     productName="MD"

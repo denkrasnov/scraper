@@ -2,11 +2,13 @@ import React, { FC, ChangeEvent, Children, cloneElement } from "react";
 
 import { Article } from "../../../backend/scrapers/types";
 import Box from "~app/atoms/Box";
+import Image from "~app/atoms/Image";
 import Checkbox from "~app/atoms/Checkbox";
 import Card from "~app/atoms/Card";
 import Divider from "~app/atoms/Divider";
 import Text from "~app/atoms/Text";
 import isDesktop from "~app/atoms/hooks/isDesktop";
+import { channelLogo } from "~app/common/constants";
 import { filterName } from "./constants";
 import { FilterProps } from "./types";
 import useFilter from "./hooks/useFilter";
@@ -49,7 +51,13 @@ const Filter: FC<FilterProps> = (props) => {
               {options.map((option) => (
                 <Box key={option} marginTop="s12">
                   <Checkbox
-                    label={option}
+                    label={
+                      <Image
+                        alt="channel logo"
+                        src={channelLogo[option]}
+                        width="30px"
+                      />
+                    }
                     name={option}
                     onChange={onChange}
                     value={option}

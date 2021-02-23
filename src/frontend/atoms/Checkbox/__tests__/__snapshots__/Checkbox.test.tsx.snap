@@ -10,7 +10,9 @@ exports[`Checkbox should render 1`] = `
     type="checkbox"
     value="__VALUE__"
   />
-  <div />
+  <Box
+    alignItems="center"
+  />
 </label>
 `;
 
@@ -24,8 +26,10 @@ exports[`Checkbox should render with label 1`] = `
     type="checkbox"
     value="__TEST__"
   />
-  <div>
+  <Box
+    alignItems="center"
+  >
     __LABEL__
-  </div>
+  </Box>
 </label>
 `;

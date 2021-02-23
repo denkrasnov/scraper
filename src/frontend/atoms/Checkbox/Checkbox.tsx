@@ -2,6 +2,7 @@ import React, { FC } from "react";
 
 import { CheckboxProps } from "./types";
 import styles from "./Checkbox.css";
+import Box from "../Box";
 
 const Checkbox: FC<CheckboxProps> = (props) => {
   const { name, value, label, onChange } = props;
@@ -9,7 +10,7 @@ const Checkbox: FC<CheckboxProps> = (props) => {
   return (
     <label className={styles.checkbox}>
       <input name={name} onChange={onChange} type="checkbox" value={value} />
-      <div>{label}</div>
+      <Box alignItems="center">{label}</Box>
     </label>
   );
 };
