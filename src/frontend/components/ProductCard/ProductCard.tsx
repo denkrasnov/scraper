@@ -42,7 +42,7 @@ const ProductCard: FC<ProductCardProps> = (props) => {
             <Divider />
             <Box justifyContent="spaceBetween" marginTop="s8">
               <Image alt="channel" src={channelLogo[channel]} width="30px" />
-              <Text color="BORDER_DARK" fontSize="fs16" fontWeight="fw700">
+              <Text color="BORDER_DARK" fontWeight="fw700">
                 {date}
               </Text>
             </Box>

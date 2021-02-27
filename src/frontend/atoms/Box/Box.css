@@ -109,6 +109,7 @@
 
 .gridArea-header {
   grid-area: header;
+  z-index: 1;
 }
 
 .gridArea-body {
