@@ -30,35 +30,39 @@ exports[`Filter should render 1`] = `
           justifyContent="flexStart"
         >
           <Box
-            key="__OPTION_1__"
+            key="TV8"
             marginTop="s12"
           >
             <Checkbox
               label={
                 <Image
                   alt="channel logo"
+                  src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
                   width="30px"
                 />
               }
-              name="__OPTION_1__"
+              name="TV8"
               onChange={[Function]}
-              value="__OPTION_1__"
+              styled="TV8"
+              value="TV8"
             />
           </Box>
           <Box
-            key="__OPTION_2__"
+            key="NTV"
             marginTop="s12"
           >
             <Checkbox
               label={
                 <Image
                   alt="channel logo"
+                  src="https://yt3.ggpht.com/ytc/AAUvwnjTxNZwMTMTlj18m75pswpomJFvJEHuargB5gWA=s900-c-k-c0x00ffffff-no-rj"
                   width="30px"
                 />
               }
-              name="__OPTION_2__"
+              name="NTV"
               onChange={[Function]}
-              value="__OPTION_2__"
+              styled="NTV"
+              value="NTV"
             />
           </Box>
         </Box>
@@ -99,35 +103,39 @@ exports[`Filter should render when mobile 1`] = `
           justifyContent="spaceAround"
         >
           <Box
-            key="__OPTION_1__"
+            key="TV8"
             marginTop="s12"
           >
             <Checkbox
               label={
                 <Image
                   alt="channel logo"
+                  src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
                   width="30px"
                 />
               }
-              name="__OPTION_1__"
+              name="TV8"
               onChange={[Function]}
-              value="__OPTION_1__"
+              styled="TV8"
+              value="TV8"
             />
           </Box>
           <Box
-            key="__OPTION_2__"
+            key="NTV"
             marginTop="s12"
           >
             <Checkbox
               label={
                 <Image
                   alt="channel logo"
+                  src="https://yt3.ggpht.com/ytc/AAUvwnjTxNZwMTMTlj18m75pswpomJFvJEHuargB5gWA=s900-c-k-c0x00ffffff-no-rj"
                   width="30px"
                 />
               }
-              name="__OPTION_2__"
+              name="NTV"
               onChange={[Function]}
-              value="__OPTION_2__"
+              styled="NTV"
+              value="NTV"
             />
           </Box>
         </Box>

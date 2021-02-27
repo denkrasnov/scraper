@@ -1,8 +1,8 @@
 // TODO: create shared types with /backend
-import { ProductName, Article } from "../../../backend/scrapers/types";
+import { ProductName, Article, Channel } from "../../../backend/scrapers/types";
 
 export interface FilterProps {
   productName: ProductName;
-  options: string[];
+  options: Channel[];
   items: Article[];
 }

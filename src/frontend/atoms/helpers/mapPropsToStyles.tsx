@@ -20,8 +20,11 @@ function mapPropsToStyles(
         default:
           throw new Error(`Unknown typeof value: ${value}`);
       }
-      if (className === "" || typeof styles[className] === "undefined")
+
+      if (className === "" || typeof styles[className] === "undefined") {
         return mappedStyles;
+      }
+
       return { ...mappedStyles, [styles[className]]: true };
     },
     {}

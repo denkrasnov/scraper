@@ -60,6 +60,7 @@ const Filter: FC<FilterProps> = (props) => {
                     }
                     name={option}
                     onChange={onChange}
+                    styled={option}
                     value={option}
                   />
                 </Box>

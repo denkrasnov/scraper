@@ -30,7 +30,7 @@ describe("Filter", () => {
     const component = shallow(
       <Filter
         items={news}
-        options={["__OPTION_1__", "__OPTION_2__"]}
+        options={[Channel.TV8, Channel.NTV]}
         productName={ProductName.MD}
       >
         <div />
@@ -44,7 +44,7 @@ describe("Filter", () => {
     const component = shallow(
       <Filter
         items={news}
-        options={["__OPTION_1__", "__OPTION_2__"]}
+        options={[Channel.TV8, Channel.NTV]}
         productName={ProductName.MD}
       >
         <div />
@@ -59,7 +59,7 @@ describe("Filter", () => {
     const component = shallow(
       <Filter
         items={news}
-        options={["__OPTION_1__", "__OPTION_2__"]}
+        options={[Channel.TV8, Channel.NTV]}
         productName={ProductName.MD}
       >
         <div />

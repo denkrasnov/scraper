@@ -1,14 +1,14 @@
-.checkbox {
+.root {
   display: inline-flex;
   position: relative;
   align-items: center;
 }
 
-.checkbox > div {
+.root > div {
   margin-left: 10px;
 }
 
-.checkbox > input {
+.root > input {
   width: 20px;
   height: 20px;
   appearance: none;
@@ -19,12 +19,12 @@
   position: relative;
 }
 
-.checkbox > input:checked {
+.root > input:checked {
   border: 1px solid var(--main-red);
   background-color: var(--main-red);
 }
 
-.checkbox > input::before {
+.root > input::before {
   content: "";
   display: block;
   position: absolute;
@@ -38,6 +38,105 @@
   opacity: 0;
 }
 
-.checkbox > input:checked::before {
+.root > input:checked::before {
   opacity: 1;
+}
+
+/*-- JurnalTV --*/
+.styled-JurnalTV:hover div {
+  box-shadow: 0px 0px 9px 1px var(--jurnaltv);
+}
+
+.styled-JurnalTV input:checked + div {
+  box-shadow: 0px 0px 9px 1px var(--jurnaltv);
+}
+
+.styled-JurnalTV > input {
+  border: none;
+}
+
+.styled-JurnalTV > input:checked {
+  border: none;
+  background: none;
+}
+
+.styled-JurnalTV > input::before {
+  opacity: 1;
+  border: solid var(--border-gray);
+  border-width: 0 2px 2px 0;
+}
+
+.styled-JurnalTV:hover > input::before {
+  opacity: 1;
+  border-color: var(--jurnaltv);
+}
+
+.styled-JurnalTV > input:checked::before {
+  border-color: var(--jurnaltv);
+}
+
+/*-- TV8 --*/
+.styled-TV8:hover div {
+  box-shadow: 0px 0px 9px 1px var(--tv8);
+}
+
+.styled-TV8 input:checked + div {
+  box-shadow: 0px 0px 9px 1px var(--tv8);
+}
+
+.styled-TV8 > input {
+  border: none;
+}
+
+.styled-TV8 > input:checked {
+  border: none;
+  background: none;
+}
+
+.styled-TV8 > input::before {
+  opacity: 1;
+  border: solid var(--border-gray);
+  border-width: 0 2px 2px 0;
+}
+
+.styled-TV8:hover > input::before {
+  opacity: 1;
+  border-color: var(--tv8);
+}
+
+.styled-TV8 > input:checked::before {
+  border-color: var(--tv8);
+}
+
+/*-- NTV --*/
+.styled-NTV:hover div {
+  box-shadow: 0px 0px 9px 1px var(--ntv);
+}
+
+.styled-NTV input:checked + div {
+  box-shadow: 0px 0px 9px 1px var(--ntv);
+}
+
+.styled-NTV > input {
+  border: none;
+}
+
+.styled-NTV > input:checked {
+  border: none;
+  background: none;
+}
+
+.styled-NTV > input::before {
+  opacity: 1;
+  border: solid var(--border-gray);
+  border-width: 0 2px 2px 0;
+}
+
+.styled-NTV:hover > input::before {
+  opacity: 1;
+  border-color: var(--ntv);
+}
+
+.styled-NTV > input:checked::before {
+  border-color: var(--ntv);
 }

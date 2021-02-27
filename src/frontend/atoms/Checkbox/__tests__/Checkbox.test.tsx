@@ -24,4 +24,18 @@ describe("Checkbox", () => {
 
     expect(component).toMatchSnapshot();
   });
+
+  it("should render styled", () => {
+    const component = shallow(
+      <Checkbox
+        label="__LABEL__"
+        name="__TEST__"
+        onChange={jest.fn()}
+        styled="TV8"
+        value="__TEST__"
+      />
+    );
+
+    expect(component).toMatchSnapshot();
+  });
 });
