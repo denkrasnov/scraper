@@ -1,14 +1,19 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 import { boolean } from "@storybook/addon-knobs";
 
 import Box from "../../Box";
 import Divider from "../Divider";
 
-storiesOf("Components|Divider", module).add("default", () => {
+export default {
+  title: "Components/Divider"
+};
+
+export const Default = () => {
   return (
     <Box height="100px" margin="s8" width="100%">
       <Divider vertical={boolean("Vertical position", false)} />
     </Box>
   );
-});
+};
+
+Default.storyName = "Divider";

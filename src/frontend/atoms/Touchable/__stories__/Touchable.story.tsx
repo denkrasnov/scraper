@@ -1,12 +1,15 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 import { boolean } from "@storybook/addon-knobs";
 
 import Touchable from "../Touchable";
 import Card from "../../Card";
 import Box from "../../Box";
 
-storiesOf("Components|Touchable", module).add("default", () => {
+export default {
+  title: "Components/Touchable"
+};
+
+export const Default = () => {
   return (
     <Box margin="s20">
       <Touchable productHover={boolean("Hover effect", false)}>
@@ -23,4 +26,6 @@ storiesOf("Components|Touchable", module).add("default", () => {
       </Touchable>
     </Box>
   );
-});
+};
+
+Default.storyName = "Touchable";

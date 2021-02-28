@@ -1,12 +1,15 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Box from "../../Box";
 import Text from "../../Text";
 import { colors } from "../colors";
 import { Color } from "../types";
 
-storiesOf("Components|Colors", module).add("default", () => {
+export default {
+  title: "Components/Colors"
+};
+
+export const Default = () => {
   const colorItems = Object.keys(colors).map((key) => (
     <div
       key={key}
@@ -37,4 +40,6 @@ storiesOf("Components|Colors", module).add("default", () => {
       {colorItems}
     </Box>
   );
-});
+};
+
+Default.storyName = "Colors";

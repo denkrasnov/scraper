@@ -1,5 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 import { select } from "@storybook/addon-knobs";
 
 import Text from "../Text";
@@ -18,7 +17,11 @@ const fontSizes = [
 ];
 const fontWeights = ["fw200", "fw400", "fw700"];
 
-storiesOf("Components|Text", module).add("default", () => {
+export default {
+  title: "Components/Text"
+};
+
+export const Default = () => {
   return (
     <Text
       fontSize={select("Font size", fontSizes, fontSizes[2]) as FontSize}
@@ -29,4 +32,6 @@ storiesOf("Components|Text", module).add("default", () => {
       Text example
     </Text>
   );
-});
+};
+
+Default.storyName = "Text";

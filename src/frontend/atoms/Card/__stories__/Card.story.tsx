@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 import { boolean } from "@storybook/addon-knobs";
 
 import Box from "../../Box";
 import Card from "../Card";
 
-storiesOf("Components|Card", module).add("default", () => {
+export default {
+  title: "Components/Card"
+};
+
+export const Default = () => {
   return (
     <Box height="500px" margin="s12">
       <Card
@@ -23,4 +26,6 @@ storiesOf("Components|Card", module).add("default", () => {
       </Card>
     </Box>
   );
-});
+};
+
+Default.storyName = "Card";
