@@ -3,15 +3,15 @@ import express, { Application, Request, Response } from "express";
 import path from "path";
 import bodyParser from "body-parser";
 import chalk from "chalk";
-import mongoose from "mongoose";
+import mongoose, { Model, Document } from "mongoose";
 import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
 
 import productsRoute from "./src/backend/routes/products";
 import { error } from "./src/backend/scrapers/helpers/status";
 import { startCron } from "./src/backend/scrapers";
-import { Products } from "./src/backend/models/products";
-import { NewsCollection } from "./src/backend/scrapers/types";
+import { NewsModel } from "./src/backend/models/news";
+import { Locale } from "./src/types";
 
 require("dotenv").config();
 
@@ -83,16 +83,17 @@ if (isDevelopment) {
   });
 }
 
+// keep the endpoint to teach Daniil about REST API
 app.use("/news", productsRoute);
 
 /* ------ GRAPHQL START ------ */
 const schema = buildSchema(`
   type Query {
-    news: [Article]!
+    news(locale: String!): [Article]!
   }
 
   type Article {
-    _id: ID!
+    id: ID
     date: String
     header: String
     imageURL: String
@@ -101,13 +102,26 @@ const schema = buildSchema(`
   }
 `);
 
+const localeRealm = {
+  [Locale.MD]: "md_MD",
+  [Locale.RU]: "md_RU"
+};
+
 const resolvers = {
-  news: async (_args: any, context: any) => {
-    const { products } = context;
-    const productsDocument = await products.find({});
+  news: async (
+    args: { locale: Locale },
+    context: { newsModel: Model<Document> }
+  ) => {
+    const selectByFieldName = localeRealm[args.locale];
+    const { newsModel } = context;
+
+    const query = await newsModel.find({}).select(selectByFieldName);
+
     const news =
-      ((productsDocument[0] as unknown) as NewsCollection)?.news || [];
-    return news.filter((item) => !!item);
+      // @ts-ignore
+      query[0]?.[selectByFieldName]?.map((item: any) => item.transform()) || [];
+
+    return news.filter((item: any) => !!item);
   }
 };
 
@@ -116,7 +130,7 @@ app.use(
   graphqlHTTP({
     schema,
     rootValue: resolvers,
-    context: { products: Products },
+    context: { newsModel: NewsModel },
     graphiql: true
   })
 );

@@ -22,6 +22,10 @@
     "body";
 }
 
+.flexGrow-gr1 {
+  flex-grow: 1;
+}
+
 @media (min-width: 992px) {
   .result {
     grid-gap: 25px;

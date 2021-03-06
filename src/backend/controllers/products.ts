@@ -1,12 +1,13 @@
 import { Request, Response, NextFunction } from "express";
 
 import { NewsCollection, ProductName } from "../scrapers/types";
-import { Products } from "../models/products";
+import { NewsModel } from "../models/news";
 
+// Keep this controler to teach Daniil about REST API
 export const ProductsController = {
   getNews: async (_req: Request, res: Response, next: NextFunction) => {
     try {
-      const productsDocument = await Products.find({});
+      const productsDocument = await NewsModel.find({});
       const news =
         ((productsDocument[0] as unknown) as NewsCollection)?.news || [];
 

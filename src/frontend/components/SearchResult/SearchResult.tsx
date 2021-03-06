@@ -1,7 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 
+// TODO create shared types
 import { Article, ProductName } from "../../../backend/scrapers/types";
+import { Locale } from "../../../types";
 import Box from "~app/atoms/Box";
 import Loader from "~app/atoms/Loader";
 import Grid from "~app/atoms/Grid";
@@ -10,9 +12,9 @@ import Filter from "../Filter";
 import getOptions from "./helpers/getOptions";
 
 const FETCH_NEWS = gql`
-  query FetchNews {
-    news {
-      _id
+  query FetchNews($locale: String!) {
+    news(locale: $locale) {
+      id
       date
       header
       imageURL
@@ -23,7 +25,16 @@ const FETCH_NEWS = gql`
 `;
 
 const SearchResult: FC = () => {
-  const { loading, error, data } = useQuery<{ news: Article[] }>(FETCH_NEWS);
+  const [locale, setLocale] = useState(Locale.RU);
+  const nextLocale = locale === Locale.MD ? Locale.RU : Locale.MD;
+
+  const { loading, error, data } = useQuery<{ news: Article[] }>(FETCH_NEWS, {
+    variables: { locale: nextLocale }
+  });
+
+  const onClickLocale = () => {
+    setLocale(nextLocale);
+  };
 
   if (loading || error || !data) {
     return (
@@ -38,7 +49,13 @@ const SearchResult: FC = () => {
   const options = getOptions(news);
   return (
     <Grid result>
-      <Filter items={news} options={options} productName={ProductName.MD}>
+      <Filter
+        items={news}
+        locale={locale}
+        onClickLocale={onClickLocale}
+        options={options}
+        productName={ProductName.MD}
+      >
         <ProductList />
       </Filter>
     </Grid>

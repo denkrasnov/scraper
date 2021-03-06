@@ -2,7 +2,7 @@
 import puppeteer, { Page } from "puppeteer";
 
 import { error, success } from "../helpers/status";
-import { TV8 } from "./constants";
+import { TV8md, TV8ru } from "./constants";
 import { Article, Channel } from "../types";
 
 const extractNews = (channel: Channel) => {
@@ -76,7 +76,7 @@ const getTV8News = async () => {
   try {
     // Set up browser and page.
     const browser = await puppeteer.launch({
-      // headless: false,
+      headless: false,
       args: ["--incognito", "--no-sandbox"]
     });
     const page = await browser.newPage();
@@ -91,16 +91,21 @@ const getTV8News = async () => {
       }
     });
 
-    await page.goto(TV8);
-
+    await page.goto(TV8md);
     // Scroll and extract items from the page.
-    const news = await scrapeInfiniteScrollItems(page, extractNews, 60);
+    const md = await scrapeInfiniteScrollItems(page, extractNews, 60);
+    await page.close();
+
+    const page2 = await browser.newPage();
+    await page2.goto(TV8ru);
+    // Scroll and extract items from the page.
+    const ru = await scrapeInfiniteScrollItems(page2, extractNews, 60);
 
     await browser.close();
 
     console.log(success("✅ TV8 --FINISH--"));
 
-    return news;
+    return { md, ru };
   } catch (e) {
     console.log(error("❌ TV8 --ERROR--:", e));
     return undefined;

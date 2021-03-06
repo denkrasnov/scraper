@@ -2,5 +2,5 @@
 import { ProductName } from "../../../backend/scrapers/types";
 
 export const filterName = {
-  [ProductName.MD]: "Canal"
+  [ProductName.MD]: "Filter"
 };

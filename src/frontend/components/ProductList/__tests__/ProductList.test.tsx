@@ -12,6 +12,7 @@ jest.mock("~app/atoms/hooks/isDesktop", () => jest.fn(() => true));
 describe("ProductCard", () => {
   const products = [
     {
+      id: "__ID__",
       imageURL: "__IMAGE_URL__",
       date: "9:00",
       header: "__TITLE__",

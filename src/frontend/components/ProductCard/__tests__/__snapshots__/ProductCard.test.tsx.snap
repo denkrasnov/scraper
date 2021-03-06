@@ -50,6 +50,7 @@ exports[`ProductCard should render 1`] = `
         >
           <Image
             alt="channel"
+            height="30px"
             src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
             width="30px"
           />
@@ -122,6 +123,7 @@ exports[`ProductCard should render when no image url 1`] = `
         >
           <Image
             alt="channel"
+            height="30px"
             src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
             width="30px"
           />

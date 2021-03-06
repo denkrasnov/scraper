@@ -47,3 +47,28 @@
 .fontWeight-fw700 {
   font-weight: 700;
 }
+
+@media (min-width: 992px) {
+  .gradientHover {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background: linear-gradient(
+      to right,
+      var(--body-text),
+      var(--body-text) 50%,
+      var(--text-gray) 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none;
+  }
+
+  .gradientHover:hover {
+    background-position: 0 100%;
+  }
+}

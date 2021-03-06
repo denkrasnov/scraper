@@ -8,6 +8,7 @@ export type Color =
   | "BORDER"
   | "BORDER_DARK"
   | "BORDER_GRAY"
+  | "TEXT_GRAY"
   | "SUCCESS"
   | "ERROR"
   | "BODY_TEXT"

@@ -7,20 +7,22 @@ import Grid from "~app/atoms/Grid";
 
 const Home = () => {
   return (
-    <Grid main>
-      <Header />
-      <Box flexDirection="column" gridArea="body" height="100%">
-        <Box
-          background="BACKGROUND"
-          display="block"
-          flexDirection="column"
-          flexGrow="gr1"
-          marginBottom="s24"
-        >
-          <SearchResult />
+    <Box flexDirection="column" height="100%">
+      <Grid flexGrow="gr1" main>
+        <Header />
+        <Box flexDirection="column" gridArea="body">
+          <Box
+            background="BACKGROUND"
+            display="block"
+            flexDirection="column"
+            flexGrow="gr1"
+            marginBottom="s24"
+          >
+            <SearchResult />
+          </Box>
         </Box>
-      </Box>
-    </Grid>
+      </Grid>
+    </Box>
   );
 };
 

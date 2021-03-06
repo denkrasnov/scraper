@@ -82,14 +82,14 @@ const getJurnalTVNews = async () => {
       }
     });
 
-    const news = await extractNews(page, JurnalTV);
+    const md = await extractNews(page, JurnalTV);
 
     // Close the browser.
     await browser.close();
 
     console.log(success("✅ JurnalTV --FINISH--"));
 
-    return news;
+    return { md };
   } catch (e) {
     console.log(error("❌ JurnalTV --ERROR--:", e));
     return undefined;

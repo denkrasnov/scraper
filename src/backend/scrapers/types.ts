@@ -11,6 +11,7 @@ export interface NewsCollection {
   news: Article[];
 }
 export interface Article {
+  id?: string;
   date?: string;
   header?: string;
   imageURL?: string;

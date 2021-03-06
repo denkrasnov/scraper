@@ -26,4 +26,5 @@ export interface TextProps {
   fontSize?: FontSize;
   tag?: Tag;
   textAlign?: TextAlign;
+  gradientHover?: boolean;
 }

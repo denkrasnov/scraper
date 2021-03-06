@@ -10,6 +10,7 @@ export const colors: Colors = {
   BORDER: "var(--border)",
   BORDER_DARK: "var(--border-dark)",
   BORDER_GRAY: "var(--border-gray)",
+  TEXT_GRAY: "var(--text-gray)",
   SUCCESS: "var(--success)",
   ERROR: "var(--error)",
   BODY_TEXT: "var(--body-text)",

@@ -14,7 +14,14 @@ import { FilterProps } from "./types";
 import useFilter from "./hooks/useFilter";
 
 const Filter: FC<FilterProps> = (props) => {
-  const { productName, options, children, items } = props;
+  const {
+    productName,
+    options,
+    children,
+    items,
+    onClickLocale,
+    locale
+  } = props;
   const desktop = isDesktop();
   const [filteredItems, filter] = useFilter<Article>(items);
 
@@ -38,10 +45,17 @@ const Filter: FC<FilterProps> = (props) => {
       >
         <Card>
           <Box flexDirection="column" padding="s12">
-            <Box marginBottom="s4">
+            <Box justifyContent="spaceBetween" marginBottom="s4">
               <Text fontSize="fs14" fontWeight="fw700">
                 {filterName[productName]}
               </Text>
+              {locale && (
+                <Box cursor="pointer" onClick={onClickLocale}>
+                  <Text color="TEXT_GRAY" fontSize="fs16" gradientHover>
+                    {locale}
+                  </Text>
+                </Box>
+              )}
             </Box>
             <Divider />
             <Box
@@ -54,6 +68,7 @@ const Filter: FC<FilterProps> = (props) => {
                     label={
                       <Image
                         alt="channel logo"
+                        height="30px"
                         src={channelLogo[option]}
                         width="30px"
                       />

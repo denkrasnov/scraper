@@ -34,6 +34,10 @@
   color: var(--border-gray);
 }
 
+.color-TEXT_GRAY {
+  color: var(--text-gray);
+}
+
 .color-SUCCESS {
   color: var(--success);
 }

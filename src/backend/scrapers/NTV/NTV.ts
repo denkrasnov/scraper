@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 
 import { error, success } from "../helpers/status";
-import { NTV } from "./constants";
+import { NTVmd, NTVru } from "./constants";
 import { Article, Channel } from "../types";
 
 const extractNews = (channel: Channel) => {
@@ -15,7 +15,7 @@ const extractNews = (channel: Channel) => {
       const headerElement: HTMLLinkElement | null = article.querySelector(
         "a > span"
       );
-      const header = headerElement?.childNodes[1]?.textContent || undefined;
+      const header = headerElement?.childNodes[1]?.textContent?.trim();
       const date =
         headerElement?.querySelector("span.time_news")?.textContent ||
         undefined;
@@ -54,18 +54,22 @@ const getNTVNews = async () => {
       }
     });
 
-    // Navigate to the demo page.
-    await page.goto(NTV);
-
+    await page.goto(NTVmd);
     // Scroll and extract items from the page.
-    const news = await page.evaluate(extractNews, Channel.NTV);
+    const md = await page.evaluate(extractNews, Channel.NTV);
+    await page.close();
+
+    const page2 = await browser.newPage();
+    await page2.goto(NTVru);
+    // Scroll and extract items from the page.
+    const ru = await page2.evaluate(extractNews, Channel.NTV);
 
     // Close the browser.
     await browser.close();
 
     console.log(success("✅ NTV --FINISH--"));
 
-    return news;
+    return { md, ru };
   } catch (e) {
     console.log(error("❌ NTV --ERROR--:", e));
     return undefined;

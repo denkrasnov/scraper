@@ -1,24 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home should render 1`] = `
-<Grid
-  main={true}
+<Box
+  flexDirection="column"
+  height="100%"
 >
-  <Header />
-  <Box
-    flexDirection="column"
-    gridArea="body"
-    height="100%"
+  <Grid
+    flexGrow="gr1"
+    main={true}
   >
+    <Header />
     <Box
-      background="BACKGROUND"
-      display="block"
       flexDirection="column"
-      flexGrow="gr1"
-      marginBottom="s24"
+      gridArea="body"
     >
-      <SearchResult />
+      <Box
+        background="BACKGROUND"
+        display="block"
+        flexDirection="column"
+        flexGrow="gr1"
+        marginBottom="s24"
+      >
+        <SearchResult />
+      </Box>
     </Box>
-  </Box>
-</Grid>
+  </Grid>
+</Box>
 `;

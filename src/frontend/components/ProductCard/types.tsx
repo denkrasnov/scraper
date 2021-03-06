@@ -1,3 +1,7 @@
-import { Article } from "../../../backend/scrapers/types";
-
-export interface ProductCardProps extends Article {}
+export interface ProductCardProps {
+  channel: string;
+  date?: string;
+  header?: string;
+  imageURL?: string;
+  newsURL?: string;
+}

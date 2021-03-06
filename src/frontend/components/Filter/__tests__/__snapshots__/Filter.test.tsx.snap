@@ -15,13 +15,14 @@ exports[`Filter should render 1`] = `
         padding="s12"
       >
         <Box
+          justifyContent="spaceBetween"
           marginBottom="s4"
         >
           <Text
             fontSize="fs14"
             fontWeight="fw700"
           >
-            Canal
+            Filter
           </Text>
         </Box>
         <Divider />
@@ -37,6 +38,7 @@ exports[`Filter should render 1`] = `
               label={
                 <Image
                   alt="channel logo"
+                  height="30px"
                   src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
                   width="30px"
                 />
@@ -55,6 +57,7 @@ exports[`Filter should render 1`] = `
               label={
                 <Image
                   alt="channel logo"
+                  height="30px"
                   src="https://yt3.ggpht.com/ytc/AAUvwnjTxNZwMTMTlj18m75pswpomJFvJEHuargB5gWA=s900-c-k-c0x00ffffff-no-rj"
                   width="30px"
                 />
@@ -89,13 +92,14 @@ exports[`Filter should render when mobile 1`] = `
         padding="s12"
       >
         <Box
+          justifyContent="spaceBetween"
           marginBottom="s4"
         >
           <Text
             fontSize="fs14"
             fontWeight="fw700"
           >
-            Canal
+            Filter
           </Text>
         </Box>
         <Divider />
@@ -110,6 +114,7 @@ exports[`Filter should render when mobile 1`] = `
               label={
                 <Image
                   alt="channel logo"
+                  height="30px"
                   src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
                   width="30px"
                 />
@@ -128,6 +133,96 @@ exports[`Filter should render when mobile 1`] = `
               label={
                 <Image
                   alt="channel logo"
+                  height="30px"
+                  src="https://yt3.ggpht.com/ytc/AAUvwnjTxNZwMTMTlj18m75pswpomJFvJEHuargB5gWA=s900-c-k-c0x00ffffff-no-rj"
+                  width="30px"
+                />
+              }
+              name="NTV"
+              onChange={[Function]}
+              styled="NTV"
+              value="NTV"
+            />
+          </Box>
+        </Box>
+      </Box>
+    </Card>
+  </Box>
+  <div
+    products={Array []}
+  />
+</Fragment>
+`;
+
+exports[`Filter should render with locale 1`] = `
+<Fragment>
+  <Box
+    display="inlineBlock"
+    gridArea="filter"
+    marginBottom="s20"
+    marginLeft="s20"
+    marginTop="s20"
+  >
+    <Card>
+      <Box
+        flexDirection="column"
+        padding="s12"
+      >
+        <Box
+          justifyContent="spaceBetween"
+          marginBottom="s4"
+        >
+          <Text
+            fontSize="fs14"
+            fontWeight="fw700"
+          >
+            Filter
+          </Text>
+          <Box
+            cursor="pointer"
+          >
+            <Text
+              color="TEXT_GRAY"
+              fontSize="fs16"
+              gradientHover={true}
+            >
+              MD
+            </Text>
+          </Box>
+        </Box>
+        <Divider />
+        <Box
+          flexDirection="column"
+          justifyContent="flexStart"
+        >
+          <Box
+            key="TV8"
+            marginTop="s12"
+          >
+            <Checkbox
+              label={
+                <Image
+                  alt="channel logo"
+                  height="30px"
+                  src="https://tv8.md/wp-content/uploads/2020/07/logo-tv8-new-2.png"
+                  width="30px"
+                />
+              }
+              name="TV8"
+              onChange={[Function]}
+              styled="TV8"
+              value="TV8"
+            />
+          </Box>
+          <Box
+            key="NTV"
+            marginTop="s12"
+          >
+            <Checkbox
+              label={
+                <Image
+                  alt="channel logo"
+                  height="30px"
                   src="https://yt3.ggpht.com/ytc/AAUvwnjTxNZwMTMTlj18m75pswpomJFvJEHuargB5gWA=s900-c-k-c0x00ffffff-no-rj"
                   width="30px"
                 />

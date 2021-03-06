@@ -17,6 +17,7 @@ Object {
   "MAIN_RED": "var(--main-red)",
   "SHADOW_COLOR": "var(--shadow-color)",
   "SUCCESS": "var(--success)",
+  "TEXT_GRAY": "var(--text-gray)",
   "WHITE": "var(--white)",
 }
 `;

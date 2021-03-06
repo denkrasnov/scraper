@@ -10,7 +10,7 @@ exports[`Text should render 1`] = `
 
 exports[`Text should render with attributes 1`] = `
 <span
-  className="root color-BODY_TEXT fontSize-fs10 fontWeight-fw400"
+  className="root color-BODY_TEXT fontSize-fs10 fontWeight-fw400 gradientHover"
 >
   __TEXT__
 </span>

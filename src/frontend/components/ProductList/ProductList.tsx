@@ -18,17 +18,19 @@ const ProductList: FC<ProductListProps> = (props) => {
       margin={desktop ? "s20" : undefined}
       marginTop={desktop ? undefined : "s8"}
     >
-      {items.map((product) => (
-        <Box key={product.header} marginBottom="s8">
-          <ProductCard
-            channel={product.channel}
-            date={product.date}
-            header={product.header}
-            imageURL={product.imageURL}
-            newsURL={product.newsURL}
-          />
-        </Box>
-      ))}
+      {items.map((product) => {
+        return (
+          <Box key={product.id} marginBottom="s8">
+            <ProductCard
+              channel={product.channel}
+              date={product.date}
+              header={product.header}
+              imageURL={product.imageURL}
+              newsURL={product.newsURL}
+            />
+          </Box>
+        );
+      })}
       <Box ref={setRef} bottom="200px" position="relative" />
     </Box>
   );
