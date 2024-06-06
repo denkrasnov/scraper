@@ -1,6 +1,6 @@
 import { Channel } from "../../backend/scrapers/types";
 
-export const channelLogo = {
+export const channelLogo: Record<string, string> = {
   [Channel.JurnalTV]:
     "https://live-tv-channels.org/pt-data/uploads/logo/md-jurnal-tv.jpg",
   [Channel.NTV]:

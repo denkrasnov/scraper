@@ -26,6 +26,7 @@ const useFilter = <T extends object>(items: T[]): UseFilterReturn<T> => {
     ? items.filter((item) => {
         let match: boolean = false;
         filters.forEach((filter) => {
+          // @ts-ignore
           if (item[filter?.key] === filter?.value) {
             match = true;
           }

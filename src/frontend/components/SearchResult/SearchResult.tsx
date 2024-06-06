@@ -39,7 +39,7 @@ const SearchResult: FC = () => {
   if (loading || error || !data) {
     return (
       <Box justifyContent="center" marginTop="s48">
-        {loading ? <Loader /> : "Error..."}
+        <Loader />
       </Box>
     );
   }

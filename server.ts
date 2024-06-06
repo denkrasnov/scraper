@@ -9,7 +9,7 @@ import { buildSchema } from "graphql";
 
 import productsRoute from "./src/backend/routes/products";
 import { error } from "./src/backend/scrapers/helpers/status";
-import { startCron } from "./src/backend/scrapers";
+// import { scrape } from "./src/backend/scrapers";
 import { NewsModel } from "./src/backend/models/news";
 import { Locale } from "./src/types";
 
@@ -21,30 +21,30 @@ const app: Application = express();
 process.stdout.write(`
  ${chalk.bgHex("#224dff").white("--- newsfeed ---")}
  The server is available on ${chalk.hex("#f7c132")(
-   `${
-     isDevelopment ? `http://localhost:${process.env.PORT}` : process.env.PORT
-   }`
+   `${isDevelopment ? `http://localhost:3000` : process.env.PORT}`
  )}
 \n`);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const dbConnectionUrl = process.env.CONNECTION_URL;
+// const dbConnectionUrl = process.env.CONNECTION_URL;
 
 // Initialize DB connection
-mongoose
-  .connect(dbConnectionUrl!, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-  })
-  .then(() => {
-    setTimeout(() => {
-      startCron();
-    }, 8000);
-  })
-  .catch((err) => console.log(error(err)));
+// mongoose
+//   .connect(dbConnectionUrl!, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false
+//   })
+//   .then(() => {
+//     setTimeout(() => {
+//       startCron();
+//     }, 8000);
+//   })
+//   .catch((err) => console.log(error(err)));
+
+// scrape();
 
 mongoose.connection.on("error", (err) => {
   console.log(error(err));
@@ -137,4 +137,4 @@ app.use(
 
 /* ------ GRAPHQL END ------ */
 
-app.listen(process.env.PORT, () => {});
+app.listen("3000", () => {});

@@ -1,1 +1,1 @@
-export { default as startCron } from "./startCron";
+export { default as scrape } from "./startCron";
