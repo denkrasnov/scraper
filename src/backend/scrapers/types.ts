@@ -12,9 +12,9 @@ export interface NewsCollection {
 }
 export interface Article {
   id?: string;
-  date?: string;
-  header?: string;
+  postDate?: string;
+  title?: string;
   imageURL?: string;
-  newsURL?: string;
+  text?: string;
   channel: Channel;
 }

@@ -1,17 +1,19 @@
 /* eslint-disable no-console */
 import express, { Application, Request, Response } from "express";
 import path from "path";
-import bodyParser from "body-parser";
+
 import chalk from "chalk";
-import mongoose, { Model, Document } from "mongoose";
-import { graphqlHTTP } from "express-graphql";
+// import mongoose, { Model, Document } from "mongoose";
+
+import { createHandler } from "graphql-http/lib/use/express";
 import { buildSchema } from "graphql";
 
-import productsRoute from "./src/backend/routes/products";
-import { error } from "./src/backend/scrapers/helpers/status";
+// import productsRoute from "./src/backend/routes/products";
+// import { error } from "./src/backend/scrapers/helpers/status";
 // import { scrape } from "./src/backend/scrapers";
 import { NewsModel } from "./src/backend/models/news";
-import { Locale } from "./src/types";
+// import { Locale } from "./src/types";
+import fs from "fs/promises";
 
 require("dotenv").config();
 
@@ -19,14 +21,14 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 const app: Application = express();
 
 process.stdout.write(`
- ${chalk.bgHex("#224dff").white("--- newsfeed ---")}
+ ${chalk.bgHex("#224dff").white("--- unknown ---")}
  The server is available on ${chalk.hex("#f7c132")(
    `${isDevelopment ? `http://localhost:3000` : process.env.PORT}`
  )}
 \n`);
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // const dbConnectionUrl = process.env.CONNECTION_URL;
 
@@ -46,9 +48,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // scrape();
 
-mongoose.connection.on("error", (err) => {
-  console.log(error(err));
-});
+// mongoose.connection.on("error", (err) => {
+//   console.log(error(err));
+// });
 
 if (isDevelopment) {
   /* eslint-disable global-require */
@@ -83,8 +85,8 @@ if (isDevelopment) {
   });
 }
 
-// keep the endpoint to teach Daniil about REST API
-app.use("/news", productsRoute);
+// Use GraphQL instead
+// app.use("/news", productsRoute);
 
 /* ------ GRAPHQL START ------ */
 const schema = buildSchema(`
@@ -94,44 +96,49 @@ const schema = buildSchema(`
 
   type Article {
     id: ID
-    date: String
-    header: String
+    postDate: String
+    title: String
     imageURL: String
-    newsURL: String
-    channel: String
+    text: String
   }
 `);
 
-const localeRealm = {
-  [Locale.MD]: "md_MD",
-  [Locale.RU]: "md_RU"
-};
+// const localeRealm = {
+//   [Locale.MD]: "md_MD",
+//   [Locale.RU]: "md_RU"
+// };
 
 const resolvers = {
-  news: async (
-    args: { locale: Locale },
-    context: { newsModel: Model<Document> }
-  ) => {
-    const selectByFieldName = localeRealm[args.locale];
-    const { newsModel } = context;
+  news: async () =>
+    // args: { locale: Locale },
+    // context: { newsModel: Model<Document> }
+    {
+      // const selectByFieldName = localeRealm[args.locale];
+      // const { newsModel } = context;
 
-    const query = await newsModel.find({}).select(selectByFieldName);
+      // const query = await newsModel.find({}).select(selectByFieldName);
 
-    const news =
-      // @ts-ignore
-      query[0]?.[selectByFieldName]?.map((item: any) => item.transform()) || [];
+      // const news =
+      //   // @ts-ignore
+      //   query[0]?.[selectByFieldName]?.map((item: any) => item.transform()) || [];
 
-    return news.filter((item: any) => !!item);
-  }
+      try {
+        const data = await fs.readFile("./macedo.json", "utf8");
+        const articles = JSON.parse(data);
+        console.log(articles);
+        return articles;
+      } catch (error) {
+        console.log(error);
+      }
+    }
 };
 
 app.use(
   "/graphql",
-  graphqlHTTP({
+  createHandler({
     schema,
     rootValue: resolvers,
-    context: { newsModel: NewsModel },
-    graphiql: true
+    context: { newsModel: NewsModel }
   })
 );
 

@@ -22,11 +22,11 @@ const ProductList: FC<ProductListProps> = (props) => {
         return (
           <Box key={product.id} marginBottom="s8">
             <ProductCard
-              channel={product.channel}
-              date={product.date}
-              header={product.header}
+              channel={"No channel yet"}
+              date={product.postDate}
+              header={product.title}
               imageURL={product.imageURL}
-              newsURL={product.newsURL}
+              // newsURL={product.newsURL}
             />
           </Box>
         );

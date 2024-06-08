@@ -41,6 +41,7 @@ const extractArticles = (data: DataResponse, template: TemplateResponse) => {
     const postContent = articleData?.post_content;
 
     if (
+      postContent &&
       articleData &&
       `post--${articleData.ID}` === postId &&
       !postContent.includes("iframe")

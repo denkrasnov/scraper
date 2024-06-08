@@ -15,11 +15,10 @@ const FETCH_NEWS = gql`
   query FetchNews($locale: String!) {
     news(locale: $locale) {
       id
-      date
-      header
+      postDate
+      title
       imageURL
-      newsURL
-      channel
+      text
     }
   }
 `;
@@ -39,7 +38,7 @@ const SearchResult: FC = () => {
   if (loading || error || !data) {
     return (
       <Box justifyContent="center" marginTop="s48">
-        <Loader />
+        {loading ? <Loader /> : "Oops Error..."}
       </Box>
     );
   }
