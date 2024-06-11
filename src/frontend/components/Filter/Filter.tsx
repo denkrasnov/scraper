@@ -14,14 +14,8 @@ import { FilterProps } from "./types";
 import useFilter from "./hooks/useFilter";
 
 const Filter: FC<FilterProps> = (props) => {
-  const {
-    productName,
-    options,
-    children,
-    items,
-    onClickLocale,
-    locale
-  } = props;
+  const { productName, options, children, items, onClickLocale, locale } =
+    props;
   const desktop = isDesktop();
   const [filteredItems, filter] = useFilter<Article>(items);
 

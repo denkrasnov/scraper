@@ -8,7 +8,7 @@
       }
     ],
     "@babel/preset-typescript",
-    "@babel/preset-react"  
+    "@babel/preset-react"
   ],
   "plugins": [
     "react-hot-loader/babel",
@@ -17,11 +17,14 @@
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-transform-regenerator",
-    ["module-resolver", {
-      "alias": {
-        "~app": "./src/frontend"
-      },
-      "extensions": [".tsx"]
-    }]
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "~app": "./src/frontend"
+        },
+        "extensions": [".tsx"]
+      }
+    ]
   ]
 }

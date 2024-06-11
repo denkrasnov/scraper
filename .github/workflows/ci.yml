@@ -1,54 +1,54 @@
 name: CI
 
-on: 
+on:
   push:
-    branches:    
-      - master 
+    branches:
+      - master
 jobs:
   check-and-release:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12
-    
-    - name: Install packages
-      run: npm ci
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
 
-    - name: Check types
-      run: npm run check:types 
+      - name: Install packages
+        run: npm ci
 
-    - name: Lint
-      run: npm run lint 
+      - name: Check types
+        run: npm run check:types
 
-    - name: Test coverage
-      run: npm run test:coverage
-      
-    - name: Build
-      run: npm run build --if-present
+      - name: Lint
+        run: npm run lint
 
-    - name: Run app
-      env:
-        NODE_ENV: ${{ secrets.NODE_ENV }}
-        PORT: ${{ secrets.PORT }}
-        CONNECTION_URL: ${{ secrets.CONNECTION_URL }}
-      run: npm start & sleep 10
+      - name: Test coverage
+        run: npm run test:coverage
 
-    - name: E2E tests
-      uses: DevExpress/testcafe-action@latest
-      with:
-        args: "chrome:headless e2e/"
+      - name: Build
+        run: npm run build --if-present
 
-    - name: Release
-      uses: cycjimmy/semantic-release-action@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run app
+        env:
+          NODE_ENV: ${{ secrets.NODE_ENV }}
+          PORT: ${{ secrets.PORT }}
+          CONNECTION_URL: ${{ secrets.CONNECTION_URL }}
+        run: npm start & sleep 10
 
-    - name: Add remote origin
-      run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_STAGING_APP_NAME }}.git
+      - name: E2E tests
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "chrome:headless e2e/"
 
-    - name: Deploy to Heroku
-      run: git push heroku HEAD:master -f
+      - name: Release
+        uses: cycjimmy/semantic-release-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add remote origin
+        run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_STAGING_APP_NAME }}.git
+
+      - name: Deploy to Heroku
+        run: git push heroku HEAD:master -f

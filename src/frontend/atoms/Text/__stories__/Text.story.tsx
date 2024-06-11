@@ -21,17 +21,15 @@ export default {
   title: "Components/Text"
 };
 
-export const Default = () => {
-  return (
-    <Text
-      fontSize={select("Font size", fontSizes, fontSizes[2]) as FontSize}
-      fontWeight={
-        select("Font weight", fontWeights, fontWeights[1]) as FontWeight
-      }
-    >
-      Text example
-    </Text>
-  );
-};
+export const Default = () => (
+  <Text
+    fontSize={select("Font size", fontSizes, fontSizes[2]) as FontSize}
+    fontWeight={
+      select("Font weight", fontWeights, fontWeights[1]) as FontWeight
+    }
+  >
+    Text example
+  </Text>
+);
 
 Default.storyName = "Text";

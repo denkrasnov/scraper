@@ -33,11 +33,10 @@ const extractArticles = (data: DataResponse, template: TemplateResponse) => {
   Array.from(articles).forEach((item) => {
     const postId = item.getAttribute("id");
 
-    const articleData = data.items.find((item) => {
-      return item.ID === Number(postId?.replace("post--", ""));
-    });
+    const articleData = data.items.find(
+      (item) => item.ID === Number(postId?.replace("post--", ""))
+    );
 
-    // eslint-disable-next-line camelcase
     const postContent = articleData?.post_content;
 
     if (
@@ -71,9 +70,10 @@ const extractArticles = (data: DataResponse, template: TemplateResponse) => {
 const getEMacedo = async () => {
   console.log(success("✅ TV8 --START--"));
 
-  const delay = (delayInms: number) => {
-    return new Promise((resolve) => setTimeout(resolve, delayInms));
-  };
+  const delay = (delayInms: number) =>
+    new Promise((resolve) => {
+      setTimeout(resolve, delayInms);
+    });
 
   try {
     let result: any = [];
@@ -96,7 +96,6 @@ const getEMacedo = async () => {
       console.log(success("Page number:", i));
 
       if (i === 1) {
-        // eslint-disable-next-line camelcase
         const pages = reqData?.data?.information.max_num_pages;
         if (pages) {
           times = pages;

@@ -1,4 +1,4 @@
-import { renderHook, act, cleanup } from "@testing-library/react-hooks";
+import { renderHook, act } from "@testing-library/react-hooks";
 
 import { Channel } from "../../../../../../backend/scrapers/types";
 import useFilter from "../useFilter";

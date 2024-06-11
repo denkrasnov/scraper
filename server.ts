@@ -1,19 +1,17 @@
 /* eslint-disable no-console */
 import express, { Application, Request, Response } from "express";
 import path from "path";
-
 import chalk from "chalk";
-// import mongoose, { Model, Document } from "mongoose";
-
 import { createHandler } from "graphql-http/lib/use/express";
 import { buildSchema } from "graphql";
+import fs from "fs/promises";
 
+import { NewsModel } from "./src/backend/models/news";
+// import { Locale } from "./src/types";
+// import mongoose, { Model, Document } from "mongoose";
 // import productsRoute from "./src/backend/routes/products";
 // import { error } from "./src/backend/scrapers/helpers/status";
 // import { scrape } from "./src/backend/scrapers";
-import { NewsModel } from "./src/backend/models/news";
-// import { Locale } from "./src/types";
-import fs from "fs/promises";
 
 require("dotenv").config();
 
@@ -125,10 +123,10 @@ const resolvers = {
       try {
         const data = await fs.readFile("./macedo.json", "utf8");
         const articles = JSON.parse(data);
-        console.log(articles);
         return articles;
       } catch (error) {
         console.log(error);
+        return [];
       }
     }
 };

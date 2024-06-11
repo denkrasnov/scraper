@@ -11,25 +11,25 @@
     "sourceMap": true,
     "downlevelIteration": true,
 
-    /* Strict Type-Checking Options */  
+    /* Strict Type-Checking Options */
     "strict": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
 
-   /* Module Resolution Options */
+    /* Module Resolution Options */
     "isolatedModules": true,
-    "allowSyntheticDefaultImports": true, 
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "~app/*": ["src/frontend/*"],
+      "~app/*": ["src/frontend/*"]
     },
 
     /* Additional Checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-  
+
     /* Advanced Options */
     "resolveJsonModule": true,
 
@@ -39,7 +39,7 @@
     "skipLibCheck": true,
     "newLine": "LF",
     "typeRoots": ["@types", "./node_modules/@types"]
-  }, 
+  },
   "include": ["./src/frontend/**/*"],
   "exclude": [
     "./public/",
@@ -48,5 +48,5 @@
     "build",
     "jest",
     "@types"
-  ],
+  ]
 }

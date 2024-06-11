@@ -11,7 +11,7 @@ describe("Application root", () => {
     const div = document.createElement("div");
     div.id = "root";
     document.body.appendChild(div);
-    require("../index.tsx");
+    require("../index");
     expect(ReactDOM.render).toHaveBeenCalledWith(<App />, div);
   });
 });

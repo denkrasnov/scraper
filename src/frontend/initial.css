@@ -8,7 +8,9 @@
 
 html {
   height: 100%;
-  font: 400 13px/20px "Source Sans Pro", sans-serif;
+  font:
+    400 13px/20px "Source Sans Pro",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import fs from "fs/promises";
 
 import { error } from "./helpers/status";

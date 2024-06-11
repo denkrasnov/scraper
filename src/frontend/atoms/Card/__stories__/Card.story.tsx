@@ -8,24 +8,22 @@ export default {
   title: "Components/Card"
 };
 
-export const Default = () => {
-  return (
-    <Box height="500px" margin="s12">
-      <Card
-        fullHeight={boolean("fullHeight", false)}
-        rounded={boolean("rounded", false)}
+export const Default = () => (
+  <Box height="500px" margin="s12">
+    <Card
+      fullHeight={boolean("fullHeight", false)}
+      rounded={boolean("rounded", false)}
+    >
+      <Box
+        alignItems="center"
+        height="200px"
+        justifyContent="center"
+        width="200px"
       >
-        <Box
-          alignItems="center"
-          height="200px"
-          justifyContent="center"
-          width="200px"
-        >
-          Content here
-        </Box>
-      </Card>
-    </Box>
-  );
-};
+        Content here
+      </Box>
+    </Card>
+  </Box>
+);
 
 Default.storyName = "Card";

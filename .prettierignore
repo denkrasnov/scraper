@@ -1,0 +1,16 @@
+node_modules/
+*~
+#*
+.vscode/
+coverage/
+build/
+public/
+
+.env
+
+.DS_Store
+
+macedo.json
+
+package-lock.json
+package.json

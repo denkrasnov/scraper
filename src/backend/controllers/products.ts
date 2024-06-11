@@ -1,10 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-
+import fs from "fs/promises";
 // import { NewsCollection, ProductName } from "../scrapers/types";
 // import { NewsModel } from "../models/news";
-import fs from "fs/promises";
 
-// Keep this controler to teach Daniil about REST API
+// Keep this controller to teach Danik about REST API
 export const ProductsController = {
   getNews: async (_req: Request, _res: Response, next: NextFunction) => {
     try {
@@ -16,13 +15,13 @@ export const ProductsController = {
       const articles = JSON.parse(data);
 
       const removed: any = [];
-      //@ts-ignore
+      // @ts-ignore
       const result = articles.filter((item: any) => {
-        if (!!item.text) {
+        if (item.text) {
           return true;
-        } else {
-          removed.push({ title: item.title, date: item.postDate });
         }
+        removed.push({ title: item.title, date: item.postDate });
+        return false;
       });
       await fs.writeFile("macedo.json", JSON.stringify(result));
       // res.status(200).json({ items: articles });

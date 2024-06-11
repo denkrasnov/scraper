@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",                          
-    "module": "commonjs",                    
-    "lib": ["es6", "es2017", "dom", "es2019"],                     
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es6", "es2017", "dom", "es2019"],
     "allowJs": true,
-    "outDir": "../../build/script",          
-    "strict": true,         
+    "outDir": "../../build/script",
+    "strict": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true, 
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "typeRoots": ["../../@types", "../../node_modules/@types"]
   },
-  "include": [ "../../src/backend/**/*", "../../server.ts" ],
+  "include": ["../../src/backend/**/*", "../../server.ts"]
 }

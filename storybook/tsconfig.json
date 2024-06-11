@@ -1,6 +1,8 @@
 {
   "extends": "../tsconfig",
-  "rootDir": "src",
+  "compilerOptions": {
+    "rootDir": "../src"
+  },
   "lib": ["es5", "es6", "es7", "es2017", "dom"],
   "baseUrl": "src",
   "forceConsistentCasingInFileNames": true,

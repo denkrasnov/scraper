@@ -1,20 +1,20 @@
+/* eslint-disable no-console */
 import puppeteer from "puppeteer";
 
 import { error, success } from "../helpers/status";
 import { NTVmd, NTVru } from "./constants";
-import { Article, Channel } from "../types";
+import { Channel } from "../types";
 
 const extractNews = (channel: Channel) => {
   const articlesElements = document.querySelectorAll(
     "ul#catcontainer div#dle-content > li"
   );
-  const news: Article[] = [];
+  const news: any[] = [];
 
   Array.from(articlesElements).forEach((article) => {
     if (article.className !== "hdata") {
-      const headerElement: HTMLLinkElement | null = article.querySelector(
-        "a > span"
-      );
+      const headerElement: HTMLLinkElement | null =
+        article.querySelector("a > span");
       const header = headerElement?.childNodes[1]?.textContent?.trim();
       const date =
         headerElement?.querySelector("span.time_news")?.textContent ||

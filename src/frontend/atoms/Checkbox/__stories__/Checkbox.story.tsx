@@ -11,35 +11,31 @@ export default {
   title: "Components/Input/Checkbox"
 };
 
-export const Default = () => {
-  return (
-    <Checkbox
-      label="label"
-      name="story"
-      onChange={action("Checkbox")}
-      value="story"
-    />
-  );
-};
+export const Default = () => (
+  <Checkbox
+    label="label"
+    name="story"
+    onChange={action("Checkbox")}
+    value="story"
+  />
+);
 
 Default.storyName = "default";
 
-export const CheckboxWithImageLabel = () => {
-  return (
-    <Checkbox
-      label={
-        <Image
-          alt="storybook story test"
-          src="https://live-tv-channels.org/pt-data/uploads/logo/md-jurnal-tv.jpg"
-          width="30px"
-        />
-      }
-      name="story"
-      onChange={action("Checkbox")}
-      value="story"
-    />
-  );
-};
+export const CheckboxWithImageLabel = () => (
+  <Checkbox
+    label={
+      <Image
+        alt="storybook story test"
+        src="https://live-tv-channels.org/pt-data/uploads/logo/md-jurnal-tv.jpg"
+        width="30px"
+      />
+    }
+    name="story"
+    onChange={action("Checkbox")}
+    value="story"
+  />
+);
 
 CheckboxWithImageLabel.storyName = "checkbox with image label";
 
