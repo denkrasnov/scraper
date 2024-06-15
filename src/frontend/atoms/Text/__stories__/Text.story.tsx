@@ -1,8 +1,7 @@
 import React from "react";
-import { select } from "@storybook/addon-knobs";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Text from "../Text";
-import { FontSize, FontWeight } from "../types";
 
 const fontSizes = [
   "fs10",
@@ -17,19 +16,23 @@ const fontSizes = [
 ];
 const fontWeights = ["fw200", "fw400", "fw700"];
 
-export default {
-  title: "Components/Text"
+const meta: Meta<typeof Text> = {
+  title: "Components/Text",
+  component: Text,
+  argTypes: {
+    fontWeight: {
+      options: fontWeights
+    },
+    fontSize: {
+      options: fontSizes
+    }
+  }
 };
 
-export const Default = () => (
-  <Text
-    fontSize={select("Font size", fontSizes, fontSizes[2]) as FontSize}
-    fontWeight={
-      select("Font weight", fontWeights, fontWeights[1]) as FontWeight
-    }
-  >
-    Text example
-  </Text>
-);
+export default meta;
 
-Default.storyName = "Text";
+export const Default: StoryObj<typeof Text> = {
+  render: (args) => <Text {...args}>Text example</Text>,
+
+  name: "Text"
+};

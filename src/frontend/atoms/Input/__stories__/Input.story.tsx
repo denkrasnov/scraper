@@ -6,8 +6,8 @@ export default {
   title: "Components/Input/Text"
 };
 
-export const Text = () => (
-  <Input name="fieldName" placeholder="Input placeholder" />
-);
+export const Text = {
+  render: () => <Input name="fieldName" placeholder="Input placeholder" />,
 
-Text.storyName = "Text";
+  name: "Text"
+};

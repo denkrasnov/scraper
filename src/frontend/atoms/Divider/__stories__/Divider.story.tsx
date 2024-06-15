@@ -1,17 +1,21 @@
 import React from "react";
-import { boolean } from "@storybook/addon-knobs";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Box from "../../Box";
 import Divider from "../Divider";
 
-export default {
+const meta: Meta<typeof Divider> = {
   title: "Components/Divider"
 };
 
-export const Default = () => (
-  <Box height="100px" margin="s8" width="100%">
-    <Divider vertical={boolean("Vertical position", false)} />
-  </Box>
-);
+export default meta;
 
-Default.storyName = "Divider";
+export const Default: StoryObj<typeof Divider> = {
+  render: (args) => (
+    <Box height="100px" margin="s8" width="100%">
+      <Divider {...args} />
+    </Box>
+  ),
+
+  name: "Divider"
+};

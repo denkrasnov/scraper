@@ -6,6 +6,7 @@ export default {
   title: "Components/Loader"
 };
 
-export const Default = () => <Loader />;
-
-Default.storyName = "Loader";
+export const Default = {
+  render: () => <Loader />,
+  name: "Loader"
+};

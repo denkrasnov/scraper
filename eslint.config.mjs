@@ -126,13 +126,7 @@ export default tsEslint.config(
           allowTaggedTemplates: true
         }
       ],
-
-      "react/jsx-props-no-spreading": [
-        "error",
-        {
-          html: "ignore"
-        }
-      ]
+      "react/jsx-props-no-spreading": "off"
     }
   },
   {

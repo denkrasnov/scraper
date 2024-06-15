@@ -2,11 +2,14 @@ const path = require("path");
 
 module.exports = {
   stories: ["../src/**/*.story.tsx"],
+
   addons: [
+    "@storybook/addon-docs",
     "@storybook/addon-viewport",
-    "@storybook/addon-knobs",
-    "@storybook/addon-actions"
+    "@storybook/addon-actions",
+    "@storybook/addon-webpack5-compiler-babel"
   ],
+
   webpackFinal: async (baseConfig: any) => {
     const include = [path.resolve(__dirname, "../src"), __dirname];
     const exclude = [path.resolve(__dirname, "../src/**/__tests__")];
@@ -51,5 +54,16 @@ module.exports = {
 
     // Return the altered config
     return config;
+  },
+
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {}
+  },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
   }
 };
