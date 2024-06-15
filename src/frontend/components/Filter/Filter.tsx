@@ -1,4 +1,10 @@
-import React, { FC, ChangeEvent, Children, cloneElement } from "react";
+import React, {
+  FC,
+  ChangeEvent,
+  Children,
+  cloneElement,
+  PropsWithChildren
+} from "react";
 
 import { Article } from "../../../backend/scrapers/types";
 import Box from "~app/atoms/Box";
@@ -13,7 +19,7 @@ import { filterName } from "./constants";
 import { FilterProps } from "./types";
 import useFilter from "./hooks/useFilter";
 
-const Filter: FC<FilterProps> = (props) => {
+const Filter: FC<PropsWithChildren<FilterProps>> = (props) => {
   const { productName, options, children, items, onClickLocale, locale } =
     props;
   const desktop = isDesktop();
