@@ -1,5 +1,3 @@
-import React from "react";
-
 import Touchable from "../Touchable";
 import Card from "../../Card";
 import Box from "../../Box";

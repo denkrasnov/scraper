@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import useInfiniteScroll from "infinite-scroll-react-hook";
 
 import Box from "~app/atoms/Box";

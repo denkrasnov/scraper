@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import Image from "~app/atoms/Image";
 import Touchable from "~app/atoms/Touchable";

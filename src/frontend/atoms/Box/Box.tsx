@@ -1,4 +1,5 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
+import * as React from "react";
 
 import mapPropsToStyles from "../helpers/mapPropsToStyles";
 import { clearStyle } from "../helpers/clearStyle";

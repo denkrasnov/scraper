@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import { clearStyle } from "../helpers/clearStyle";
 import mapPropsToStyles from "../helpers/mapPropsToStyles";

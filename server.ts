@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import express, { Application, Request, Response } from "express";
 import path from "path";
 import chalk from "chalk";

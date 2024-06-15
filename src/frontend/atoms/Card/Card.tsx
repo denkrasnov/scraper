@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import mapPropsToStyles from "../helpers/mapPropsToStyles";
 import { CardProps } from "./types";

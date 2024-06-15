@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import puppeteer from "puppeteer";
 
 import { error, success } from "../helpers/status";

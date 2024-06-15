@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import Divider from "~app/atoms/Divider";
 import Text from "~app/atoms/Text";

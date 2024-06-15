@@ -128,7 +128,8 @@ export default tsEslint.config(
       ],
       "react/jsx-props-no-spreading": "off",
       "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "no-console": "off"
     }
   },
   {

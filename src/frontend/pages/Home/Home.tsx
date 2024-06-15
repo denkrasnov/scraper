@@ -1,5 +1,3 @@
-import React from "react";
-
 import Header from "~app/components/Header";
 import SearchResult from "~app/components/SearchResult";
 import Box from "~app/atoms/Box";
