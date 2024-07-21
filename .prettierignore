@@ -10,7 +10,8 @@ public/
 
 .DS_Store
 
-macedo.json
+macedoRU.json
+macedoEN.json
 
 package-lock.json
 package.json
