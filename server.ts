@@ -10,7 +10,7 @@ import { NewsModel } from "./src/backend/models/news";
 // import mongoose, { Model, Document } from "mongoose";
 // import productsRoute from "./src/backend/routes/products";
 // import { error } from "./src/backend/scrapers/helpers/status";
-// import { scrape } from "./src/backend/scrapers";
+import { scrape } from "./src/backend/scrapers";
 
 require("dotenv").config();
 
@@ -43,7 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 //   })
 //   .catch((err) => console.log(error(err)));
 
-// scrape();
+scrape();
 
 // mongoose.connection.on("error", (err) => {
 //   console.log(error(err));
@@ -120,7 +120,7 @@ const resolvers = {
       //   query[0]?.[selectByFieldName]?.map((item: any) => item.transform()) || [];
 
       try {
-        const data = await fs.readFile("./macedo.json", "utf8");
+        const data = await fs.readFile("./macedoRu.json", "utf8");
         const articles = JSON.parse(data);
         return articles;
       } catch (error) {

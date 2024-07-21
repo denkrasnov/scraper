@@ -17,5 +17,6 @@ export const colors: Colors = {
   MAIN: "var(--main)",
   MAIN_DARK: "var(--main-dark)",
   MAIN_RED: "var(--main-red)",
-  WHITE: "var(--white)"
+  WHITE: "var(--white)",
+  BLACK: "var(--black)"
 };

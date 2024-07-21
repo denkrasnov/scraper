@@ -1,6 +1,7 @@
 /* eslint-env node */
 const { merge } = require("webpack-merge");
 const webpack = require("webpack");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 const common = require("./webpack.common");
 
@@ -12,13 +13,22 @@ module.exports = merge(common, {
     "./src/frontend/index.tsx"
   ],
   resolve: {
-    alias: {
-      "react-dom": "@hot-loader/react-dom"
-    },
     extensions: [".tsx", ".ts", ".js"]
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              plugins: [require.resolve("react-refresh/babel")]
+            }
+          }
+        ],
+        exclude: /node_modules/
+      },
       {
         test: /\.css$/,
         use: [
@@ -40,5 +50,8 @@ module.exports = merge(common, {
       }
     ]
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin()
+  ]
 });

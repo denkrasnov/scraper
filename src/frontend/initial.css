@@ -8,10 +8,15 @@
 
 html {
   height: 100%;
-  font:
-    400 13px/20px "Source Sans Pro",
-    sans-serif;
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./Nunito-VariableFont.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -19,6 +24,8 @@ body {
   margin: 0;
   padding: 0;
   color: var(--body-text);
+  /* background-color: #0c314a; */
+  background-image: url("./common/images/bkg.png");
 }
 
 * {

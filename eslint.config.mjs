@@ -90,7 +90,6 @@ export default tsEslint.config(
           "newlines-between": "always"
         }
       ],
-
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -100,7 +99,6 @@ export default tsEslint.config(
           js: "never"
         }
       ],
-
       "import/no-extraneous-dependencies": [
         "error",
         {

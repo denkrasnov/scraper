@@ -1,5 +1,5 @@
 export interface ProductCardProps {
-  channel: string;
+  channel: string; // TODO remove
   date?: string;
   header?: string;
   imageURL?: string;

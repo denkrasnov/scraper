@@ -178,6 +178,10 @@
   margin-top: var(--s48);
 }
 
+.marginTop-sn60 {
+  margin-top: var(--sn60);
+}
+
 .marginLeft-s2 {
   margin-left: var(--s2);
 }

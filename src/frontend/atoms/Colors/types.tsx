@@ -15,6 +15,7 @@ export type Color =
   | "MAIN"
   | "MAIN_DARK"
   | "MAIN_RED"
-  | "WHITE";
+  | "WHITE"
+  | "BLACK";
 
 export type Colors = { [key in Color]: string };

@@ -7,9 +7,23 @@ const Home = () => (
   <Box flexDirection="column" height="100%">
     <Grid flexGrow="gr1" main>
       <Header />
+      <Box
+        background="BACKGROUND"
+        display="flex"
+        flexDirection="column"
+        gridArea="banner"
+        overflow="hidden"
+      >
+        <Box
+          background="BLACK"
+          height="700px"
+          marginTop="sn60"
+          shadow="header"
+          width="40%"
+        />
+      </Box>
       <Box flexDirection="column" gridArea="body">
         <Box
-          background="BACKGROUND"
           display="block"
           flexDirection="column"
           flexGrow="gr1"

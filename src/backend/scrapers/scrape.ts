@@ -1,13 +1,13 @@
 import fs from "fs/promises";
 
 import { error } from "./helpers/status";
-import getEMacedo from "./EMacedo";
+import getEMacedoEN from "./EMacedoEN";
 
 const scrape = async () => {
-  const products = await Promise.all([getEMacedo()]);
+  const products = await Promise.all([getEMacedoEN()]);
 
   try {
-    await fs.writeFile("macedo.json", JSON.stringify(products[0]));
+    await fs.writeFile("macedoEN.json", JSON.stringify(products[0]));
   } catch (err) {
     console.log(error("❌ ERROR: No collection to drop", err));
   }

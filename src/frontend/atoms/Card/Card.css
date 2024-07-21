@@ -1,8 +1,4 @@
 .root {
-  box-shadow:
-    0 1px 5px var(--shadow-color),
-    0 4px 6px -2px var(--shadow-color-2);
-  background-color: var(--white);
   transition: transform 330ms ease-in-out;
 }
 

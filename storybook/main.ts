@@ -42,6 +42,14 @@ module.exports = {
         ],
         include,
         exclude
+      },
+      {
+        test: /\.(png|jpe?g|gif|ttf)$/i,
+        use: [
+          {
+            loader: "file-loader"
+          }
+        ]
       }
     ];
     const resolve = {

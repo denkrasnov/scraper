@@ -9,4 +9,5 @@ export type Space =
   | "s20"
   | "s24"
   | "s32"
-  | "s48";
+  | "s48"
+  | "sn60";

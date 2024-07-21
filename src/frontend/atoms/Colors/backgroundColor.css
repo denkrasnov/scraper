@@ -61,3 +61,7 @@
 .background-WHITE {
   background-color: var(--white);
 }
+
+.background-BLACK {
+  background-color: var(--black);
+}

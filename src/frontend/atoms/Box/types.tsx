@@ -33,7 +33,7 @@ type FlexGrow = "gr1";
 
 type Position = "relative" | "sticky";
 
-type GreadArea = "main" | "filter" | "result" | "header" | "body";
+type GreadArea = "main" | "filter" | "result" | "header" | "body" | "banner";
 
 export interface BoxProps {
   alignItems?: AlignItems;
@@ -62,4 +62,6 @@ export interface BoxProps {
   maxWidth?: string;
   cursor?: Cursor;
   onClick?: () => void;
+  shadow?: "header";
+  overflow?: "hidden";
 }

@@ -115,3 +115,11 @@
 .gridArea-body {
   grid-area: body;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.shadow-header {
+  box-shadow: 70px 0px 150px 46px var(--black);
+}
