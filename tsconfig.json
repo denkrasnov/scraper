@@ -22,9 +22,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "paths": {
-      "~app/*": ["src/frontend/*"]
-    },
+
 
     /* Additional Checks */
     "noUnusedLocals": true,
@@ -38,15 +36,11 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "newLine": "LF",
-    "typeRoots": ["@types", "./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./src/frontend/**/*"],
   "exclude": [
     "./public/",
-    "./src/**/*.test.ts",
     "node_modules",
     "build",
-    "jest",
-    "@types"
   ]
 }
