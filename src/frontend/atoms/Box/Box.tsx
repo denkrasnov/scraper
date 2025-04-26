@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import * as React from "react";
+import cn from "classnames";
 
 import mapPropsToStyles from "../helpers/mapPropsToStyles";
 import { clearStyle } from "../helpers/clearStyle";
@@ -18,6 +19,7 @@ const Box = forwardRef((props: BoxProps, ref: React.Ref<HTMLDivElement>) => {
     minHeight,
     maxWidth,
     dataAttr,
+    className,
     ...restProps
   } = props;
 
@@ -29,7 +31,7 @@ const Box = forwardRef((props: BoxProps, ref: React.Ref<HTMLDivElement>) => {
     <div
       ref={ref}
       {...dataAttr}
-      className={classes}
+      className={cn(classes, className)}
       onClick={onClick}
       style={clearStyle(style)}
     >

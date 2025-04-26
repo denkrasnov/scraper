@@ -31,7 +31,7 @@ const meta: Meta<typeof Text> = {
 export default meta;
 
 export const Default: StoryObj<typeof Text> = {
-  render: (args) => <Text {...args}>Text example</Text>,
+  render: (args: any) => <Text {...args}>Text example</Text>,
 
   name: "Text"
 };

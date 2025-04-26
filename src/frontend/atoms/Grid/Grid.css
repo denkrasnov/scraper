@@ -12,6 +12,7 @@
   grid-template-areas:
     "filter"
     "result";
+  height: 100%;
 }
 
 .main {
@@ -21,10 +22,6 @@
     "header"
     "banner"
     "body";
-}
-
-.flexGrow-gr1 {
-  flex-grow: 1;
 }
 
 @media (min-width: 992px) {

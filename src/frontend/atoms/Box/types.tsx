@@ -40,6 +40,7 @@ export interface BoxProps {
   alignSelf?: AlignSelf;
   background?: Color;
   children?: ReactNode;
+  className?: string;
   display?: Display;
   dataAttr?: DataAttr;
   flexDirection?: FlexDirection;

@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import express, { Application, Request, Response } from "express";
 import path from "path";
 import chalk from "chalk";
@@ -10,7 +11,7 @@ import { NewsModel } from "./src/backend/models/news";
 // import mongoose, { Model, Document } from "mongoose";
 // import productsRoute from "./src/backend/routes/products";
 // import { error } from "./src/backend/scrapers/helpers/status";
-import { scrape } from "./src/backend/scrapers";
+// import { scrape } from "./src/backend/scrapers";
 
 require("dotenv").config();
 
@@ -43,14 +44,15 @@ app.use(express.urlencoded({ extended: false }));
 //   })
 //   .catch((err) => console.log(error(err)));
 
-scrape();
+// scrape();
 
 // mongoose.connection.on("error", (err) => {
 //   console.log(error(err));
 // });
 
 if (isDevelopment) {
-  /* eslint-disable global-require */
+  console.log("development----------------");
+
   const webpack = require("webpack");
   const webpackDevMiddleware = require("webpack-dev-middleware");
   const webpackHotMiddleware = require("webpack-hot-middleware");
@@ -71,16 +73,24 @@ if (isDevelopment) {
   );
 
   app.use(webpackHotMiddleware(compiler));
-
   app.get("/", (_req: Request, res: Response) => {
+    res.send("Hello, Webpack with Express and HMR!");
+  });
+
+  app.get("*", (_req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "build/index.html"));
   });
 } else {
   app.use(express.static(path.join(__dirname, "../")));
-  app.get("/", (_req: Request, res: Response) => {
+  app.get("*", (_req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "../index.html"));
   });
 }
+
+app.use((err: any, _req: any, res: any, _next: any) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
 
 // Use GraphQL instead
 // app.use("/news", productsRoute);
@@ -120,7 +130,7 @@ const resolvers = {
       //   query[0]?.[selectByFieldName]?.map((item: any) => item.transform()) || [];
 
       try {
-        const data = await fs.readFile("./macedoRu.json", "utf8");
+        const data = await fs.readFile("./macedoEN.json", "utf8");
         const articles = JSON.parse(data);
         return articles;
       } catch (error) {

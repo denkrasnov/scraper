@@ -11,7 +11,6 @@ describe("ProductCard", () => {
         date="9:00"
         header="__TITLE__"
         imageURL="__IMAGE_URL__"
-        newsURL="__URL__"
       />
     );
     expect(component).toMatchSnapshot();
@@ -24,7 +23,6 @@ describe("ProductCard", () => {
         date="9:00"
         header="__TITLE__"
         imageURL=""
-        newsURL="__URL__"
       />
     );
     expect(component).toMatchSnapshot();

@@ -10,7 +10,7 @@ const meta: Meta<typeof Divider> = {
 export default meta;
 
 export const Default: StoryObj<typeof Divider> = {
-  render: (args) => (
+  render: (args: any) => (
     <Box height="100px" margin="s8" width="100%">
       <Divider {...args} />
     </Box>

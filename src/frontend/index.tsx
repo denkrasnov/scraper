@@ -3,7 +3,6 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 import "./initial.css";
-
 import { createRoot } from "react-dom/client";
 
 import App from "./App";

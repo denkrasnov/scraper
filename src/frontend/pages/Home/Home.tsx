@@ -5,7 +5,7 @@ import Grid from "~app/atoms/Grid";
 
 const Home = () => (
   <Box flexDirection="column" height="100%">
-    <Grid flexGrow="gr1" main>
+    <Grid main>
       <Header />
       <Box
         background="BACKGROUND"

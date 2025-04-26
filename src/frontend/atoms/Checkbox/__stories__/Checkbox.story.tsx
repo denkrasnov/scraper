@@ -11,12 +11,12 @@ const meta: Meta<typeof Checkbox> = {
 export default meta;
 
 export const Default: StoryObj<typeof Checkbox> = {
-  render: (args) => <Checkbox {...args} />,
+  render: (args: any) => <Checkbox {...args} />,
   name: "default"
 };
 
 export const CheckboxWithImageLabel: StoryObj<typeof Checkbox> = {
-  render: (args) => (
+  render: (args: any) => (
     <Checkbox
       {...args}
       label={
@@ -33,7 +33,7 @@ export const CheckboxWithImageLabel: StoryObj<typeof Checkbox> = {
 };
 
 export const CheckboxStyled: StoryObj<typeof Checkbox> = {
-  render: (args) => (
+  render: (args: any) => (
     <Checkbox
       {...args}
       label={

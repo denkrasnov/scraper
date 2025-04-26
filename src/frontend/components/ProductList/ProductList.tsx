@@ -24,8 +24,8 @@ const ProductList: FC<ProductListProps> = (props) => {
             channel="No channel yet"
             date={product.postDate}
             header={product.title}
+            id={product.id}
             imageURL={product.imageURL}
-            // newsURL={product.newsURL}
           />
         </Box>
       ))}

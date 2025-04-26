@@ -3,5 +3,5 @@ export interface ProductCardProps {
   date?: string;
   header?: string;
   imageURL?: string;
-  newsURL?: string;
+  id?: string;
 }
