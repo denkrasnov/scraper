@@ -1,7 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
-import reactHooks from "eslint-plugin-react-hooks";
-import react from "eslint-plugin-react";
 import _import from "eslint-plugin-import";
 import globals from "globals";
 import path from "node:path";
@@ -25,7 +23,6 @@ export default tsEslint.config(
   },
   ...fixupConfigRules(
     compat.extends(
-      "airbnb",
       "prettier",
       "plugin:import/recommended",
       "plugin:import/typescript"
@@ -34,8 +31,6 @@ export default tsEslint.config(
   {
     plugins: {
       "@typescript-eslint": tsEslint.plugin,
-      "react-hooks": fixupPluginRules(reactHooks),
-      react: fixupPluginRules(react),
       import: fixupPluginRules(_import)
     },
 
@@ -71,14 +66,6 @@ export default tsEslint.config(
     },
     files: ["**/*.mjs", "**/*.js", "**/*.ts", "**/*.tsx"],
     rules: {
-      "react/function-component-definition": [
-        1,
-        {
-          namedComponents: "arrow-function",
-          unnamedComponents: "arrow-function"
-        }
-      ],
-
       "import/order": [
         "error",
         {
@@ -105,18 +92,8 @@ export default tsEslint.config(
           devDependencies: true
         }
       ],
-
-      "react/jsx-sort-props": ["error"],
-      "react/button-has-type": 0,
       "import/prefer-default-export": 0,
       "no-restricted-exports": "off",
-      "jsx-a11y/label-has-associated-control": [
-        2,
-        {
-          assert: "either",
-          depth: 3
-        }
-      ],
 
       "no-unused-expressions": [
         "error",
@@ -124,9 +101,7 @@ export default tsEslint.config(
           allowTaggedTemplates: true
         }
       ],
-      "react/jsx-props-no-spreading": "off",
-      "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",
+
       "no-console": "off"
     }
   },
@@ -134,16 +109,11 @@ export default tsEslint.config(
     files: ["**/*.ts", "**/*.tsx"],
 
     rules: {
-      "jsx-a11y/click-events-have-key-events": "off",
-      "jsx-a11y/no-static-element-interactions": "off",
-      "react/jsx-filename-extension": "off",
       "no-unused-vars": "off",
       "no-undef": "off",
       "no-restricted-globals": "off",
       "no-shadow": "off",
       "space-infix-ops": "off",
-      "react/prop-types": "off",
-      "react/default-props-match-prop-types": "off",
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": "error"
     }
